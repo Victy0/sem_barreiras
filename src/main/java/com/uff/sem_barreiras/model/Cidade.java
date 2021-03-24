@@ -1,6 +1,5 @@
-package com.uff.semBarreiras.model;
+package com.uff.sem_barreiras.model;
 
-import java.io.Serializable;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 import javax.persistence.Column;
@@ -14,10 +13,10 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name= "cidade")
-public class Cidade implements Serializable {
+public class Cidade{
  
     @Id
-    @Column(name= "nome")
+    @Column(name= "id")
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private  Integer id;
 

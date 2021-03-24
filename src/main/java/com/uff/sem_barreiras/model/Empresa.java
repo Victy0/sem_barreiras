@@ -1,6 +1,5 @@
-package com.uff.semBarreiras.model;
+package com.uff.sem_barreiras.model;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +13,7 @@ import lombok.Data;
 @Entity
 @Table(name="empresa")
 @Data
-public class Empresa implements Serializable{
+public class Empresa{
     
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
@@ -33,7 +32,7 @@ public class Empresa implements Serializable{
     @Column( name = "email" )
     private String email;
     
-    @Column( name = "id" )
+    @Column( name = "endereco" )
     private String endereco;
     
     @ManyToOne

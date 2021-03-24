@@ -1,6 +1,5 @@
-package com.uff.semBarreiras.model;
+package com.uff.sem_barreiras.model;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +11,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name= "escolaridade")
-public class Escolaridade implements Serializable {
+public class Escolaridade{
     
     @Id
     @Column(name= "id")

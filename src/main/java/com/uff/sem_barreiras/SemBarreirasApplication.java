@@ -8,6 +8,7 @@ public class SemBarreirasApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SemBarreirasApplication.class, args);
+		System.out.println("\nCONFIGURAÇÕES FUNCIONANDO!!!");
 	}
 
 }

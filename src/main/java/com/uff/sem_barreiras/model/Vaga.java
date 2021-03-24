@@ -1,6 +1,5 @@
-package com.uff.semBarreiras.model;
+package com.uff.sem_barreiras.model;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +17,8 @@ import javax.persistence.ManyToMany;
 @Entity
 @Table(name="vaga")
 @Data
-public class Vaga implements Serializable {
-    
+public class Vaga {
+
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column( name = "id" )

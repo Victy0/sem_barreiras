@@ -1,6 +1,5 @@
-package com.uff.semBarreiras.model;
+package com.uff.sem_barreiras.model;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +11,7 @@ import lombok.Data;
 @Entity
 @Table(name="area_atuacao")
 @Data
-public class AreaAtuacao implements Serializable {
+public class AreaAtuacao {
     
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
