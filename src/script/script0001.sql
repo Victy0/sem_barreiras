@@ -133,17 +133,6 @@ CREATE TABLE deficiencia
 	CONSTRAINT PK_deficiencia PRIMARY KEY (id)
 );
 
--- criacao tabela deficiencia
-CREATE TABLE deficiencia
-(
-	id SERIAL NOT NULL,
-    descricao VARCHAR(50) NOT NULL,
-    necessidade_rampa BOOLEAN NULL,
-	necessidade_piso_tatel BOOLEAN NULL,
-    necessiade_sonora BOOLEAN NULL,
-	CONSTRAINT PK_deficiencia PRIMARY KEY (id)
-);
-
 -- criacao tabela candidato_x_deficiencia
 CREATE TABLE candidato_x_deficiencia
 (
