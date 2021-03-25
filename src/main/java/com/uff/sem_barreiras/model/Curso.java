@@ -28,7 +28,7 @@ public class Curso{
     @Column(name= "descricao")
     private String descricao ;
 
-    @Column(name= "hyperLink")
+    @Column(name= "hiperLink")
     private String hyperLink ;
 
     @Column(name= "preco")

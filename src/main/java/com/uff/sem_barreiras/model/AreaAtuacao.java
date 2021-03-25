@@ -20,7 +20,4 @@ public class AreaAtuacao {
     
     @Column( name = "descricao" )
     private String descricao;
-    
-    @Column( name = "nome" )
-    private Integer nome;
 }

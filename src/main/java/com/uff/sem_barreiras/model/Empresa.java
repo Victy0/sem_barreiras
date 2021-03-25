@@ -34,6 +34,9 @@ public class Empresa{
     
     @Column( name = "endereco" )
     private String endereco;
+
+    @Column( name = "telefone" )
+    private String telefone;
     
     @ManyToOne
     @JoinColumn( name = "id_cidade")
