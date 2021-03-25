@@ -20,5 +20,4 @@ public class AreaAtuacao {
     
     @Column( name = "descricao" )
     private String descricao;
-    
 }
