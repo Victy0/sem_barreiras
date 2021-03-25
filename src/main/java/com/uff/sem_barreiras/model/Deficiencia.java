@@ -28,8 +28,8 @@ public class Deficiencia{
     @Column( name = "necessidade_rampa" )
     private Boolean necessidadeRampa;
     
-    @Column( name = "necessidade_piso_tatel" )
-    private Boolean necessidadePisoTatel;
+    @Column( name = "necessidade_piso_tatil" )
+    private Boolean necessidadePisoTatil;
     
     @Column( name = "necessidade_sonora" )
     private Boolean necessidadeSonora;
