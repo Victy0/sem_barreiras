@@ -90,9 +90,9 @@
     <td>
       <ul>
         <li><b>nome:</b><br></li>
-        <li>&nbsp; nome do estado<br></li>
+        <li>nome do estado<br></li>
         <li><b>uf:</b><br></li>
-        <li>&nbsp; sigla do estado<br></li>
+        <li>sigla do estado<br></li>
       </ul>      
     </td>
   </tr>
@@ -130,7 +130,7 @@
     <td>
       <ul>
         <li><b>id:</b><br></li>
-        <li>&nbsp; id do estado<br></li>
+        <li>id do estado<br></li>
       </ul>
     </td>
   <tr>
@@ -187,7 +187,7 @@
   </tr>
 </table>
 <br>
-<h3>Estado - GET [id] </h3>
+<h3>Cidade - GET [id] </h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
@@ -236,7 +236,7 @@
     <td>
       <ul>
         <li><b>nome:</b><br></li>
-        <li>&nbsp; nome da cidade<br></li>
+        <li>nome da cidade<br></li>
       </ul>
     </td>
   </tr>
@@ -273,7 +273,7 @@
   <td>
     <ul>
       <li><b>id:</b><br></li>
-      <li>&nbsp; id da cidade<br></li>
+      <li>id da cidade<br></li>
     </ul>
   </td>
   <tr>
