@@ -1,5 +1,4 @@
 package com.uff.sem_barreiras.dao;
-import java.util.List;
 
 
 import com.uff.sem_barreiras.model.Vaga;
