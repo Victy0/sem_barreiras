@@ -25,7 +25,7 @@ public class VagaController {
         this.vagaService.criarVaga(vaga);
     }
     
-    @DeleteMapping("/vaga")
+    @DeleteMapping("/vaga/{id}")
     public void deletar(@RequestParam(value = "id")Integer id){
         this.vagaService.deletarVaga(id);
     }

@@ -25,7 +25,7 @@ public class CursoController {
         this.cursoService.criarCurso(curso);
     }
     
-    @DeleteMapping("/curso")
+    @DeleteMapping("/curso/{id}")
     public void deletarCurso(@RequestParam(value = "id")Integer id){
         this.cursoService.deletarCurso(id);
     }

@@ -25,7 +25,7 @@ public class AreaAtuacaoController {
         this.AreaAtuacaoService.criarCurso(area);
     }
     
-    @DeleteMapping("/area")
+    @DeleteMapping("/area/{id}")
     public void deletarAreaAtuacao(@RequestParam(value = "id")Integer id){
         this.AreaAtuacaoService.deletarCurso(id);
     }
