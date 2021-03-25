@@ -16,6 +16,11 @@ public class EstadoService {
         return this.estadoDao.findAll();
     }
 
+    // encontrar estado pelo id
+    public Estado encontrarEstado(Integer id){
+        return this.estadoDao.findById(id).get();
+    }
+
     @Autowired
     private EstadoDao estadoDao;
 }
