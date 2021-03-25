@@ -22,12 +22,10 @@
       &nbsp;“estados”: [<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “0”,<br>
-          &nbsp;&nbsp;&nbsp;"nome": "Rio de Janeiro",<br>
           &nbsp;&nbsp;&nbsp;“uf”: “RJ”,<br>
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
-          &nbsp;&nbsp;&nbsp;"nome": "Sao Paulo",<br>
           &nbsp;&nbsp;&nbsp;“uf”: “SP”,<br>
         &nbsp;&nbsp;}<br>
         &nbsp;]<br>
@@ -60,7 +58,6 @@
     <td>
     {<br>
       &nbsp;"id": “0”,<br>
-      &nbsp;"nome": "Rio de Janeiro",<br>
       &nbsp;“uf”: “RJ”,<br>
     }<br>
     </td>
@@ -101,7 +98,6 @@
     <td>
     {<br>
       &nbsp;"id": “0”,<br>
-      &nbsp;"nome": "Rio de Janeiro",<br>
       &nbsp;“uf”: “RJ”,<br>
     }<br>
     </td>
@@ -138,7 +134,6 @@
     <td>
     {<br>
       &nbsp;"id": “0”,<br>
-      &nbsp;"nome": "Rio de Janeiro",<br>
       &nbsp;“uf”: “RJ”,<br>
     }<br>
     </td>
