@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class VagaService {
+
     public List<Vaga> listarVagas( ){
         return this.vagaDao.findAll();
     }
@@ -17,9 +18,15 @@ public class VagaService {
     public void criarVaga(Vaga vaga){
         this.vagaDao.save(vaga);
     }
+
     public void deletarVaga(Integer id){
         this.vagaDao.deleteById(id);;
     }
+
+    public Vaga encontrarVaga(Integer id){
+        return this.vagaDao.getOne(id);
+    }
+
     @Autowired
     private VagaDao vagaDao;
 }

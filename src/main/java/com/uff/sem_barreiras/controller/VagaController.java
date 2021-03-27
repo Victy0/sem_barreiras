@@ -8,6 +8,7 @@ import com.uff.sem_barreiras.service.VagaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,13 @@ public class VagaController {
         
         return this.vagaService.listarVagas();
     }
+
+    @GetMapping("/vaga/{id}")
+    public Vaga encontrarVaga(@PathVariable( value = "id" ) final Integer id){
+        
+        return this.vagaService.encontrarVaga(id);
+    }
+
     @PostMapping("/vaga")
     public void cadastrar(@RequestBody final Vaga vaga  ){
         this.vagaService.criarVaga(vaga);
@@ -29,6 +37,7 @@ public class VagaController {
     public void deletar(@RequestParam(value = "id")Integer id){
         this.vagaService.deletarVaga(id);
     }
+
     @Autowired
     private VagaService vagaService ;
 }
