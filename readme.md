@@ -5,7 +5,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -43,7 +43,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -72,7 +72,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -112,7 +112,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -148,7 +148,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -188,7 +188,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -219,7 +219,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -260,7 +260,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -296,7 +296,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -340,7 +340,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -374,7 +374,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -411,11 +411,12 @@
     </td>
   </tr>
 </table>
+<br>
 <h3>Deficiencia - DELETE</h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -451,7 +452,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -489,7 +490,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -519,7 +520,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -557,7 +558,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -588,11 +589,12 @@
     </td>
   </tr>
 </table>
+<br>
 <h3>Candidato - GET [list] </h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -640,7 +642,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -675,7 +677,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -728,7 +730,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Description</th>
+    <th>Descricao</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -759,3 +761,356 @@
     </td>
   </tr>
 </table>
+<br>
+<h3>AreaAtuacao - GET [list] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/area</td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"areas": [<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “0”,<br>
+          &nbsp;&nbsp;&nbsp;"descricao": "Tecnologia da informacao",<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “1”,<br>
+          &nbsp;&nbsp;&nbsp;"descricao": "Vendas",<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;]<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>AreaAtuacao - GET [id] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/area/{id}</td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": 0,<br>
+      &nbsp;"descricao": "Vendas",<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>AreaAtuacao - POST</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/area/</td>
+  </tr>
+  <tr>
+    <td>params</td>
+    <td>
+      <ul>
+        <li><b>descricao:</b><br></li>
+        <li>descricao da area<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": 0,<br>
+      &nbsp;"descricao": "Vendas",<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<h3>AreaAtuacao - DELETE</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/area/{id}</td>
+  </tr>
+  <td>params</td>
+  <td>
+    <ul>
+      <li><b>id:</b><br></li>
+      <li>id da area<br></li>
+    </ul>
+  </td>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"message": “Object deleted with success”,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Vaga - GET [list] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/vaga</td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"vagas": [<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “0”,<br>
+          &nbsp;&nbsp;&nbsp;"dataCriacao": "29-03-2020",<br>
+          &nbsp;&nbsp;&nbsp;"funcao": "Gerente",<br>
+          &nbsp;&nbsp;&nbsp;"nivel": "Pleno",<br>
+          &nbsp;&nbsp;&nbsp;"descricao": "Auxiliar no processo de gerenciamento",<br>
+          &nbsp;&nbsp;&nbsp;"requisitosNecessarios": ["Bom relacionamento interpessoal", "inglês básico"],<br>
+          &nbsp;&nbsp;&nbsp;"requisitosDesejados": ["Inglês avançado"],<br>
+          &nbsp;&nbsp;&nbsp;"beneficios": ["VR", "VA", "VT"],<br>
+          &nbsp;&nbsp;&nbsp;"outrosBeneficos": "Seguro de vida",<br>
+          &nbsp;&nbsp;&nbsp;"jornadaTrabalho": 8,<br>
+          &nbsp;&nbsp;&nbsp;"duracaoVaga": 30,<br>
+          &nbsp;&nbsp;&nbsp;"area_id": 0,<br>
+          &nbsp;&nbsp;&nbsp;"empresa_id": 0,<br>
+          &nbsp;&nbsp;&nbsp;"escolaridade_id": 0,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “1”,<br>
+          &nbsp;&nbsp;&nbsp;"dataCriacao": "09-10-2021",<br>
+          &nbsp;&nbsp;&nbsp;"funcao": "Desenvolvedor",<br>
+          &nbsp;&nbsp;&nbsp;"nivel": "Junior",<br>
+          &nbsp;&nbsp;&nbsp;"descricao": "Desenvolver sistemas web",<br>
+          &nbsp;&nbsp;&nbsp;"requisitosNecessarios": ["Fácil Aprendizado", "inglês avançado", "Frances basico"],<br>
+          &nbsp;&nbsp;&nbsp;"requisitosDesejados": ["Inglês avançado"],<br>
+          &nbsp;&nbsp;&nbsp;"beneficios": ["VR", "VA", "VT"],<br>
+          &nbsp;&nbsp;&nbsp;"outrosBeneficos": "Seguro de vida e plano de saúde",<br>
+          &nbsp;&nbsp;&nbsp;"jornadaTrabalho": 8,<br>
+          &nbsp;&nbsp;&nbsp;"duracaoVaga": 20,<br>
+          &nbsp;&nbsp;&nbsp;"area_id": 1,<br>
+          &nbsp;&nbsp;&nbsp;"empresa_id": 1,<br>
+          &nbsp;&nbsp;&nbsp;"escolaridade_id": 1,<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;]<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Vaga - GET [id] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/vaga/{id}</td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": “0”,<br>
+      &nbsp;"dataCriacao": "29-03-2020",<br>
+      &nbsp;"funcao": "Gerente",<br>
+      &nbsp;"nivel": "Pleno",<br>
+      &nbsp;"descricao": "Auxiliar no processo de gerenciamento",<br>
+      &nbsp;"requisitosNecessarios": ["Bom relacionamento interpessoal", "inglês básico"],<br>
+      &nbsp;"requisitosDesejados": ["Inglês avançado"],<br>
+      &nbsp;"beneficios": ["VR", "VA", "VT"],<br>
+      &nbsp;"outrosBeneficos": "Seguro de vida",<br>
+      &nbsp;"jornadaTrabalho": 8,<br>
+      &nbsp;"duracaoVaga": 30,<br>
+      &nbsp;"area_id": 0,<br>
+      &nbsp;"empresa_id": 0,<br>
+      &nbsp;"escolaridade_id": 0,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203 / 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Vaga - POST</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/vaga/</td>
+  </tr>
+  <tr>
+    <td>params</td>
+    <td>
+      <ul>
+        <li><b>data de criacao:</b><br></li>
+        <li>data de criacao da vaga<br></li>
+        <li><b>funcao:</b><br></li>
+        <li>funcao da vaga<br></li>
+        <li><b>nivel:</b><br></li>
+        <li>nivel da vaga<br></li>
+        <li><b>descricao:</b><br></li>
+        <li>descricao da vaga<br></li>
+        <li><b>requisitos necessarios:</b><br></li>
+        <li>requisitos necessarios da vaga<br></li>
+        <li><b>requisitos desejados:</b><br></li>
+        <li>requisitos desejados da vaga<br></li>
+        <li><b>beneficios:</b><br></li>
+        <li>lista beneficios da vaga<br></li>
+        <li><b>outros beneficios:</b><br></li>
+        <li>outros beneficios<br></li>
+        <li><b>area_id:</b><br></li>
+        <li>chave para area da vaga<br></li>
+        <li><b>empresa_id:</b><br></li>
+        <li>chave para empresa da vaga<br></li>
+        <li><b>escolaridade_id:</b><br></li>
+        <li>chave para escolaridade da vaga<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": “0”,<br>
+      &nbsp;"dataCriacao": "29-03-2020",<br>
+      &nbsp;"funcao": "Gerente",<br>
+      &nbsp;"nivel": "Pleno",<br>
+      &nbsp;"descricao": "Auxiliar no processo de gerenciamento",<br>
+      &nbsp;"requisitosNecessarios": ["Bom relacionamento interpessoal", "inglês básico"],<br>
+      &nbsp;"requisitosDesejados": ["Inglês avançado"],<br>
+      &nbsp;"beneficios": ["VR", "VA", "VT"],<br>
+      &nbsp;"outrosBeneficos": "Seguro de vida",<br>
+      &nbsp;"jornadaTrabalho": 8,<br>
+      &nbsp;"duracaoVaga": 30,<br>
+      &nbsp;"area_id": 0,<br>
+      &nbsp;"empresa_id": 0,<br>
+      &nbsp;"escolaridade_id": 0,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<h3>Vaga - DELETE</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descricao</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/vaga/{id}</td>
+  </tr>
+  <td>params</td>
+  <td>
+    <ul>
+      <li><b>id:</b><br></li>
+      <li>id da vaga<br></li>
+    </ul>
+  </td>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"message": “Object deleted with success”,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
