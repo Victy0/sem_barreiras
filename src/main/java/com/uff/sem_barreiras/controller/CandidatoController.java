@@ -30,7 +30,7 @@ public class CandidatoController {
         try{
             return this.candidatoService.encontrarCandidato(id);
         }catch(final Exception e ){
-            throw new NotFoundException("Candidato");
+            throw new NotFoundException("Candidato", id);
         }
     }
 

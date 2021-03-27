@@ -29,7 +29,7 @@ public class DeficienciaController {
         try {
             return this.deficienciaService.encontrarDeficiencia(id);
         } catch (final Exception e) {
-            throw new NotFoundException("Deficiencia");
+            throw new NotFoundException("Deficiencia", id);
         }
     }
 

@@ -26,7 +26,7 @@ public class EstadoController {
         try{
             return this.estadoService.encontrarEstado(id);
         }catch(final Exception e ){
-            throw new NotFoundException("Estado");
+            throw new NotFoundException("Estado", id);
         }
     }
 

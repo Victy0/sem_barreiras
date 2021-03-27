@@ -1,6 +1,7 @@
 package com.uff.sem_barreiras.controllerAdvice;
 
 import com.uff.sem_barreiras.exceptions.NotFoundException;
+import com.uff.sem_barreiras.dto.ResponseObject;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,9 +15,8 @@ public class NotFoundAdvice {
     @ResponseBody
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    ErrorObject notFoundHandler(NotFoundException ex) {
-        ErrorObject error = new ErrorObject();
-        error.setMensagem(ex.getMessage());
+    ResponseObject notFoundHandler(NotFoundException ex) {
+        ResponseObject error = new ResponseObject(false, ex.getMessage());
         return error;
     }
 }

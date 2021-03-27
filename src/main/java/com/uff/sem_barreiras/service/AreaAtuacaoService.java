@@ -10,15 +10,23 @@ import com.uff.sem_barreiras.model.AreaAtuacao;
 
 @Service
 public class AreaAtuacaoService {
+
     public List<AreaAtuacao> listarAreaAtuacao(){
         return this.AreaAtuacaoDao.findAll();
     }
-    public void criarCurso(AreaAtuacao area){
-        this.AreaAtuacaoDao.save(area);
+
+    public AreaAtuacao encontrarAreaAtuacao(Integer id){
+        return this.AreaAtuacaoDao.findById(id).get();
     }
-    public void deletarCurso(Integer id){
-        this.AreaAtuacaoDao.deleteById(id);;
+
+    public AreaAtuacao criarAreaAtuacao(AreaAtuacao area){
+        return this.AreaAtuacaoDao.save(area);
     }
+
+    public void deletarAreaAtuacao(Integer id){
+        this.AreaAtuacaoDao.deleteById(id);
+    }
+
     @Autowired
     private AreaAtuacaoDao AreaAtuacaoDao;
 }

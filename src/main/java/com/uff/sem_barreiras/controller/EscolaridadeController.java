@@ -27,7 +27,7 @@ public class EscolaridadeController {
         try{
             return this.escolaridadeService.encontrarEscolaridade(id);
         }catch(final Exception e ){
-            throw new NotFoundException("Escolaridade");
+            throw new NotFoundException("Escolaridade", id);
         }
     }
     
