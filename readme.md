@@ -5,7 +5,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -43,7 +43,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -52,6 +52,15 @@
   <tr>
     <td>curl</td>
     <td>/api/v1/estado/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do estado<br></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>response</td>
@@ -72,7 +81,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -83,7 +92,7 @@
     <td>/api/v1/estado/</td>
   </tr>
   <tr>
-    <td>params</td>
+    <td>body:</td>
     <td>
       <ul>
         <li><b>nome:</b><br></li>
@@ -108,11 +117,12 @@
     </td>
   </tr>
 </table>
+<br>
 <h3>Estado - DELETE</h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -122,7 +132,7 @@
     <td>curl</td>
     <td>/api/v1/estado/{id}</td>
   </tr>
-  <td>params</td>
+  <td>params:</td>
     <td>
       <ul>
         <li><b>id:</b><br></li>
@@ -133,8 +143,8 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"id": 0,<br>
-      &nbsp;“uf”: “RJ”,<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;“mensagem”: “Estado deletado com sucesso.”,<br>
     }<br>
     </td>
   </tr>
@@ -148,7 +158,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -188,7 +198,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -197,6 +207,15 @@
   <tr>
     <td>curl</td>
     <td>/api/v1/cidade/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da cidade<br></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>response</td>
@@ -219,7 +238,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -230,7 +249,7 @@
     <td>/api/v1/cidade/</td>
   </tr>
   <tr>
-    <td>params</td>
+    <td>body:</td>
     <td>
       <ul>
         <li><b>nome:</b><br></li>
@@ -260,7 +279,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -270,7 +289,7 @@
     <td>curl</td>
     <td>/api/v1/cidade/{id}</td>
   </tr>
-  <td>params</td>
+  <td>params:</td>
   <td>
     <ul>
       <li><b>id:</b><br></li>
@@ -281,7 +300,8 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"message": “Object deleted with success”,<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": “Cidade deletada com sucesso.”,<br>
     }<br>
     </td>
   </tr>
@@ -296,7 +316,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -340,7 +360,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -349,6 +369,15 @@
   <tr>
     <td>curl</td>
     <td>/api/v1/deficiencia/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da deficiencia<br></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>response</td>
@@ -374,7 +403,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -385,7 +414,7 @@
     <td>/api/v1/deficiencia/</td>
   </tr>
   <tr>
-    <td>params</td>
+    <td>body:</td>
     <td>
       <ul>
         <li><b>descricao:</b><br></li>
@@ -412,11 +441,11 @@
   </tr>
 </table>
 <br>
-<h3>Deficiencia - DELETE</h3>
+<h3>Deficiencia - PUT</h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -426,7 +455,55 @@
     <td>curl</td>
     <td>/api/v1/deficiencia/{id}</td>
   </tr>
-  <td>params</td>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da deficiencia<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>body:</td>
+    <td>
+      <ul>
+        <li><b>descricao:</b><br></li>
+        <li>descricao da deficiencia<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": "Deficiencia atualizada com sucesso.",<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Deficiencia - DELETE</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/deficiencia/{id}</td>
+  </tr>
+  <td>params:</td>
   <td>
     <ul>
       <li><b>id:</b><br></li>
@@ -437,7 +514,8 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"message": “Object deleted with success”,<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": “Deficiencia deletada com sucesso.”,<br>
     }<br>
     </td>
   </tr>
@@ -452,7 +530,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -490,7 +568,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -499,6 +577,15 @@
   <tr>
     <td>curl</td>
     <td>/api/v1/escolaridade/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da escolaridade<br></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>response</td>
@@ -520,7 +607,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -531,7 +618,7 @@
     <td>/api/v1/escolaridade/</td>
   </tr>
   <tr>
-    <td>params</td>
+    <td>body:</td>
     <td>
       <ul>
         <li><b>descricao:</b><br></li>
@@ -558,11 +645,11 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
-    <td>POST</td>
+    <td>DELETE</td>
   </tr>
   <tr>
     <td>curl</td>
@@ -579,7 +666,8 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"message": “Object deleted with success”,<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": “Escolaridade deletada com sucesso.”,<br>
     }<br>
     </td>
   </tr>
@@ -594,7 +682,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -642,7 +730,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -651,6 +739,15 @@
   <tr>
     <td>curl</td>
     <td>/api/v1/candidato/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do candidato<br></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>response</td>
@@ -677,7 +774,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -688,13 +785,13 @@
     <td>/api/v1/candidato/</td>
   </tr>
   <tr>
-    <td>params</td>
+    <td>body:</td>
     <td>
       <ul>
         <li><b>nome:</b><br></li>
         <li>nome do candidato<br></li>
         <li><b>telefone:</b><br></li>
-        <li>telefone do candidato<br></li>
+        <li>telefone:<br></li>
         <li><b>email:</b><br></li>
         <li>email do candidato<br></li>
         <li><b>curriculo:</b><br></li>
@@ -726,11 +823,12 @@
     </td>
   </tr>
 </table>
-<h3>Candidato - DELETE</h3>
+<br>
+<h3>Candidato - PUT</h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -740,7 +838,64 @@
     <td>curl</td>
     <td>/api/v1/candidato/{id}</td>
   </tr>
-  <td>params</td>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do candidato<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>body:</td>
+    <td>
+      <ul>
+        <li><b>nome:</b><br></li>
+        <li>nome do candidato<br></li>
+        <li><b>telefone:</b><br></li>
+        <li>telefone do candidato<br></li>
+        <li><b>email:</b><br></li>
+        <li>email do candidato<br></li>
+        <li><b>curriculo:</b><br></li>
+        <li>caminho do curriculo do candidato<br></li>
+        <li><b>cidade_id:</b><br></li>
+        <li>chave para a cidade do candidato<br></li>
+        <li><b>escolaridade_id:</b><br></li>
+        <li>chave para a escolaridade do candidato<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": "Candidato atualizado com sucesso.",<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<h3>Candidato - DELETE</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/candidato/{id}</td>
+  </tr>
+  <td>params:</td>
   <td>
     <ul>
       <li><b>id:</b><br></li>
@@ -751,7 +906,8 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"message": “Object deleted with success”,<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"message": “Candidato deletado com sucesso.”,<br>
     }<br>
     </td>
   </tr>
@@ -766,7 +922,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -804,7 +960,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -813,6 +969,15 @@
   <tr>
     <td>curl</td>
     <td>/api/v1/area/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da area<br></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>response</td>
@@ -834,7 +999,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -845,7 +1010,7 @@
     <td>/api/v1/area/</td>
   </tr>
   <tr>
-    <td>params</td>
+    <td>body:</td>
     <td>
       <ul>
         <li><b>descricao:</b><br></li>
@@ -872,7 +1037,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -882,7 +1047,7 @@
     <td>curl</td>
     <td>/api/v1/area/{id}</td>
   </tr>
-  <td>params</td>
+  <td>params:</td>
   <td>
     <ul>
       <li><b>id:</b><br></li>
@@ -893,7 +1058,8 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"message": “Object deleted with success”,<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": “Area de atuacao deletada com sucesso.”,<br>
     }<br>
     </td>
   </tr>
@@ -908,7 +1074,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -970,7 +1136,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -979,6 +1145,15 @@
   <tr>
     <td>curl</td>
     <td>/api/v1/vaga/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da vaga:<br></li>
+      </ul>
+    </td>
   </tr>
   <tr>
     <td>response</td>
@@ -1012,7 +1187,7 @@
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -1023,10 +1198,10 @@
     <td>/api/v1/vaga/</td>
   </tr>
   <tr>
-    <td>params</td>
+    <td>body:</td>
     <td>
       <ul>
-        <li><b>data de criacao:</b><br></li>
+        <li><b>dataCriacao:</b><br></li>
         <li>data de criacao da vaga<br></li>
         <li><b>funcao:</b><br></li>
         <li>funcao da vaga<br></li>
@@ -1034,13 +1209,13 @@
         <li>nivel da vaga<br></li>
         <li><b>descricao:</b><br></li>
         <li>descricao da vaga<br></li>
-        <li><b>requisitos necessarios:</b><br></li>
+        <li><b>requisitosNecessarios:</b><br></li>
         <li>requisitos necessarios da vaga<br></li>
-        <li><b>requisitos desejados:</b><br></li>
+        <li><b>requisitosDesejados:</b><br></li>
         <li>requisitos desejados da vaga<br></li>
         <li><b>beneficios:</b><br></li>
         <li>lista beneficios da vaga<br></li>
-        <li><b>outros beneficios:</b><br></li>
+        <li><b>outrosBeneficios:</b><br></li>
         <li>outros beneficios<br></li>
         <li><b>area_id:</b><br></li>
         <li>chave para area da vaga<br></li>
@@ -1078,11 +1253,79 @@
     </td>
   </tr>
 </table>
+<h3>Vaga - PUT</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/vaga/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da vaga<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>body:</td>
+    <td>
+      <ul>
+        <li><b>dataCriacao:</b><br></li>
+        <li>data de criacao da vaga<br></li>
+        <li><b>funcao:</b><br></li>
+        <li>funcao da vaga<br></li>
+        <li><b>nivel:</b><br></li>
+        <li>nivel da vaga<br></li>
+        <li><b>descricao:</b><br></li>
+        <li>descricao da vaga<br></li>
+        <li><b>requisitosNecessarios:</b><br></li>
+        <li>requisitos necessarios da vaga<br></li>
+        <li><b>requisitosDesejados:</b><br></li>
+        <li>requisitos desejados da vaga<br></li>
+        <li><b>beneficios:</b><br></li>
+        <li>lista beneficios da vaga<br></li>
+        <li><b>outrosBeneficios:</b><br></li>
+        <li>outros beneficios<br></li>
+        <li><b>area_id:</b><br></li>
+        <li>chave para area da vaga<br></li>
+        <li><b>empresa_id:</b><br></li>
+        <li>chave para empresa da vaga<br></li>
+        <li><b>escolaridade_id:</b><br></li>
+        <li>chave para escolaridade da vaga<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": "Vaga atualizada com sucesso.",<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
 <h3>Vaga - DELETE</h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
-    <th>Descricao</th>
+    <th>Descrição</th>
   </tr>
   <tr>
     <td>metodo</td>
@@ -1103,7 +1346,488 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"message": “Object deleted with success”,<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": “Vaga deletada com sucesso.”,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Curso - GET [list] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/curso</td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"cursos": [<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “0”,<br>
+          &nbsp;&nbsp;&nbsp;“nome”: “Excel avancado”,<br>
+          &nbsp;&nbsp;&nbsp;“descricao”: “Aprenda a dominar o excel.”,<br>
+          &nbsp;&nbsp;&nbsp;“hiperLink”: “https://certificadocursosonline.com/cursos/curso-de-excel/”,<br>
+          &nbsp;&nbsp;&nbsp;"preco": 27.90,<br>
+          &nbsp;&nbsp;&nbsp;"vaga_id": 0,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “1”,<br>
+          &nbsp;&nbsp;&nbsp;“nome”: Java avancado”,<br>
+          &nbsp;&nbsp;&nbsp;“descricao”: “Aprenda a programar em java.”,<br>
+          &nbsp;&nbsp;&nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
+          &nbsp;&nbsp;&nbsp;"preco": 37.90,<br>
+          &nbsp;&nbsp;&nbsp;"vaga_id": 1,<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;]<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Curso - GET [id] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/curso/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do curso<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": “0”,<br>
+      &nbsp;“nome”: “Excel avancado”,<br>
+      &nbsp;“descricao”: “Aprenda a dominar o excel.”,<br>
+      &nbsp;“hiperLink”: “https://certificadocursosonline.com/cursos/curso-de-excel/”,<br>
+      &nbsp;"preco": 27.90,<br>
+      &nbsp;"vaga_id": 0,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<h3>Curso - POST</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/curso/</td>
+  </tr>
+  <tr>
+    <td>body</td>
+    <td>
+      <ul>
+        <li><b>nome:</b><br></li>
+        <li>nome do curso<br></li>
+        <li><b>descricao:</b><br></li>
+        <li>descricao do curso<br></li>
+        <li><b>hiperLink:</b><br></li>
+        <li>hiperlink do curso<br></li>
+        <li><b>preco:</b><br></li>
+        <li>preco do curso<br></li>
+        <li><b>vaga_id:</b><br></li>
+        <li>chave para a vaga do curso<br></li>
+      </ul>      
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": “1”,<br>
+      &nbsp;“nome”: Java avancado”,<br>
+      &nbsp;“descricao”: “Aprenda a programar em java.”,<br>
+      &nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
+      &nbsp;"preco": 37.90,<br>
+      &nbsp;"vaga_id": 1,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Curso - PUT</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/curso/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do curso<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>body:</td>
+    <td>
+      <ul>
+        <li><b>nome:</b><br></li>
+        <li>nome do curso<br></li>
+        <li><b>descricao:</b><br></li>
+        <li>descricao do curso<br></li>
+        <li><b>hiperLink:</b><br></li>
+        <li>hiperlink do curso<br></li>
+        <li><b>preco:</b><br></li>
+        <li>preco do curso<br></li>
+        <li><b>vaga_id:</b><br></li>
+        <li>chave para a vaga do curso<br></li>
+      </ul>      
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": "Curso atualizado com sucesso.",<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Curso - DELETE</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/curso/{id}</td>
+  </tr>
+  <td>params</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do curso<br></li>
+      </ul>
+    </td>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;“mensagem”: "Curso deletado com sucesso.”,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Empresa - GET [list] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/empresa</td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"empresas": [<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “0”,<br>
+          &nbsp;&nbsp;&nbsp;“nome”: “Ambev",<br>
+          &nbsp;&nbsp;&nbsp;“nomeFantasia”: “AMBEV IND.”,<br>
+          &nbsp;&nbsp;&nbsp;“cnpj”: “43277397000176",<br>
+          &nbsp;&nbsp;&nbsp;"email": "institucional@ambev.com",<br>
+          &nbsp;&nbsp;&nbsp;"telefone": "21987723341",<br>
+          &nbsp;&nbsp;&nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
+          &nbsp;&nbsp;&nbsp;"cidade_id": 0,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;"id": “0”,<br>
+          &nbsp;&nbsp;&nbsp;“nome”: Colgate",<br>
+          &nbsp;&nbsp;&nbsp;“nomeFantasia”: "COLGATE IND.”,<br>
+          &nbsp;&nbsp;&nbsp;“cnpj”: "34434685000104",<br>
+          &nbsp;&nbsp;&nbsp;"email": "institucional@colgate.com",<br>
+          &nbsp;&nbsp;&nbsp;"telefone": "11983226532",<br>
+          &nbsp;&nbsp;&nbsp;"endereco": "Av. Paulista, 1294 - Bela VistaSão Paulo - SP",<br>
+          &nbsp;&nbsp;&nbsp;"cidade_id": 1,<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;]<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Empresa - GET [id] </h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>GET</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/empresa/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do curso<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": “0”,<br>
+      &nbsp;“nome”: “Ambev",<br>
+      &nbsp;“nomeFantasia”: “AMBEV IND.”,<br>
+      &nbsp;“cnpj”: “43277397000176",<br>
+      &nbsp;"email": "institucional@ambev.com",<br>
+      &nbsp;"telefone": "21987723341",<br>
+      &nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
+      &nbsp;"cidade_id": 0,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<h3>Empresa - POST</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/empresa/</td>
+  </tr>
+  <tr>
+    <td>body</td>
+    <td>
+      <ul>
+        <li><b>nome:</b><br></li>
+        <li>nome da empresa<br></li>
+        <li><b>nomeFantasia:</b><br></li>
+        <li>nome fantasia da empresa<br></li>
+        <li><b>cpnj:</b><br></li>
+        <li>cnpj da empresa<br></li>
+        <li><b>email:</b><br></li>
+        <li>email da empresa<br></li>
+        <li><b>telefone:</b><br></li>
+        <li>telefone da empresa<br></li>
+        <li><b>endereco:</b><br></li>
+        <li>endereco da empresa<br></li>
+        <li><b>cidade_id:</b><br></li>
+        <li>chave para a cidade do empresa<br></li>
+      </ul>      
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": “0”,<br>
+      &nbsp;“nome”: “Ambev",<br>
+      &nbsp;“nomeFantasia”: “AMBEV IND.”,<br>
+      &nbsp;“cnpj”: “43277397000176",<br>
+      &nbsp;"email": "institucional@ambev.com",<br>
+      &nbsp;"telefone": "21987723341",<br>
+      &nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
+      &nbsp;"cidade_id": 0,<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Empresa - PUT</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/empresa/{id}</td>
+  </tr>
+  <tr>
+    <td>params:</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id da empresa<br></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>body:</td>
+    <td>
+      <ul>
+        <li><b>nome:</b><br></li>
+        <li>nome da empresa<br></li>
+        <li><b>nomeFantasia:</b><br></li>
+        <li>nome fantasia da empresa<br></li>
+        <li><b>cpnj:</b><br></li>
+        <li>cnpj da empresa<br></li>
+        <li><b>email:</b><br></li>
+        <li>email da empresa<br></li>
+        <li><b>telefone:</b><br></li>
+        <li>telefone da empresa<br></li>
+        <li><b>endereco:</b><br></li>
+        <li>endereco da empresa<br></li>
+        <li><b>cidade_id:</b><br></li>
+        <li>chave para a cidade do empresa<br></li>
+      </ul>      
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;"mensagem": "Empresa atualizada com sucesso.",<br>
+    }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Empresa - DELETE</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>POST</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>/api/v1/curso/{id}</td>
+  </tr>
+  <td>params</td>
+    <td>
+      <ul>
+        <li><b>id:</b><br></li>
+        <li>id do curso<br></li>
+      </ul>
+    </td>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"sucesso": true,<br>
+      &nbsp;“mensagem”: "Empresa deletada com sucesso.”,<br>
     }<br>
     </td>
   </tr>
