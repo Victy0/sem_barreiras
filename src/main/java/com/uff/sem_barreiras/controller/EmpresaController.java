@@ -2,6 +2,7 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Empresa;
 import com.uff.sem_barreiras.service.EmpresaService;
@@ -35,7 +36,7 @@ public class EmpresaController {
 
     // mapeamento Post para criar uma empresa
     @PostMapping("/empresa")
-    public Empresa criarEmpresa(@RequestBody final Empresa empresa) {
+    public Empresa criarEmpresa(@RequestBody final Empresa empresa) throws InsertException {
         return this.empresaService.criarEmpresa(empresa);
     }
 

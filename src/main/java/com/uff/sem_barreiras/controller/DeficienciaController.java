@@ -2,6 +2,7 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Deficiencia;
 import com.uff.sem_barreiras.service.DeficienciaService;
@@ -35,7 +36,7 @@ public class DeficienciaController {
 
     // mapeamento Post para criar uma deficiencia
     @PostMapping("/deficiencia")
-    public Deficiencia criarDeficiencia(@RequestBody final Deficiencia deficiencia) {
+    public Deficiencia criarDeficiencia(@RequestBody final Deficiencia deficiencia) throws InsertException {
         return this.deficienciaService.criarDeficiencia(deficiencia);
     }
 

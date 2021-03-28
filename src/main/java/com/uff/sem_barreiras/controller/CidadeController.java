@@ -2,6 +2,7 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Cidade;
 import com.uff.sem_barreiras.service.CidadeService;
@@ -34,7 +35,7 @@ public class CidadeController {
 
     // mapeamento Post para criar uma cidade
     @PostMapping("/cidade")
-    public Cidade criarCidade(@RequestBody final Cidade cidade) {
+    public Cidade criarCidade(@RequestBody final Cidade cidade) throws InsertException{
         return this.cidadeService.criarCidade(cidade);
     }
 

@@ -3,6 +3,7 @@ package com.uff.sem_barreiras.service;
 import java.util.List;
 
 import com.uff.sem_barreiras.dao.DeficienciaDao;
+import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.model.Deficiencia;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,13 @@ public class DeficienciaService {
     }
 
     // salvar deficiencia
-    public Deficiencia criarDeficiencia(Deficiencia deficiencia) {
-        return this.deficienciaDao.save(deficiencia);
+    public Deficiencia criarDeficiencia(Deficiencia deficiencia) throws InsertException {
+        try{
+            return this.deficienciaDao.save(deficiencia);
+            }catch(Exception e){
+                String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
+                throw new InsertException(text, "a Deficiencia");
+            }
     }
 
     // deletar deficiencia

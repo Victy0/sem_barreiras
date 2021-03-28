@@ -2,6 +2,7 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Candidato;
 import com.uff.sem_barreiras.service.CandidatoService;
@@ -36,13 +37,13 @@ public class CandidatoController {
 
     // mapeamento post para cadastrar candidato
     @PostMapping("/candidato")
-    public Candidato cadastrar(@RequestBody final Candidato candidato  ){
+    public Candidato cadastrar(@RequestBody final Candidato candidato  ) throws InsertException {
         return this.candidatoService.criarCandidato(candidato);
     }
 
     // mapeamento put para confirmar candidatura para uma vaga
     @PutMapping("/candidato/{idCandidato}/candidatura/{idVaga}")
-    public Boolean atrelarCandidatura(@PathVariable( value = "idCandido" ) final Integer idCandidato, @PathVariable( value = "idVaga" ) final Integer idVaga){
+    public Boolean atrelarCandidatura(@PathVariable( value = "idCandido" ) final Integer idCandidato, @PathVariable( value = "idVaga" ) final Integer idVaga)throws NotFoundException{
         return this.candidatoService.atrelarCandidatura(idCandidato, idVaga);
     }
 
