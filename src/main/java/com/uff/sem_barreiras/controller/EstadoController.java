@@ -23,11 +23,7 @@ public class EstadoController {
     //mapeamento Get para recuperar 1 estado informando o id do mesmo
     @GetMapping("/estado/{id}")
     public Estado encontrarEstado(@PathVariable( value = "id" ) final Integer id) throws NotFoundException{
-        try{
-            return this.estadoService.encontrarEstado(id);
-        }catch(final Exception e ){
-            throw new NotFoundException("Estado");
-        }
+        return this.estadoService.encontrarEstado(id);
     }
 
     @Autowired

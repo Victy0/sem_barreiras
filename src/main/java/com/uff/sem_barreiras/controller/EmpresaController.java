@@ -29,7 +29,7 @@ public class EmpresaController {
         try {
             return this.empresaService.encontrarEmpresa(id);
         } catch (final Exception e) {
-            throw new NotFoundException("Empresa");
+            throw new NotFoundException("Empresa", id);
         }
     }
 

@@ -28,7 +28,7 @@ public class CidadeController {
         try {
             return this.cidadeService.encontrarCidade(id);
         } catch (final Exception e) {
-            throw new NotFoundException("Cidade");
+            throw new NotFoundException("Cidade", id);
         }
     }
 
