@@ -91,9 +91,11 @@ CREATE TABLE vaga
     duracao_vaga INTEGER NOT NULL,
     id_area_atuacao SERIAL NOT NULL,
     id_escolaridade SERIAL NOT NULL,
+    id_empresa SERIAL NOT NULL,
 	CONSTRAINT PK_vaga PRIMARY KEY (id),
     CONSTRAINT FK_vaga_x_area_atuacao FOREIGN KEY (id_area_atuacao) REFERENCES area_atuacao(id),
-    CONSTRAINT FK_vaga_x_escolaridade FOREIGN KEY (id_escolaridade) REFERENCES escolaridade(id)
+    CONSTRAINT FK_vaga_x_escolaridade FOREIGN KEY (id_escolaridade) REFERENCES escolaridade(id),
+    CONSTRAINT FK_vaga_x_empresa FOREIGN KEY (id_empresa) REFERENCES empresa(id)
 );
 
 -- criacao tabela curso
