@@ -419,6 +419,12 @@
       <ul>
         <li><b>descricao:</b><br></li>
         <li>descricao da deficiencia<br></li>
+        <li><b>necessidadeRampa:</b><br></li>
+        <li>se é preciso de rampa<br></li>
+        <li><b>necessidadePisoTatil:</b><br></li>
+        <li>se é preciso de piso tátiil<br></li>
+        <li><b>necessidadeSonora:</b><br></li>
+        <li>se é preciso de dispositivo sonoro<br></li>
       </ul>
     </td>
   </tr>
@@ -459,8 +465,14 @@
     <td>params:</td>
     <td>
       <ul>
-        <li><b>id:</b><br></li>
-        <li>id da deficiencia<br></li>
+        <li><b>descricao:</b><br></li>
+        <li>descricao da deficiencia<br></li>
+        <li><b>necessidadeRampa:</b><br></li>
+        <li>se é preciso de rampa<br></li>
+        <li><b>necessidadePisoTatil:</b><br></li>
+        <li>se é preciso de piso tátiil<br></li>
+        <li><b>necessidadeSonora:</b><br></li>
+        <li>se é preciso de dispositivo sonoro<br></li>
       </ul>
     </td>
   </tr>
