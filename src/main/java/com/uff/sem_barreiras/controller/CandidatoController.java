@@ -41,13 +41,23 @@ public class CandidatoController {
         return this.candidatoService.criarCandidato(candidato);
     }
 
-    // mapeamento put para confirmar candidatura para uma vaga
-    @PutMapping("/candidato/{idCandidato}/candidatura/{idVaga}")
+    // mapeamento post para cadastrar candidato
+    @PostMapping("/candidato/atualiza")
+    public Candidato atualizar(@RequestBody final Candidato candidato  ) {
+        return this.candidatoService.atualizarCandidato(candidato);
+    }
+
+    // mapeamento get para confirmar candidatura para uma vaga tendo "cadastro"
+    @GetMapping("/candidato/{idCandidato}/candidatura/{idVaga}")
     public Boolean atrelarCandidatura(@PathVariable( value = "idCandido" ) final Integer idCandidato, @PathVariable( value = "idVaga" ) final Integer idVaga)throws NotFoundException{
         return this.candidatoService.atrelarCandidatura(idCandidato, idVaga);
     }
 
-
+    // mapeamento post para confirmar candidatura para uma vaga sem "cadastro"
+    @PostMapping("/candidato/candidatura/{idVaga}")
+    public Boolean atrelarCandidatura(@RequestBody final String nome, @RequestBody final String email, @RequestBody final String telefone, @PathVariable( value = "idVaga" ) final Integer idVaga)throws NotFoundException{
+        return this.candidatoService.realizarCandidatura(nome, email, telefone, idVaga);
+    }
 
     
     @Autowired
