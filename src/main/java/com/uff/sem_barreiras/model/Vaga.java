@@ -73,8 +73,5 @@ public class Vaga {
     @ManyToMany
     @JoinTable( name = "vaga_x_deficiencia", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_deficiencia" ) )
     private List<Deficiencia> deficiencias;
-    
-    @ManyToMany
-    @JoinTable( name = "candidato_x_vaga", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_candidato" ) )
-    private List<Candidato> candidatos;
+
 }
