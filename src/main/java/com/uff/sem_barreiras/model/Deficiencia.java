@@ -35,10 +35,6 @@ public class Deficiencia{
     private Boolean necessidadeSonora;
     
     @ManyToMany
-    @JoinTable( name = "candidato_x_deficiencia", joinColumns = @JoinColumn( name = "id_deficiencia" ), inverseJoinColumns = @JoinColumn( name = "id_candidato" ) )
-    private List<Candidato> candidatos;
-    
-    @ManyToMany
     @JoinTable( name = "vaga_x_deficiencia", joinColumns = @JoinColumn( name = "id_deficiencia" ), inverseJoinColumns = @JoinColumn( name = "id_vaga" ) )
     private List<Vaga> vagas;
 }
