@@ -38,6 +38,24 @@ public class VagaService {
        }
     }
 
+    public Boolean realizarCandidatura(String nome, String email, String telefone, Integer idVaga) throws NotFoundException {
+        Vaga vaga = this.encontrarVaga(idVaga);
+        
+        // TODO: necessário avaliar escolaridade de não cadastrados ?
+        /*if(candidato.getEscolaridade().getGrau() >= vaga.getEscolaridade().getGrau()){
+            return false;
+        }*/
+
+        String content = String.format("O candidato %s demonstrou interesse pela vaga \"%s\" disponibilizada.\nE-mail do candidato: %s\nTelefone do candidato: %s", nome, vaga.getResumo(), email, telefone );
+
+        this.emailService.enviar(vaga.getEmpresa().getEmail(), "Interesse em vaga", content);
+
+        return true;
+    }
+
     @Autowired
     private VagaDao vagaDao;
+
+    @Autowired
+    private EmailService emailService;
 }
