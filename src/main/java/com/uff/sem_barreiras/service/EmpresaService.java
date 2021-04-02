@@ -1,6 +1,9 @@
 package com.uff.sem_barreiras.service;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.uff.sem_barreiras.dao.EmpresaDao;
 import com.uff.sem_barreiras.exceptions.InsertException;
@@ -38,6 +41,43 @@ public class EmpresaService {
         return;
     }
 
+    public Integer getIdByEmail(String email){
+        return this.empresaDao.getIdByEmail(email);
+    }
+
+    public void enviarCodigoVerificacao(String email){
+
+        Integer id = this.empresaDao.getIdByEmail(email);
+        Long milis = new Date().getTime();
+        controleLogin.put(id, milis); 
+
+        String content = String.format("E-mail enviado devido a solicitação de login em Sem Barreiras\n \n Código de verificação: %s", milis.toString().substring(milis.toString().length() - 4, milis.toString().length()) );
+
+        this.emailService.enviar(email, "Sem Barreiras - Código de verificação", content);
+    }
+
+    public Boolean confirmarCodigoVerificacao(String email, String codigo){
+
+        Integer id = this.empresaDao.getIdByEmail(email);
+
+        if(!controleLogin.containsKey(id)){
+            return false;
+        }
+
+        Long milis = controleLogin.get(id);
+        if( !milis.toString().substring(milis.toString().length() - 4, milis.toString().length()).equals(codigo)){
+            return false;
+        }
+
+        controleLogin.remove(id);
+        return true;
+    }
+
     @Autowired
     private EmpresaDao empresaDao;
+
+    @Autowired
+    private EmailService emailService;
+
+    private Map<Integer, Long> controleLogin = new HashMap<Integer, Long>();
 }

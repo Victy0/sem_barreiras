@@ -2,6 +2,10 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import com.uff.sem_barreiras.dto.LoginObject;
+import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Empresa;
@@ -12,7 +16,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -52,6 +58,34 @@ public class EmpresaController {
         }
     }
 
+    // mapeamento Post para login de empresa
+    @PostMapping("/empresa/login")
+    public ResponseObject loginEmpresa(@RequestBody final LoginObject login  ){
+        Integer id = this.empresaService.getIdByEmail(login.getEmail());
+        if(id == null){
+            return new ResponseObject(false, "Empresa não cadastrada");
+        }
+
+        this.empresaService.enviarCodigoVerificacao(login.getEmail());
+
+        return new ResponseObject(true, "Código de verificação enviado por e-mail");
+
+    }
+
+    // mapeamento Post para confirmar login de empresa por código de autentificação
+    @PostMapping("/empresa/login-confirma")
+    public ResponseObject loginEmpresa( @RequestBody final LoginObject login, HttpSession session  ){
+        
+        if(this.empresaService.confirmarCodigoVerificacao(login.getEmail(), login.getCodigo())){
+            session.setAttribute("login", this.empresaService.getIdByEmail(login.getEmail()));
+            return new ResponseObject(true, "Autentificação concluída com sucesso");
+        }
+
+        return new ResponseObject(false, "Erro de autentificação");
+
+    }
+
     @Autowired
     private EmpresaService empresaService;
+
 }
