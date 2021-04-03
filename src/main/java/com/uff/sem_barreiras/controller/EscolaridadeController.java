@@ -24,11 +24,7 @@ public class EscolaridadeController {
     //mapeamento Get para recuperar 1 estado informando o id do mesmo
     @GetMapping("/escolaridade/{id}")
     public Escolaridade encontrarEscolaridade(@PathVariable( value = "id" ) final Integer id) throws NotFoundException{
-        try{
-            return this.escolaridadeService.encontrarEscolaridade(id);
-        }catch(final Exception e ){
-            throw new NotFoundException("Escolaridade", id);
-        }
+        return this.escolaridadeService.encontrarEscolaridade(id);
     }
     
     @Autowired

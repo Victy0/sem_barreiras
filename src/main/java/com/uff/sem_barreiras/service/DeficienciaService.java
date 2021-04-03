@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.uff.sem_barreiras.dao.DeficienciaDao;
 import com.uff.sem_barreiras.exceptions.InsertException;
+import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Deficiencia;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,24 +19,32 @@ public class DeficienciaService {
     }
 
     // encontrar deficiencia pelo id
-    public Deficiencia encontrarDeficiencia(Integer id) {
-        return this.deficienciaDao.findById(id).get();
+    public Deficiencia encontrarDeficiencia(Integer id) throws NotFoundException {
+        try{
+            return this.deficienciaDao.findById(id).get();
+        }catch(final Exception e ){
+            throw new NotFoundException("Deficiência", id);
+        }
     }
 
     // salvar deficiencia
     public Deficiencia criarDeficiencia(Deficiencia deficiencia) throws InsertException {
         try{
             return this.deficienciaDao.save(deficiencia);
-            }catch(Exception e){
+        }catch(Exception e){
                 String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
                 throw new InsertException(text, "a Deficiencia");
-            }
+        }
     }
 
     // deletar deficiencia
-    public void deletarDeficiencia(Integer id) {
-        this.deficienciaDao.deleteById(id);
-        return;
+    public void deletarDeficiencia(Integer id) throws NotFoundException {
+        
+        try{
+            this.deficienciaDao.deleteById(id);
+        }catch(final Exception e ){
+            throw new NotFoundException("Deficiência", id);
+        }
     }
 
     @Autowired

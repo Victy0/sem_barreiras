@@ -2,6 +2,8 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import com.uff.sem_barreiras.dto.CandidatoDados;
+import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Vaga;
@@ -24,19 +26,26 @@ public class VagaController {
     }
 
     @GetMapping("/vaga/{id}")
-    public Vaga encontrarVaga(@PathVariable( value = "id" ) final Integer id)throws NotFoundException{
-        
+    public Vaga encontrar(@PathVariable( value = "id" ) final Integer id)throws NotFoundException{
         return this.vagaService.encontrarVaga(id);
     }
 
     @PostMapping("/vaga") 
-    public void cadastrar(@RequestBody final Vaga vaga  ) throws InsertException{
+    public ResponseObject cadastrar(@RequestBody final Vaga vaga  ) throws InsertException{
         this.vagaService.criarVaga(vaga);
+        return new ResponseObject(true, "Vaga salva com sucesso");
     }
     
     @DeleteMapping("/vaga/{id}")
-    public void deletar(@PathVariable(value = "id")Integer id){
+    public ResponseObject deletar(@PathVariable(value = "id")Integer id){
         this.vagaService.deletarVaga(id);
+        return new ResponseObject(true, "Vaga removida com sucesso");
+    }
+
+    @PostMapping("/vaga/candidatar/{id}")
+    public ResponseObject candidatarAVaga(@RequestBody CandidatoDados candidato, @PathVariable(value = "id")Integer idVaga) throws NotFoundException{
+        this.vagaService.realizarCandidatura(candidato.getNome(), candidato.getEmail(), candidato.getTelefone(), idVaga);
+        return new ResponseObject(true, "Candidatura realizada com sucesso");
     }
 
     @Autowired

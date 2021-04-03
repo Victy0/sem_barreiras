@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.uff.sem_barreiras.dao.CidadeDao;
 import com.uff.sem_barreiras.exceptions.InsertException;
+import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Cidade;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,12 @@ public class CidadeService {
     }
 
     // encontrar cidade pelo id
-    public Cidade encontrarCidade(Integer id) {
-        return this.cidadeDao.findById(id).get();
+    public Cidade encontrarCidade(Integer id) throws NotFoundException {
+        try{
+            return this.cidadeDao.findById(id).get();
+        }catch(final Exception e ){
+            throw new NotFoundException("Cidade", id);
+        }
     }
 
     // salvar cidade

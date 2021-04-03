@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CursoService {
+
     public List<Curso> listarCursos(){
         return this.cursoDao.findAll();
     }
+
     public Curso criarCurso(Curso curso)throws InsertException{
         try{
            return this.cursoDao.save(curso);
@@ -23,17 +25,23 @@ public class CursoService {
             throw new InsertException(text, "o Curso");
         }
     }
+
     public Curso encontrarCurso(Integer id) throws NotFoundException {
-       try{
-        return this.cursoDao.findById(id).get();
-       }catch(final Exception e){
-        throw new NotFoundException("Curso", id);
-       }
+        try{
+            return this.cursoDao.findById(id).get();
+        }catch(final Exception e){
+            throw new NotFoundException("Curso", id);
+        }
     }
     
-    public void deletarCurso(Integer id){
-        this.cursoDao.deleteById(id);;
+    public void deletarCurso(Integer id) throws NotFoundException{  
+        try{
+            this.cursoDao.deleteById(id);
+        }catch(final Exception e ){
+            throw new NotFoundException("Curso", id);
+        }
     }
+
     @Autowired
     private CursoDao cursoDao;
 }

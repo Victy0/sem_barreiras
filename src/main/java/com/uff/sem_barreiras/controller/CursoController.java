@@ -34,9 +34,10 @@ public class CursoController {
     }
     
     @DeleteMapping("/curso/{id}")
-    public void deletarCurso(@PathVariable(value = "id")Integer id){
+    public void deletarCurso(@PathVariable(value = "id")Integer id) throws NotFoundException{
         this.cursoService.deletarCurso(id);
     }
+    
     @Autowired
     private CursoService cursoService ;
 }

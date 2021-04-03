@@ -14,9 +14,8 @@ import org.springframework.stereotype.Service;
 public class EstadoService {
     
     // listar todos os estados
-    public List<Estado> listarEstados(Specification<Estado> specs){
+    public List<Estado> listarEstados(){
         return this.estadoDao.findAll();
-        //return ( ( JpaSpecificationExecutor<Estado> ) this.estadoDao ).findAll( specs );
     }
 
     // encontrar estado pelo id

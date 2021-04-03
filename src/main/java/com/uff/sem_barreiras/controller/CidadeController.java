@@ -2,6 +2,7 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Cidade;
@@ -26,17 +27,14 @@ public class CidadeController {
     // mapeamento Get para recuperar 1 cidade informando o id do mesmo
     @GetMapping("/cidade/{id}")
     public Cidade encontrarCidade(@PathVariable(value = "id") final Integer id) throws NotFoundException {
-        try {
-            return this.cidadeService.encontrarCidade(id);
-        } catch (final Exception e) {
-            throw new NotFoundException("Cidade", id);
-        }
+        return this.cidadeService.encontrarCidade(id);
     }
 
     // mapeamento Post para criar uma cidade
     @PostMapping("/cidade")
-    public Cidade criarCidade(@RequestBody final Cidade cidade) throws InsertException{
-        return this.cidadeService.criarCidade(cidade);
+    public ResponseObject criarCidade(@RequestBody final Cidade cidade) throws InsertException{
+        this.cidadeService.criarCidade(cidade);
+        return new ResponseObject(true, "Cidade salva com sucesso");
     }
 
     @Autowired

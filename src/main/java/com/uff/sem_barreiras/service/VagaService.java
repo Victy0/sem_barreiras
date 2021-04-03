@@ -19,7 +19,7 @@ public class VagaService {
 
     public Vaga criarVaga(Vaga vaga) throws InsertException{
         try{
-        return this.vagaDao.save(vaga);
+            return this.vagaDao.save(vaga);
         }catch(Exception e){
             String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
             throw new InsertException(text, "a Vaga");
@@ -31,11 +31,11 @@ public class VagaService {
     }
 
     public Vaga encontrarVaga(Integer id) throws NotFoundException {
-       try{
-        return this.vagaDao.findById(id).get();
-       }catch(Exception e){
-         throw new NotFoundException("Vaga", id);
-       }
+        try{
+            return this.vagaDao.findById(id).get();
+        }catch(Exception e){
+            throw new NotFoundException("Vaga", id);
+        }
     }
 
     public Boolean realizarCandidatura(String nome, String email, String telefone, Integer idVaga) throws NotFoundException {

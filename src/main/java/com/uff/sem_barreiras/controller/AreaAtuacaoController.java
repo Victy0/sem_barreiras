@@ -35,7 +35,7 @@ public class AreaAtuacaoController {
     @PostMapping(value = "/area")
     public ResponseObject cadastrarAreaAtuacao(@RequestBody  final AreaAtuacao area) throws InsertException{
         this.AreaAtuacaoService.criarAreaAtuacao(area);
-        return new ResponseObject(true, "Área de atuação alterada com sucesso");
+        return new ResponseObject(true, "Área de atuação salva com sucesso");
     }
     
     // mapeamento post para criar nova area deatuação

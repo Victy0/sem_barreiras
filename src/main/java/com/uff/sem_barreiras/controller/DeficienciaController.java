@@ -2,6 +2,7 @@ package com.uff.sem_barreiras.controller;
 
 import java.util.List;
 
+import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Deficiencia;
@@ -27,29 +28,21 @@ public class DeficienciaController {
     // mapeamento Get para recuperar 1 deficiencia informando o id do mesmo
     @GetMapping("/deficiencia/{id}")
     public Deficiencia encontrarDeficiencia(@PathVariable(value = "id") final Integer id) throws NotFoundException {
-        try {
-            return this.deficienciaService.encontrarDeficiencia(id);
-        } catch (final Exception e) {
-            throw new NotFoundException("Deficiencia", id);
-        }
+        return this.deficienciaService.encontrarDeficiencia(id);
     }
 
     // mapeamento Post para criar uma deficiencia
     @PostMapping("/deficiencia")
-    public Deficiencia criarDeficiencia(@RequestBody final Deficiencia deficiencia) throws InsertException {
-        return this.deficienciaService.criarDeficiencia(deficiencia);
+    public ResponseObject criarDeficiencia(@RequestBody final Deficiencia deficiencia) throws InsertException {
+        this.deficienciaService.criarDeficiencia(deficiencia);
+        return new ResponseObject(true, "Deficiência salva com sucesso");
     }
 
     // mapeamento Delete para deletar 1 deficiencia informando o id do mesmo
     @DeleteMapping("/deficiencia/{id}")
-    public Boolean deletarDeficiencia(@PathVariable(value = "id") final Integer id) {
-        try {
-            this.deficienciaService.deletarDeficiencia(id);
-            return true;
-        } catch (final Exception e) {
-            //TODO: Fazer um tratamento mais apropriado.
-            return false;
-        }
+    public ResponseObject deletarDeficiencia(@PathVariable(value = "id") final Integer id) throws NotFoundException {
+        this.deficienciaService.deletarDeficiencia(id);
+        return new ResponseObject(true, "Deficiência removida com sucesso");
     }
 
     @Autowired

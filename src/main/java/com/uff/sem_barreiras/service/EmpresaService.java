@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.uff.sem_barreiras.dao.EmpresaDao;
 import com.uff.sem_barreiras.exceptions.InsertException;
+import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Empresa;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,24 +22,31 @@ public class EmpresaService {
     }
 
     // encontrar empresa pelo id
-    public Empresa encontrarEmpresa(Integer id) {
-        return this.empresaDao.findById(id).get();
+    public Empresa encontrarEmpresa(Integer id) throws NotFoundException {
+        try{
+            return this.empresaDao.findById(id).get();
+        }catch(final Exception e ){
+            throw new NotFoundException("Empresa", id);
+        }
     }
 
     // salvar empresa
     public Empresa criarEmpresa(Empresa empresa) throws InsertException {
         try{
             return this.empresaDao.save(empresa);
-            }catch(Exception e){
-                String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
-                throw new InsertException(text, "a Empresa");
-            }
+        }catch(Exception e){
+            String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
+            throw new InsertException(text, "a Empresa");
+        }
     }
 
     // deletar empresa
-    public void deletarEmpresa(Integer id) {
-        this.empresaDao.deleteById(id);
-        return;
+    public void deletarEmpresa(Integer id) throws NotFoundException {
+        try{
+            this.empresaDao.deleteById(id);
+        }catch(final Exception e ){
+            throw new NotFoundException("Empresa", id);
+        }
     }
 
     public Integer getIdByEmail(String email){
