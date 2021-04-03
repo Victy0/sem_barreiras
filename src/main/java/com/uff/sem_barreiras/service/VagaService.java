@@ -25,8 +25,7 @@ public class VagaService {
         try{
             return this.vagaDao.save(vaga);
         }catch(Exception e){
-            String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
-            throw new InsertException(text, "a Vaga");
+            throw new InsertException("a Vaga");
         }
     }
 

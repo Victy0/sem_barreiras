@@ -38,8 +38,7 @@ public class EmpresaService {
         try{
             return this.empresaDao.save(empresa);
         }catch(Exception e){
-            String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
-            throw new InsertException(text, "a Empresa");
+            throw new InsertException( "a Empresa" );
         }
     }
 

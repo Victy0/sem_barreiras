@@ -31,8 +31,7 @@ public class AreaAtuacaoService {
         try{
             this.areaAtuacaoDao.save(area);
         }catch(final Exception e){
-            String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
-            throw new InsertException(text, "a Área de atuação");
+            throw new InsertException("a Área de atuação");
         }
         return this.areaAtuacaoDao.findById(area.getId()).get();
     }
