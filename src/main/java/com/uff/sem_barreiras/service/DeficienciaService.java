@@ -35,8 +35,7 @@ public class DeficienciaService {
         try{
             return this.deficienciaDao.save(deficiencia);
         }catch(Exception e){
-                String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
-                throw new InsertException(text, "a Deficiencia");
+            throw new InsertException("a Deficiencia");
         }
     }
 

@@ -23,8 +23,7 @@ public class CursoService {
         try{
            return this.cursoDao.save(curso);
         }catch(final Exception e){
-            String text = e.getMessage().substring(e.getMessage().indexOf("constraint [") + 12, e.getMessage().indexOf("\""));
-            throw new InsertException(text, "o Curso");
+            throw new InsertException("o Curso");
         }
     }
 
