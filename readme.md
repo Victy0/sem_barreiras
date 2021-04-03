@@ -1,5 +1,6 @@
 <h1>REST API DOCUMENTATION</h1>
 <p>Documentação padronizada em REST API referente ao projeto Sem Barreiras Vagas.</p>
+<p><b>API_URL_ROOT = https://sem-barreiras.herokuapp.com/<b><p>
 <br>
 <h3>Estado - GET [list] </h3>
 <table style="width:100%">
@@ -95,7 +96,8 @@
     </td>
   </tr>
 </table>
-<h3>Estado - POST</h3>
+<br>
+<!-- <h3>Estado - POST</h3>
 <table style="width:100%">
   <tr>
     <th>Propriedade</th>
@@ -160,6 +162,7 @@
     </td>
   </tr>
 </table>
+<br> -->
 <h3>Cidade - GET [list] </h3>
 <table style="width:100%">
   <tr>
@@ -267,7 +270,6 @@
     }<br>
     </td>
   </tr>
-  
 </table>
 <br>
 <h3>Cidade - POST</h3>
@@ -282,7 +284,7 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/cidade/</td>
+    <td>{{API_URL_ROOT}}/cidade</td>
   </tr>
   <tr>
     <td>body:</td>
@@ -308,6 +310,47 @@
     </td>
   </tr>
 </table>
+<br>
+<h3>Cidade - PUT</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>PUT</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>{{API_URL_ROOT}}/cidade/alterar</td>
+  </tr>
+  <tr>
+    <td>body:</td>
+    <td>
+      {<br>
+        &nbsp;"id": 0,<br>
+        &nbsp;"nome": "Niteroi",<br>
+        &nbsp;“estado”: { <br>
+        &nbsp; &nbsp; "id": 0<br>
+        &nbsp; }<br>
+      }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": 0,<br>
+      &nbsp;"nome": "Rio de Janeiro",<br>
+      &nbsp;“estado”: { <br>
+      &nbsp; &nbsp; "id": 0<br>
+      &nbsp;}<br>
+    }<br>
+    </td>
+  </tr>
+</table>
+<br>
 <h3>Cidade - DELETE</h3>
 <table style="width:100%">
   <tr>
@@ -465,13 +508,12 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/deficiencia/</td>
+    <td>{{API_URL_ROOT}}/deficiencia</td>
   </tr>
   <tr>
     <td>body:</td>
     <td>
       {<br>
-        &nbsp;"id": 0,<br>
         &nbsp;"descricao": "Deficiencia auditiva",<br>
         &nbsp;"necessidadeRampa": false,<br>
         &nbsp;"necessidadePisoTatil": false,<br>
@@ -501,20 +543,11 @@
   </tr>
   <tr>
     <td>metodo</td>
-    <td>POST</td>
+    <td>PUT</td>
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/deficiencia/{id}</td>
-  </tr>
-  <tr>
-    <td>params:</td>
-    <td>
-      <ul>
-        <li><b>id:</b><br></li>
-        <li>id da deficiencia<br></li>
-      </ul>
-    </td>
+    <td>{{API_URL_ROOT}}/deficiencia/alterar</td>
   </tr>
   <tr>
     <td>body:</td>
@@ -529,21 +562,15 @@
     </td>
   </tr>
   <tr>
-    <td>body:</td>
+    <td>response:</td>
     <td>
-      <ul>
-        <li><b>descricao:</b><br></li>
-        <li>descricao da deficiencia<br></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"sucesso": true,<br>
-      &nbsp;"mensagem": "Deficiencia atualizada com sucesso.",<br>
-    }<br>
+      {<br>
+        &nbsp;"id": 0,<br>
+        &nbsp;"descricao": "Deficiencia auditiva",<br>
+        &nbsp;"necessidadeRampa": false,<br>
+        &nbsp;"necessidadePisoTatil": false,<br>
+        &nbsp;"necessidadeSonora": false,<br>
+      }<br>
     </td>
   </tr>
 </table>
@@ -681,337 +708,6 @@
     }<br>
     </td>
   </tr>
-  
-</table>
-<br>
-<h3>Escolaridade - POST</h3>
-<table style="width:100%">
-  <tr>
-    <th>Propriedade</th>
-    <th>Descrição</th>
-  </tr>
-  <tr>
-    <td>metodo</td>
-    <td>POST</td>
-  </tr>
-  <tr>
-    <td>curl</td>
-    <td>{{API_URL_ROOT}}/escolaridade/</td>
-  </tr>
-  <tr>
-    <td>body:</td>
-    <td>
-      {<br>
-        &nbsp;"id": 0,<br>
-        &nbsp;"descricao": "Ensino medio completo",<br>
-      }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"id": 0,<br>
-      &nbsp;"descricao": "Ensino medio completo",<br>
-    }<br>
-    </td>
-  </tr>
-</table>
-<h3>Escolaridade - DELETE</h3>
-<table style="width:100%">
-  <tr>
-    <th>Propriedade</th>
-    <th>Descrição</th>
-  </tr>
-  <tr>
-    <td>metodo</td>
-    <td>DELETE</td>
-  </tr>
-  <tr>
-    <td>curl</td>
-    <td>{{API_URL_ROOT}}/escolaridade/{id}</td>
-  </tr>
-  <td>params</td>
-  <td>
-    <ul>
-      <li><b>id:</b><br></li>
-      <li>id da escolaridade<br></li>
-    </ul>
-  </td>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"sucesso": true,<br>
-      &nbsp;"mensagem": “Escolaridade deletada com sucesso.”,<br>
-    }<br>
-    </td>
-  </tr>
-</table>
-<br>
-<h3>Candidato - GET [list] </h3>
-<table style="width:100%">
-  <tr>
-    <th>Propriedade</th>
-    <th>Descrição</th>
-  </tr>
-  <tr>
-    <td>metodo</td>
-    <td>GET</td>
-  </tr>
-  <tr>
-    <td>curl</td>
-    <td>{{API_URL_ROOT}}/candidato</td>
-  </tr>
-  <tr>
-    <td>params</td>
-    <td>
-      <ul>
-        <li><b>page:</b><br></li>
-        <li>número opcional da página da listagem<br></li>
-        <li><b>size:</b><br></li>
-        <li>tamanho opcional da página da listagem<br></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"content": [<br>
-        &nbsp;&nbsp;{<br>
-          &nbsp;&nbsp;&nbsp;"id": “0”,<br>
-          &nbsp;&nbsp;&nbsp;"nome": "Carlos Alberto",<br>
-          &nbsp;&nbsp;&nbsp;"telefone": "2199999-9999",<br>
-          &nbsp;&nbsp;&nbsp;"email": "carlos@gmail.com",<br>
-          &nbsp;&nbsp;&nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
-          &nbsp;&nbsp;&nbsp;"cidade": { <br>
-          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
-          &nbsp;&nbsp;&nbsp;},<br>
-          &nbsp;&nbsp;&nbsp;"escolaridade": { <br>
-          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
-          &nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;},<br>
-        &nbsp;&nbsp;{<br>
-          &nbsp;&nbsp;&nbsp;"id": “1”,<br>
-          &nbsp;&nbsp;&nbsp;"nome": "Julliete Freire",<br>
-          &nbsp;&nbsp;&nbsp;"telefone": "2199999-9999",<br>
-          &nbsp;&nbsp;&nbsp;"email": "jullietevencedora@gmail.com",<br>
-          &nbsp;&nbsp;&nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo001.pdf",<br>
-          &nbsp;&nbsp;&nbsp;"cidade": { <br>
-          &nbsp;&nbsp;&nbsp;&nbsp; "id": 1<br>
-          &nbsp;&nbsp;&nbsp;},<br>
-          &nbsp;&nbsp;&nbsp;"escolaridade": { <br>
-          &nbsp;&nbsp;&nbsp;&nbsp; "id": 1<br>
-          &nbsp;&nbsp;&nbsp;}<br>
-        &nbsp;&nbsp;}<br>
-        &nbsp;],<br>
-      &nbsp;"pageable": {<br>
-        &nbsp;&nbsp;"sort": {<br>
-          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
-          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
-          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
-        &nbsp;&nbsp;},<br>
-        &nbsp;&nbsp;"pageSize": 26,<br>
-        &nbsp;&nbsp;"pageNumber": 0,<br>
-        &nbsp;&nbsp;"offset": 0,<br>
-        &nbsp;&nbsp;"paged": 0,<br>
-        &nbsp;&nbsp;"unpaged": 0,<br>
-      &nbsp;},<br>
-      &nbsp;"totalPages": 1,<br>
-      &nbsp;"totalElements": 1,<br>
-      &nbsp;"last": true,<br>
-      &nbsp;"sort": {<br>
-        &nbsp;&nbsp;"unsorted": false,<br>
-        &nbsp;&nbsp;"sorted": true,<br>
-        &nbsp;&nbsp;"empty": false<br>
-      &nbsp;},<br>
-      &nbsp;"numberOfElements": 1,<br>
-      &nbsp;"first": true,<br>
-      &nbsp;"size": 26,<br>
-      &nbsp;"number": 0,<br>
-      &nbsp;"empty": false<br>
-    }<br>
-    </td>
-  </tr>
-</table>
-<br>
-<h3>Candidato - GET [id] </h3>
-<table style="width:100%">
-  <tr>
-    <th>Propriedade</th>
-    <th>Descrição</th>
-  </tr>
-  <tr>
-    <td>metodo</td>
-    <td>GET</td>
-  </tr>
-  <tr>
-    <td>curl</td>
-    <td>{{API_URL_ROOT}}/candidato/{id}</td>
-  </tr>
-  <tr>
-    <td>params:</td>
-    <td>
-      <ul>
-        <li><b>id:</b><br></li>
-        <li>id do candidato<br></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"id": “0”,<br>
-      &nbsp;"nome": "Carlos Alberto",<br>
-      &nbsp;"telefone": "2199999-9999",<br>
-      &nbsp;"email": "carlos@gmail.com",<br>
-      &nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
-      &nbsp;"cidade": { <br>
-      &nbsp;&nbsp; "id": 0<br>
-      &nbsp;},<br>
-      &nbsp;"escolaridade": { <br>
-      &nbsp;&nbsp; "id": 0<br>
-      &nbsp;}<br>
-    }<br>
-    </td>
-  </tr>
-</table>
-<br>
-<h3>Candidato - POST</h3>
-<table style="width:100%">
-  <tr>
-    <th>Propriedade</th>
-    <th>Descrição</th>
-  </tr>
-  <tr>
-    <td>metodo</td>
-    <td>POST</td>
-  </tr>
-  <tr>
-    <td>curl</td>
-    <td>{{API_URL_ROOT}}/candidato/</td>
-  </tr>
-  <tr>
-    <td>body:</td>
-    <td>
-      {<br>
-        &nbsp;"id": “0”,<br>
-        &nbsp;"nome": "Carlos Alberto",<br>
-        &nbsp;"telefone": "2199999-9999",<br>
-        &nbsp;"email": "carlos@gmail.com",<br>
-        &nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
-        &nbsp;"cidade": {<br>
-        &nbsp;&nbsp;"id": 0<br>
-        &nbsp;}<br>
-        &nbsp;"estado": {<br>
-        &nbsp;&nbsp;"id": 0<br>
-        &nbsp;}<br>
-      }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"id": “0”,<br>
-      &nbsp;"nome": "Carlos Alberto",<br>
-      &nbsp;"telefone": "2199999-9999",<br>
-      &nbsp;"email": "carlos@gmail.com",<br>
-      &nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
-      &nbsp;"cidade": {<br>
-      &nbsp;&nbsp;"id": 0<br>
-      &nbsp;}<br>
-      &nbsp;"estado": {<br>
-      &nbsp;&nbsp;"id": 0<br>
-      &nbsp;}<br>
-    }<br>
-    </td>
-  </tr>
-</table>
-<br>
-<h3>Candidato - PUT</h3>
-<table style="width:100%">
-  <tr>
-    <th>Propriedade</th>
-    <th>Descrição</th>
-  </tr>
-  <tr>
-    <td>metodo</td>
-    <td>POST</td>
-  </tr>
-  <tr>
-    <td>curl</td>
-    <td>{{API_URL_ROOT}}/candidato/{id}</td>
-  </tr>
-  <tr>
-    <td>params:</td>
-    <td>
-      <ul>
-        <li><b>id:</b><br></li>
-        <li>id do candidato<br></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>body:</td>
-    <td>
-      {<br>
-        &nbsp;"id": “0”,<br>
-        &nbsp;"nome": "Carlos Alberto",<br>
-        &nbsp;"telefone": "2199999-9999",<br>
-        &nbsp;"email": "carlos@gmail.com",<br>
-        &nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
-        &nbsp;"cidade": {<br>
-        &nbsp;&nbsp;"id": 0<br>
-        &nbsp;},<br>
-        &nbsp;"estado": {<br>
-        &nbsp;&nbsp;"id": 0<br>
-        &nbsp;}<br>
-      }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"sucesso": true,<br>
-      &nbsp;"mensagem": "Candidato atualizado com sucesso.",<br>
-    }<br>
-    </td>
-  </tr>
-</table>
-<h3>Candidato - DELETE</h3>
-<table style="width:100%">
-  <tr>
-    <th>Propriedade</th>
-    <th>Descrição</th>
-  </tr>
-  <tr>
-    <td>metodo</td>
-    <td>POST</td>
-  </tr>
-  <tr>
-    <td>curl</td>
-    <td>{{API_URL_ROOT}}/candidato/{id}</td>
-  </tr>
-  <td>params:</td>
-  <td>
-    <ul>
-      <li><b>id:</b><br></li>
-      <li>id do candidato<br></li>
-    </ul>
-  </td>
-  <tr>
-    <td>response</td>
-    <td>
-    {<br>
-      &nbsp;"sucesso": true,<br>
-      &nbsp;"message": “Candidato deletado com sucesso.”,<br>
-    }<br>
-    </td>
-  </tr>
 </table>
 <br>
 <h3>AreaAtuacao - GET [list] </h3>
@@ -1050,20 +746,20 @@
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
-          &nbsp;&nbsp;&nbsp;"descricao": "Vendas",<br>
+          &nbsp;&nbsp;&nbsp;"descricao": "Vendas"<br>
         &nbsp;&nbsp;}<br>
       &nbsp;],<br>
       &nbsp;"pageable": {<br>
         &nbsp;&nbsp;"sort": {<br>
           &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
           &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
-          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false<br>
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;"pageSize": 26,<br>
         &nbsp;&nbsp;"pageNumber": 0,<br>
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
-        &nbsp;&nbsp;"unpaged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0<br>
       &nbsp;},<br>
       &nbsp;"totalPages": 1,<br>
       &nbsp;"totalElements": 1,<br>
@@ -1111,7 +807,7 @@
     <td>
     {<br>
       &nbsp;"id": 0,<br>
-      &nbsp;"descricao": "Vendas",<br>
+      &nbsp;"descricao": "Vendas"<br>
     }<br>
     </td>
   </tr>
@@ -1129,14 +825,13 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/area/</td>
+    <td>{{API_URL_ROOT}}/area</td>
   </tr>
   <tr>
     <td>body:</td>
     <td>
       {<br>
-        &nbsp;"id": 0,<br>
-        &nbsp;"descricao": "Vendas",<br>
+        &nbsp;"descricao": "Vendas"<br>
       }<br>
     </td>
   </tr>
@@ -1145,7 +840,41 @@
     <td>
     {<br>
       &nbsp;"id": 0,<br>
-      &nbsp;"descricao": "Vendas",<br>
+      &nbsp;"descricao": "Vendas"<br>
+    }<br>
+    </td>
+  </tr>
+</table>
+<br>
+<h3>AreaAtuacao - PUT</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>PUT</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>{{API_URL_ROOT}}/area/alterar</td>
+  </tr>
+  <tr>
+    <td>body:</td>
+    <td>
+      {<br>
+        &nbsp;"id": 0,<br>
+        &nbsp;"descricao": "Vendas"<br>
+      }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": 0,<br>
+      &nbsp;"descricao": "Vendas"<br>
     }<br>
     </td>
   </tr>
@@ -1176,7 +905,7 @@
     <td>
     {<br>
       &nbsp;"sucesso": true,<br>
-      &nbsp;"mensagem": “Area de atuacao deletada com sucesso.”,<br>
+      &nbsp;"mensagem": “Area de atuacao deletada com sucesso.”<br>
     }<br>
     </td>
   </tr>
@@ -1337,11 +1066,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203 / 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Vaga - POST</h3>
@@ -1356,13 +1080,12 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/vaga/</td>
+    <td>{{API_URL_ROOT}}/vaga</td>
   </tr>
   <tr>
     <td>body:</td>
     <td>
       {<br>
-        &nbsp;"id": “0”,<br>
         &nbsp;"dataCriacao": "29-03-2020",<br>
         &nbsp;"funcao": "Gerente",<br>
         &nbsp;"nivel": "Pleno",<br>
@@ -1400,13 +1123,20 @@
       &nbsp;"outrosBeneficos": "Seguro de vida",<br>
       &nbsp;"jornadaTrabalho": 8,<br>
       &nbsp;"duracaoVaga": 30,<br>
-      &nbsp;"area_id": 0,<br>
-      &nbsp;"empresa_id": 0,<br>
-      &nbsp;"escolaridade_id": 0<br>
+      &nbsp;"area": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;},<br>
+      &nbsp;"empresa": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;},<br>
+      &nbsp;"escolaridade": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;}<br>
     }<br>
     </td>
   </tr>
 </table>
+<br>
 <h3>Vaga - PUT</h3>
 <table style="width:100%">
   <tr>
@@ -1415,20 +1145,11 @@
   </tr>
   <tr>
     <td>metodo</td>
-    <td>POST</td>
+    <td>PUT</td>
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/vaga/{id}</td>
-  </tr>
-  <tr>
-    <td>params:</td>
-    <td>
-      <ul>
-        <li><b>id:</b><br></li>
-        <li>id da vaga<br></li>
-      </ul>
-    </td>
+    <td>{{API_URL_ROOT}}/vaga/alterar</td>
   </tr>
   <tr>
     <td>body:</td>
@@ -1445,9 +1166,75 @@
         &nbsp;"outrosBeneficos": "Seguro de vida",<br>
         &nbsp;"jornadaTrabalho": 8,<br>
         &nbsp;"duracaoVaga": 30,<br>
-        &nbsp;"area_id": 0,<br>
-        &nbsp;"empresa_id": 0,<br>
-        &nbsp;"escolaridade_id": 0,<br>
+        &nbsp;"area": { <br>
+        &nbsp;&nbsp; "id": 0<br>
+        &nbsp;},<br>
+        &nbsp;"empresa": { <br>
+        &nbsp;&nbsp; "id": 0<br>
+        &nbsp;},<br>
+        &nbsp;"escolaridade": { <br>
+        &nbsp;&nbsp; "id": 0<br>
+        &nbsp;}<br>
+        }<br>
+    </td>
+  </tr>
+  <tr>
+    <td>response</td>
+    <td>
+    {<br>
+      &nbsp;"id": “0”,<br>
+      &nbsp;"dataCriacao": "29-03-2020",<br>
+      &nbsp;"funcao": "Gerente",<br>
+      &nbsp;"nivel": "Pleno",<br>
+      &nbsp;"descricao": "Auxiliar no processo de gerenciamento",<br>
+      &nbsp;"requisitosNecessarios": ["Bom relacionamento interpessoal", "inglês básico"],<br>
+      &nbsp;"requisitosDesejados": ["Inglês avançado"],<br>
+      &nbsp;"beneficios": ["VR", "VA", "VT"],<br>
+      &nbsp;"outrosBeneficos": "Seguro de vida",<br>
+      &nbsp;"jornadaTrabalho": 8,<br>
+      &nbsp;"duracaoVaga": 30,<br>
+      &nbsp;"area": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;},<br>
+      &nbsp;"empresa": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;},<br>
+      &nbsp;"escolaridade": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;}<br>
+    }<br>
+    </td>
+  </tr>
+</table>
+<br>
+<h3>Vaga - PUT</h3>
+<table style="width:100%">
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>metodo</td>
+    <td>PUT</td>
+  </tr>
+  <tr>
+    <td>curl</td>
+    <td>{{API_URL_ROOT}}/vaga/candidatar/{id}</td>
+  </tr>
+  <td>params</td>
+  <td>
+    <ul>
+      <li><b>id:</b><br></li>
+      <li>id da vaga<br></li>
+    </ul>
+  </td>
+  <tr>
+    <td>body:</td>
+    <td>
+      {<br>
+        &nbsp;"email": “gil_123@gmail.com”,<br>
+        &nbsp;"nome": "Gilberto",<br>
+        &nbsp;"telefone": "2199999-9999"<br>
       }<br>
     </td>
   </tr>
@@ -1456,7 +1243,7 @@
     <td>
     {<br>
       &nbsp;"sucesso": true,<br>
-      &nbsp;"mensagem": "Vaga atualizada com sucesso.",<br>
+      &nbsp;"mensagem": "Candidatura realizada com sucesso.”,<br>
     }<br>
     </td>
   </tr>
@@ -1530,7 +1317,9 @@
           &nbsp;&nbsp;&nbsp;“descricao”: “Aprenda a dominar o excel.”,<br>
           &nbsp;&nbsp;&nbsp;“hiperLink”: “https://certificadocursosonline.com/cursos/curso-de-excel/”,<br>
           &nbsp;&nbsp;&nbsp;"preco": 27.90,<br>
-          &nbsp;&nbsp;&nbsp;"vaga_id": 0,<br>
+          &nbsp;&nbsp;&nbsp;"vaga": {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 0<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
@@ -1538,7 +1327,9 @@
           &nbsp;&nbsp;&nbsp;“descricao”: “Aprenda a programar em java.”,<br>
           &nbsp;&nbsp;&nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
           &nbsp;&nbsp;&nbsp;"preco": 37.90,<br>
-          &nbsp;&nbsp;&nbsp;"vaga_id": 1,<br>
+          &nbsp;&nbsp;&nbsp;"vaga": {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 1<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;}<br>
       &nbsp;],<br>
       &nbsp;"pageable": {<br>
@@ -1551,7 +1342,7 @@
         &nbsp;&nbsp;"pageNumber": 0,<br>
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
-        &nbsp;&nbsp;"unpaged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0<br>
       &nbsp;},<br>
       &nbsp;"totalPages": 1,<br>
       &nbsp;"totalElements": 1,<br>
@@ -1603,7 +1394,9 @@
       &nbsp;“descricao”: “Aprenda a dominar o excel.”,<br>
       &nbsp;“hiperLink”: “https://certificadocursosonline.com/cursos/curso-de-excel/”,<br>
       &nbsp;"preco": 27.90,<br>
-      &nbsp;"vaga_id": 0,<br>
+      &nbsp;&nbsp;&nbsp;"vaga": {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;"id": 0<br>
+      &nbsp;&nbsp;&nbsp;}<br>
     }<br>
     </td>
   </tr>
@@ -1620,13 +1413,12 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/curso/</td>
+    <td>{{API_URL_ROOT}}/curso</td>
   </tr>
   <tr>
     <td>body</td>
     <td>
       {<br>
-        &nbsp;"id": “1”,<br>
         &nbsp;“nome”: Java avancado”,<br>
         &nbsp;“descricao”: “Aprenda a programar em java.”,<br>
         &nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
@@ -1666,16 +1458,7 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/curso/{id}</td>
-  </tr>
-  <tr>
-    <td>params:</td>
-    <td>
-      <ul>
-        <li><b>id:</b><br></li>
-        <li>id do curso<br></li>
-      </ul>
-    </td>
+    <td>{{API_URL_ROOT}}/curso/alterar</td>
   </tr>
   <tr>
     <td>body:</td>
@@ -1696,8 +1479,14 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"sucesso": true,<br>
-      &nbsp;"mensagem": "Curso atualizado com sucesso.",<br>
+      &nbsp;"id": “1”,<br>
+      &nbsp;“nome”: Java avancado”,<br>
+      &nbsp;“descricao”: “Aprenda a programar em java.”,<br>
+      &nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
+      &nbsp;"preco": 37.90,<br>
+      &nbsp;“vaga”: { <br>
+      &nbsp; &nbsp; "id": 0<br>
+      &nbsp; }<br>
     }<br>
     </td>
   </tr>
@@ -1733,7 +1522,6 @@
     }<br>
     </td>
   </tr>
-  
 </table>
 <br>
 <h3>Empresa - GET [list] </h3>
@@ -1774,7 +1562,9 @@
           &nbsp;&nbsp;&nbsp;"email": "institucional@ambev.com",<br>
           &nbsp;&nbsp;&nbsp;"telefone": "21987723341",<br>
           &nbsp;&nbsp;&nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
-          &nbsp;&nbsp;&nbsp;"cidade_id": 0,<br>
+          &nbsp;&nbsp;&nbsp;"cidade": {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 0<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “0”,<br>
@@ -1784,7 +1574,9 @@
           &nbsp;&nbsp;&nbsp;"email": "institucional@colgate.com",<br>
           &nbsp;&nbsp;&nbsp;"telefone": "11983226532",<br>
           &nbsp;&nbsp;&nbsp;"endereco": "Av. Paulista, 1294 - Bela VistaSão Paulo - SP",<br>
-          &nbsp;&nbsp;&nbsp;"cidade_id": 1,<br>
+          &nbsp;&nbsp;&nbsp;"cidade": {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;"id": 1<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;}<br>
         &nbsp;]<br>
         &nbsp;"pageable": {<br>
@@ -1870,13 +1662,12 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/empresa/</td>
+    <td>{{API_URL_ROOT}}/empresa</td>
   </tr>
   <tr>
     <td>body</td>
     <td>
       {<br>
-        &nbsp;"id": “0”,<br>
         &nbsp;“nome”: “Ambev",<br>
         &nbsp;“nomeFantasia”: “AMBEV IND.”,<br>
         &nbsp;“cnpj”: “43277397000176",<br>
@@ -1920,18 +1711,8 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/empresa/{id}</td>
+    <td>{{API_URL_ROOT}}/empresa/alterar</td>
   </tr>
-  <tr>
-    <td>params:</td>
-    <td>
-      <ul>
-        <li><b>id:</b><br></li>
-        <li>id da empresa<br></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
     <td>body:</td>
     <td>
       {<br>
@@ -1952,10 +1733,17 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;"sucesso": true,<br>
-      &nbsp;"mensagem": "Empresa atualizada com sucesso.",<br>
+      &nbsp;"id": “0”,<br>
+      &nbsp;“nome”: “Ambev",<br>
+      &nbsp;“nomeFantasia”: “AMBEV IND.”,<br>
+      &nbsp;“cnpj”: “43277397000176",<br>
+      &nbsp;"email": "institucional@ambev.com",<br>
+      &nbsp;"telefone": "21987723341",<br>
+      &nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
+      &nbsp;"cidade": { <br>
+      &nbsp; &nbsp; "id": 0<br>
+      &nbsp; }<br>
     }<br>
-    </td>
   </tr>
 </table>
 <br>
@@ -1971,7 +1759,7 @@
   </tr>
   <tr>
     <td>curl</td>
-    <td>{{API_URL_ROOT}}/curso/{id}</td>
+    <td>{{API_URL_ROOT}}/empresa/{id}</td>
   </tr>
   <td>params</td>
     <td>
@@ -2010,10 +1798,12 @@
   <tr>
     <td>body:</td>
     <td>
-      <ul>
-        <li><b>email:</b><br></li>
-        <li>email da empresa<br></li>
-      </ul>
+      <td>body:</td>
+    <td>
+      {<br>
+        &nbsp;"email": "institucional@ambev.com",<br>
+      }<br>      
+    </td>
     </td>
   </tr>
   <tr>
@@ -2044,12 +1834,10 @@
   <tr>
     <td>body:</td>
     <td>
-      <ul>
-        <li><b>email:</b><br></li>
-        <li>email da empresa<br></li>
-         <li><b>codigo:</b><br></li>
-        <li>codigo enviado por e-mail<br></li>
-      </ul>
+      {<br>
+        &nbsp;"email": "institucional@ambev.com",<br>
+        &nbsp;"codigo": "7770",<br>
+      }<br>      
     </td>
   </tr>
   <tr>
