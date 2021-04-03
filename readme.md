@@ -69,11 +69,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Estado - GET [id] </h3>
@@ -97,11 +92,6 @@
       &nbsp;"id": 0,<br>
       &nbsp;“uf”: “RJ”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -137,11 +127,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Estado - DELETE</h3>
@@ -172,11 +157,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;“mensagem”: “Estado deletado com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -251,12 +231,7 @@
         &nbsp;"empty": false<br>
     }<br>
     </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
+  </tr> 
 </table>
 <br>
 <h3>Cidade - GET [id] </h3>
@@ -288,15 +263,11 @@
     {<br>
       &nbsp;"id": 0,<br>
       &nbsp;"nome": "Rio de Janeiro",<br>
-      &nbsp;"estado_id": 0,<br>
+      &nbsp;"estado": 0,<br>
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
+  
 </table>
 <br>
 <h3>Cidade - POST</h3>
@@ -318,7 +289,7 @@
     <td>
       {<br>
         &nbsp;"nome": 0,<br>
-        &nbsp;“estado”: {
+        &nbsp;“estado”: { <br>
         &nbsp; &nbsp; "id": 0<br>
         &nbsp; }<br>
       }<br>
@@ -330,13 +301,10 @@
     {<br>
       &nbsp;"id": 0,<br>
       &nbsp;"nome": "Rio de Janeiro",<br>
-      &nbsp;"estado_id": 0,<br>
+      &nbsp;“estado”: { <br>
+      &nbsp; &nbsp; "id": 0<br>
+      &nbsp;}<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -368,11 +336,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": “Cidade deletada com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -421,7 +384,7 @@
           &nbsp;&nbsp;&nbsp;"necessidadePisoTatil": false,<br>
           &nbsp;&nbsp;&nbsp;"necessidadeSonora": false,<br>
         &nbsp;&nbsp;}<br>
-      &nbsp;]<br>
+      &nbsp;],<br>
       &nbsp;"pageable": {<br>
         &nbsp;&nbsp;"sort": {<br>
           &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
@@ -433,7 +396,7 @@
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
         &nbsp;&nbsp;"unpaged": 0,<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"totalPages": 1,<br>
       &nbsp;"totalElements": 1,<br>
       &nbsp;"last": true,<br>
@@ -441,18 +404,13 @@
         &nbsp;&nbsp;"unsorted": false,<br>
         &nbsp;&nbsp;"sorted": true,<br>
         &nbsp;&nbsp;"empty": false<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"numberOfElements": 1,<br>
       &nbsp;"first": true,<br>
       &nbsp;"size": 26,<br>
       &nbsp;"number": 0,<br>
       &nbsp;"empty": false<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -493,11 +451,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Deficiencia - POST</h3>
@@ -536,11 +489,6 @@
       &nbsp;"necessidadePisoTatil": false,<br>
       &nbsp;"necessidadeSonora": false,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -598,11 +546,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Deficiencia - DELETE</h3>
@@ -633,11 +576,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": “Deficiencia deletada com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -680,7 +618,7 @@
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
           &nbsp;&nbsp;&nbsp;"descricao": "Ensino medio incompleto",<br>
         &nbsp;&nbsp;}<br>
-      &nbsp;]<br>
+      &nbsp;],<br>
       &nbsp;"pageable": {<br>
         &nbsp;&nbsp;"sort": {<br>
           &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
@@ -692,7 +630,7 @@
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
         &nbsp;&nbsp;"unpaged": 0,<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"totalPages": 1,<br>
       &nbsp;"totalElements": 1,<br>
       &nbsp;"last": true,<br>
@@ -700,18 +638,13 @@
           &nbsp;&nbsp;"unsorted": false,<br>
           &nbsp;&nbsp;"sorted": true,<br>
           &nbsp;&nbsp;"empty": false<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"numberOfElements": 1,<br>
       &nbsp;"first": true,<br>
       &nbsp;"size": 26,<br>
       &nbsp;"number": 0,<br>
       &nbsp;"empty": false<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -748,11 +681,7 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
+  
 </table>
 <br>
 <h3>Escolaridade - POST</h3>
@@ -787,11 +716,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <h3>Escolaridade - DELETE</h3>
 <table style="width:100%">
@@ -821,11 +745,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": “Escolaridade deletada com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -866,8 +785,12 @@
           &nbsp;&nbsp;&nbsp;"telefone": "2199999-9999",<br>
           &nbsp;&nbsp;&nbsp;"email": "carlos@gmail.com",<br>
           &nbsp;&nbsp;&nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
-          &nbsp;&nbsp;&nbsp;"cidade_id": 0,<br>
-          &nbsp;&nbsp;&nbsp;"escolaridade_id": 0,<br>
+          &nbsp;&nbsp;&nbsp;"cidade": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;&nbsp;"escolaridade": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
@@ -875,8 +798,12 @@
           &nbsp;&nbsp;&nbsp;"telefone": "2199999-9999",<br>
           &nbsp;&nbsp;&nbsp;"email": "jullietevencedora@gmail.com",<br>
           &nbsp;&nbsp;&nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo001.pdf",<br>
-          &nbsp;&nbsp;&nbsp;"cidade_id": 2,<br>
-          &nbsp;&nbsp;&nbsp;"escolaridade_id": 0,<br>
+          &nbsp;&nbsp;&nbsp;"cidade": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 1<br>
+          &nbsp;&nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;&nbsp;"escolaridade": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 1<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;}<br>
         &nbsp;]<br>
       &nbsp;"pageable": {<br>
@@ -890,7 +817,7 @@
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
         &nbsp;&nbsp;"unpaged": 0,<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"totalPages": 1,<br>
       &nbsp;"totalElements": 1,<br>
       &nbsp;"last": true,<br>
@@ -898,18 +825,13 @@
         &nbsp;&nbsp;"unsorted": false,<br>
         &nbsp;&nbsp;"sorted": true,<br>
         &nbsp;&nbsp;"empty": false<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"numberOfElements": 1,<br>
       &nbsp;"first": true,<br>
       &nbsp;"size": 26,<br>
       &nbsp;"number": 0,<br>
       &nbsp;"empty": false<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -946,14 +868,13 @@
       &nbsp;"telefone": "2199999-9999",<br>
       &nbsp;"email": "carlos@gmail.com",<br>
       &nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
-      &nbsp;"cidade_id": 0,<br>
-      &nbsp;"escolaridade_id": 0,<br>
+      &nbsp;"cidade": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;},<br>
+      &nbsp;"escolaridade": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;}<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1008,11 +929,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Candidato - PUT</h3>
@@ -1049,7 +965,7 @@
         &nbsp;"curriculo": "https://sembarreiras.com.br/media/curriculo000.pdf",<br>
         &nbsp;"cidade": {<br>
         &nbsp;&nbsp;"id": 0<br>
-        &nbsp;}<br>
+        &nbsp;},<br>
         &nbsp;"estado": {<br>
         &nbsp;&nbsp;"id": 0<br>
         &nbsp;}<br>
@@ -1063,11 +979,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": "Candidato atualizado com sucesso.",<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1099,11 +1010,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"message": “Candidato deletado com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1146,7 +1052,7 @@
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
           &nbsp;&nbsp;&nbsp;"descricao": "Vendas",<br>
         &nbsp;&nbsp;}<br>
-      &nbsp;]<br>
+      &nbsp;],<br>
       &nbsp;"pageable": {<br>
         &nbsp;&nbsp;"sort": {<br>
           &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
@@ -1158,7 +1064,7 @@
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
         &nbsp;&nbsp;"unpaged": 0,<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"totalPages": 1,<br>
       &nbsp;"totalElements": 1,<br>
       &nbsp;"last": true,<br>
@@ -1166,18 +1072,13 @@
         &nbsp;&nbsp;"unsorted": false,<br>
         &nbsp;&nbsp;"sorted": true,<br>
         &nbsp;&nbsp;"empty": false<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"numberOfElements": 1,<br>
       &nbsp;"first": true,<br>
       &nbsp;"size": 26,<br>
       &nbsp;"number": 0,<br>
       &nbsp;"empty": false<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1214,11 +1115,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>AreaAtuacao - POST</h3>
@@ -1253,11 +1149,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <h3>AreaAtuacao - DELETE</h3>
 <table style="width:100%">
@@ -1287,11 +1178,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": “Area de atuacao deletada com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1338,9 +1224,15 @@
           &nbsp;&nbsp;&nbsp;"outrosBeneficos": "Seguro de vida",<br>
           &nbsp;&nbsp;&nbsp;"jornadaTrabalho": 8,<br>
           &nbsp;&nbsp;&nbsp;"duracaoVaga": 30,<br>
-          &nbsp;&nbsp;&nbsp;"area_id": 0,<br>
-          &nbsp;&nbsp;&nbsp;"empresa_id": 0,<br>
-          &nbsp;&nbsp;&nbsp;"escolaridade_id": 0,<br>
+          &nbsp;&nbsp;&nbsp;"area": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;&nbsp;"empresa": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;&nbsp;"escolaridade": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
@@ -1354,11 +1246,17 @@
           &nbsp;&nbsp;&nbsp;"outrosBeneficos": "Seguro de vida e plano de saúde",<br>
           &nbsp;&nbsp;&nbsp;"jornadaTrabalho": 8,<br>
           &nbsp;&nbsp;&nbsp;"duracaoVaga": 20,<br>
-          &nbsp;&nbsp;&nbsp;"area_id": 1,<br>
-          &nbsp;&nbsp;&nbsp;"empresa_id": 1,<br>
-          &nbsp;&nbsp;&nbsp;"escolaridade_id": 1,<br>
+          &nbsp;&nbsp;&nbsp;"area": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;&nbsp;"empresa": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;},<br>
+          &nbsp;&nbsp;&nbsp;"escolaridade": { <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; "id": 0<br>
+          &nbsp;&nbsp;&nbsp;}<br>
         &nbsp;&nbsp;}<br>
-        &nbsp;]<br>
+        &nbsp;],<br>
         &nbsp;"pageable": {<br>
         &nbsp;&nbsp;"sort": {<br>
           &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
@@ -1370,7 +1268,7 @@
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
         &nbsp;&nbsp;"unpaged": 0,<br>
-        &nbsp;}<br>
+        &nbsp;},<br>
         &nbsp;"totalPages": 1,<br>
         &nbsp;"totalElements": 1,<br>
         &nbsp;"last": true,<br>
@@ -1378,18 +1276,13 @@
           &nbsp;&nbsp;"unsorted": false,<br>
           &nbsp;&nbsp;"sorted": true,<br>
           &nbsp;&nbsp;"empty": false<br>
-        &nbsp;}<br>
+        &nbsp;},<br>
         &nbsp;"numberOfElements": 1,<br>
         &nbsp;"first": true,<br>
         &nbsp;"size": 26,<br>
         &nbsp;"number": 0,<br>
         &nbsp;"empty": false<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1432,9 +1325,15 @@
       &nbsp;"outrosBeneficos": "Seguro de vida",<br>
       &nbsp;"jornadaTrabalho": 8,<br>
       &nbsp;"duracaoVaga": 30,<br>
-      &nbsp;"area_id": 0,<br>
-      &nbsp;"empresa_id": 0,<br>
-      &nbsp;"escolaridade_id": 0,<br>
+      &nbsp;"area": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;},<br>
+      &nbsp;"empresa": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;},<br>
+      &nbsp;"escolaridade": { <br>
+      &nbsp;&nbsp; "id": 0<br>
+      &nbsp;}<br>
     }<br>
     </td>
   </tr>
@@ -1474,9 +1373,15 @@
         &nbsp;"outrosBeneficos": "Seguro de vida",<br>
         &nbsp;"jornadaTrabalho": 8,<br>
         &nbsp;"duracaoVaga": 30,<br>
-        &nbsp;"area_id": 0,<br>
-        &nbsp;"empresa_id": 0,<br>
-        &nbsp;"escolaridade_id": 0,<br>
+        &nbsp;"area": { <br>
+        &nbsp;&nbsp; "id": 0<br>
+        &nbsp;},<br>
+        &nbsp;"empresa": { <br>
+        &nbsp;&nbsp; "id": 0<br>
+        &nbsp;},<br>
+        &nbsp;"escolaridade": { <br>
+        &nbsp;&nbsp; "id": 0<br>
+        &nbsp;}<br>
       }<br>
     </td>
   </tr>
@@ -1497,13 +1402,8 @@
       &nbsp;"duracaoVaga": 30,<br>
       &nbsp;"area_id": 0,<br>
       &nbsp;"empresa_id": 0,<br>
-      &nbsp;"escolaridade_id": 0,<br>
+      &nbsp;"escolaridade_id": 0<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1560,11 +1460,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Vaga - DELETE</h3>
@@ -1595,11 +1490,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": “Vaga deletada com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1650,7 +1540,7 @@
           &nbsp;&nbsp;&nbsp;"preco": 37.90,<br>
           &nbsp;&nbsp;&nbsp;"vaga_id": 1,<br>
         &nbsp;&nbsp;}<br>
-      &nbsp;]<br>
+      &nbsp;],<br>
       &nbsp;"pageable": {<br>
         &nbsp;&nbsp;"sort": {<br>
           &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
@@ -1662,7 +1552,7 @@
         &nbsp;&nbsp;"offset": 0,<br>
         &nbsp;&nbsp;"paged": 0,<br>
         &nbsp;&nbsp;"unpaged": 0,<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"totalPages": 1,<br>
       &nbsp;"totalElements": 1,<br>
       &nbsp;"last": true,<br>
@@ -1670,18 +1560,13 @@
         &nbsp;&nbsp;"unsorted": false,<br>
         &nbsp;&nbsp;"sorted": true,<br>
         &nbsp;&nbsp;"empty": false<br>
-      &nbsp;}<br>
+      &nbsp;},<br>
       &nbsp;"numberOfElements": 1,<br>
       &nbsp;"first": true,<br>
       &nbsp;"size": 26,<br>
       &nbsp;"number": 0,<br>
       &nbsp;"empty": false<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1722,11 +1607,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <h3>Curso - POST</h3>
 <table style="width:100%">
@@ -1751,7 +1631,9 @@
         &nbsp;“descricao”: “Aprenda a programar em java.”,<br>
         &nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
         &nbsp;"preco": 37.90,<br>
-        &nbsp;"vaga_id": 1,<br>
+        &nbsp;“vaga”: { <br>
+        &nbsp; &nbsp; "id": 0<br>
+        &nbsp; }<br>
       }<br>      
     </td>
   </tr>
@@ -1764,13 +1646,10 @@
       &nbsp;“descricao”: “Aprenda a programar em java.”,<br>
       &nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
       &nbsp;"preco": 37.90,<br>
-      &nbsp;"vaga_id": 1,<br>
+      &nbsp;“vaga”: { <br>
+      &nbsp; &nbsp; "id": 0<br>
+      &nbsp; }<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1807,7 +1686,9 @@
         &nbsp;“descricao”: “Aprenda a programar em java.”,<br>
         &nbsp;“hiperLink”: “https://www.devmedia.com.br/cursos/java”,<br>
         &nbsp;"preco": 37.90,<br>
-        &nbsp;"vaga_id": 1,<br>
+        &nbsp;“vaga”: { <br>
+        &nbsp; &nbsp; "id": 0<br>
+        &nbsp; }<br>
       }<br>      
     </td>
   </tr>
@@ -1818,11 +1699,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": "Curso atualizado com sucesso.",<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -1857,11 +1733,7 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
+  
 </table>
 <br>
 <h3>Empresa - GET [list] </h3>
@@ -1943,11 +1815,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Empresa - GET [id] </h3>
@@ -1984,13 +1851,10 @@
       &nbsp;"email": "institucional@ambev.com",<br>
       &nbsp;"telefone": "21987723341",<br>
       &nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
-      &nbsp;"cidade_id": 0,<br>
+      &nbsp;“cidade”: { <br>
+      &nbsp; &nbsp; "id": 0<br>
+      &nbsp; }<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -2019,7 +1883,9 @@
         &nbsp;"email": "institucional@ambev.com",<br>
         &nbsp;"telefone": "21987723341",<br>
         &nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
-        &nbsp;"cidade_id": 0,<br>
+        &nbsp;"cidade": { <br>
+        &nbsp; &nbsp; "id": 0<br>
+        &nbsp; }<br>
       }<br>     
     </td>
   </tr>
@@ -2034,13 +1900,10 @@
       &nbsp;"email": "institucional@ambev.com",<br>
       &nbsp;"telefone": "21987723341",<br>
       &nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
-      &nbsp;"cidade_id": 0,<br>
+      &nbsp;"cidade": { <br>
+      &nbsp; &nbsp; "id": 0<br>
+      &nbsp; }<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -2079,7 +1942,9 @@
         &nbsp;"email": "institucional@ambev.com",<br>
         &nbsp;"telefone": "21987723341",<br>
         &nbsp;"endereco": "Av. Rio Branco, 120 - Centro, Rio de Janeiro - RJ",<br>
-        &nbsp;"cidade_id": 0,<br>
+        &nbsp;"cidade": { <br>
+        &nbsp; &nbsp; "id": 0<br>
+        &nbsp; }<br>
       }<br>      
     </td>
   </tr>
@@ -2090,11 +1955,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": "Empresa atualizada com sucesso.",<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -2127,11 +1987,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;“mensagem”: "Empresa deletada com sucesso.”,<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK / 404 Not found / 400 / 203/ 202 / 403 / 500
     </td>
   </tr>
 </table>
@@ -2170,11 +2025,6 @@
     }<br>
     </td>
   </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK
-    </td>
-  </tr>
 </table>
 <br>
 <h3>Empresa - POST [login]</h3>
@@ -2209,11 +2059,6 @@
       &nbsp;"sucesso": true,<br>
       &nbsp;"mensagem": "Autenticação concluída com sucesso",<br>
     }<br>
-    </td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>200 OK
     </td>
   </tr>
 </table
