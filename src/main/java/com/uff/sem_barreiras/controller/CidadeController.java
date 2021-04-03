@@ -1,5 +1,6 @@
 package com.uff.sem_barreiras.controller;
 
+import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,6 +54,12 @@ public class CidadeController {
     @PutMapping("/cidade/alterar")
     public Cidade alterarCidade(@RequestBody final Cidade cidade) throws NotFoundException, IdNullException {
         return this.cidadeService.alterarCidade(cidade);
+    }
+    //mapeamento Delete para deletar cidade
+    @DeleteMapping("/cidade/{id}")
+    public ResponseObject deletarAreaAtuacao(@PathVariable(value = "id")Integer id) throws NotFoundException{
+        this.cidadeService.deletarCidade(id);
+        return new ResponseObject(true, " Cidade removida com sucesso");
     }
 
     @Autowired

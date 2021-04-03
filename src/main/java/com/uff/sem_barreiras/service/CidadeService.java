@@ -28,7 +28,14 @@ public class CidadeService {
             throw new NotFoundException("Cidade", id);
         }
     }
-
+    //deletar  cidades por id
+    public void deletarCidade(Integer id) throws NotFoundException{  
+        try{
+            this.cidadeDao.deleteById(id);
+        }catch(final Exception e ){
+            throw new NotFoundException("Curso", id);
+        }
+    }
     // salvar cidade
     public Cidade criarCidade(Cidade cidade) throws InsertException {
         try{
