@@ -194,18 +194,6 @@
     <td>curl</td>
     <td>{{API_URL_ROOT}}/cidade</td>
   </tr>
-  <tr>
-    <td>params</td>
-    <td>
-      <ul>
-        <li><b>page:</b><br></li>
-        <li>número opcional da página da listagem<br></li>
-        <li><b>size:</b><br></li>
-        <li>tamanho opcional da página da listagem<br></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
     <td>params</td>
     <td>
       <ul>
@@ -224,18 +212,43 @@
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": 0,<br>
           &nbsp;&nbsp;&nbsp;"nome": "Rio de Janeiro",<br>
-          &nbsp;&nbsp;&nbsp;"estado": {
+          &nbsp;&nbsp;&nbsp;"estado": {<br>
           &nbsp;&nbsp;&nbsp;&nbsp; "id":0,<br>
           &nbsp;&nbsp;&nbsp;}
         &nbsp;&nbsp;},<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": 1,<br>
           &nbsp;&nbsp;&nbsp;"nome": "Sao Paulo",<br>
-          &nbsp;&nbsp;&nbsp;"estado": {
+          &nbsp;&nbsp;&nbsp;"estado": {<br>
           &nbsp;&nbsp;&nbsp;&nbsp; "id":1,<br>
           &nbsp;&nbsp;&nbsp;}
         &nbsp;&nbsp;}<br>
         &nbsp;]<br>
+        &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+        &nbsp;}<br>
+        &nbsp;"totalPages": 1,<br>
+        &nbsp;"totalElements": 1,<br>
+        &nbsp;"last": true,<br>
+        &nbsp;"sort": {<br>
+          &nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;"sorted": true,<br>
+          &nbsp;&nbsp;"empty": false<br>
+        &nbsp;}<br>
+        &nbsp;"numberOfElements": 1,<br>
+        &nbsp;"first": true,<br>
+        &nbsp;"size": 26,<br>
+        &nbsp;"number": 0,<br>
+        &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
@@ -393,7 +406,7 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;[<br>
+      &nbsp;"content": [<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": 0,<br>
           &nbsp;&nbsp;&nbsp;"descricao": "Deficiencia auditiva",<br>
@@ -408,7 +421,32 @@
           &nbsp;&nbsp;&nbsp;"necessidadePisoTatil": false,<br>
           &nbsp;&nbsp;&nbsp;"necessidadeSonora": false,<br>
         &nbsp;&nbsp;}<br>
-        &nbsp;]<br>
+      &nbsp;]<br>
+      &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+      &nbsp;}<br>
+      &nbsp;"totalPages": 1,<br>
+      &nbsp;"totalElements": 1,<br>
+      &nbsp;"last": true,<br>
+      &nbsp;"sort": {<br>
+        &nbsp;&nbsp;"unsorted": false,<br>
+        &nbsp;&nbsp;"sorted": true,<br>
+        &nbsp;&nbsp;"empty": false<br>
+      &nbsp;}<br>
+      &nbsp;"numberOfElements": 1,<br>
+      &nbsp;"first": true,<br>
+      &nbsp;"size": 26,<br>
+      &nbsp;"number": 0,<br>
+      &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
@@ -642,7 +680,32 @@
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
           &nbsp;&nbsp;&nbsp;"descricao": "Ensino medio incompleto",<br>
         &nbsp;&nbsp;}<br>
-        &nbsp;]<br>
+      &nbsp;]<br>
+      &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+      &nbsp;}<br>
+      &nbsp;"totalPages": 1,<br>
+      &nbsp;"totalElements": 1,<br>
+      &nbsp;"last": true,<br>
+      &nbsp;"sort": {<br>
+          &nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;"sorted": true,<br>
+          &nbsp;&nbsp;"empty": false<br>
+      &nbsp;}<br>
+      &nbsp;"numberOfElements": 1,<br>
+      &nbsp;"first": true,<br>
+      &nbsp;"size": 26,<br>
+      &nbsp;"number": 0,<br>
+      &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
@@ -796,7 +859,7 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;[<br>
+      &nbsp;"content": [<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “0”,<br>
           &nbsp;&nbsp;&nbsp;"nome": "Carlos Alberto",<br>
@@ -816,6 +879,31 @@
           &nbsp;&nbsp;&nbsp;"escolaridade_id": 0,<br>
         &nbsp;&nbsp;}<br>
         &nbsp;]<br>
+      &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+      &nbsp;}<br>
+      &nbsp;"totalPages": 1,<br>
+      &nbsp;"totalElements": 1,<br>
+      &nbsp;"last": true,<br>
+      &nbsp;"sort": {<br>
+        &nbsp;&nbsp;"unsorted": false,<br>
+        &nbsp;&nbsp;"sorted": true,<br>
+        &nbsp;&nbsp;"empty": false<br>
+      &nbsp;}<br>
+      &nbsp;"numberOfElements": 1,<br>
+      &nbsp;"first": true,<br>
+      &nbsp;"size": 26,<br>
+      &nbsp;"number": 0,<br>
+      &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
@@ -1058,7 +1146,32 @@
           &nbsp;&nbsp;&nbsp;"id": “1”,<br>
           &nbsp;&nbsp;&nbsp;"descricao": "Vendas",<br>
         &nbsp;&nbsp;}<br>
-        &nbsp;]<br>
+      &nbsp;]<br>
+      &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+      &nbsp;}<br>
+      &nbsp;"totalPages": 1,<br>
+      &nbsp;"totalElements": 1,<br>
+      &nbsp;"last": true,<br>
+      &nbsp;"sort": {<br>
+        &nbsp;&nbsp;"unsorted": false,<br>
+        &nbsp;&nbsp;"sorted": true,<br>
+        &nbsp;&nbsp;"empty": false<br>
+      &nbsp;}<br>
+      &nbsp;"numberOfElements": 1,<br>
+      &nbsp;"first": true,<br>
+      &nbsp;"size": 26,<br>
+      &nbsp;"number": 0,<br>
+      &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
@@ -1212,7 +1325,7 @@
     <td>response</td>
     <td>
     {<br>
-      &nbsp;[<br>
+      &nbsp;"content": [<br>
         &nbsp;&nbsp;{<br>
           &nbsp;&nbsp;&nbsp;"id": “0”,<br>
           &nbsp;&nbsp;&nbsp;"dataCriacao": "29-03-2020",<br>
@@ -1246,6 +1359,31 @@
           &nbsp;&nbsp;&nbsp;"escolaridade_id": 1,<br>
         &nbsp;&nbsp;}<br>
         &nbsp;]<br>
+        &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+        &nbsp;}<br>
+        &nbsp;"totalPages": 1,<br>
+        &nbsp;"totalElements": 1,<br>
+        &nbsp;"last": true,<br>
+        &nbsp;"sort": {<br>
+          &nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;"sorted": true,<br>
+          &nbsp;&nbsp;"empty": false<br>
+        &nbsp;}<br>
+        &nbsp;"numberOfElements": 1,<br>
+        &nbsp;"first": true,<br>
+        &nbsp;"size": 26,<br>
+        &nbsp;"number": 0,<br>
+        &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
@@ -1512,7 +1650,32 @@
           &nbsp;&nbsp;&nbsp;"preco": 37.90,<br>
           &nbsp;&nbsp;&nbsp;"vaga_id": 1,<br>
         &nbsp;&nbsp;}<br>
-        &nbsp;]<br>
+      &nbsp;]<br>
+      &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+      &nbsp;}<br>
+      &nbsp;"totalPages": 1,<br>
+      &nbsp;"totalElements": 1,<br>
+      &nbsp;"last": true,<br>
+      &nbsp;"sort": {<br>
+        &nbsp;&nbsp;"unsorted": false,<br>
+        &nbsp;&nbsp;"sorted": true,<br>
+        &nbsp;&nbsp;"empty": false<br>
+      &nbsp;}<br>
+      &nbsp;"numberOfElements": 1,<br>
+      &nbsp;"first": true,<br>
+      &nbsp;"size": 26,<br>
+      &nbsp;"number": 0,<br>
+      &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
@@ -1752,6 +1915,31 @@
           &nbsp;&nbsp;&nbsp;"cidade_id": 1,<br>
         &nbsp;&nbsp;}<br>
         &nbsp;]<br>
+        &nbsp;"pageable": {<br>
+        &nbsp;&nbsp;"sort": {<br>
+          &nbsp;&nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;&nbsp;“sorted”: true,<br>
+          &nbsp;&nbsp;&nbsp;“empty”: false,<br>
+        &nbsp;&nbsp;},<br>
+        &nbsp;&nbsp;"pageSize": 26,<br>
+        &nbsp;&nbsp;"pageNumber": 0,<br>
+        &nbsp;&nbsp;"offset": 0,<br>
+        &nbsp;&nbsp;"paged": 0,<br>
+        &nbsp;&nbsp;"unpaged": 0,<br>
+        &nbsp;}<br>
+        &nbsp;"totalPages": 1,<br>
+        &nbsp;"totalElements": 1,<br>
+        &nbsp;"last": true,<br>
+        &nbsp;"sort": {<br>
+          &nbsp;&nbsp;"unsorted": false,<br>
+          &nbsp;&nbsp;"sorted": true,<br>
+          &nbsp;&nbsp;"empty": false<br>
+        &nbsp;}<br>
+        &nbsp;"numberOfElements": 1,<br>
+        &nbsp;"first": true,<br>
+        &nbsp;"size": 26,<br>
+        &nbsp;"number": 0,<br>
+        &nbsp;"empty": false<br>
     }<br>
     </td>
   </tr>
