@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.uff.sem_barreiras.dto.CandidatoDados;
 import com.uff.sem_barreiras.dto.ResponseObject;
+import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Vaga;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,6 +42,12 @@ public class VagaController {
     public ResponseObject deletar(@PathVariable(value = "id")Integer id){
         this.vagaService.deletarVaga(id);
         return new ResponseObject(true, "Vaga removida com sucesso");
+    }
+
+    // mapeamento Put para alterar vaga
+    @PutMapping("/vaga/alterar")
+    public Vaga alterarVaga(@RequestBody final Vaga vaga) throws NotFoundException, IdNullException {
+        return this.vagaService.alterarVaga(vaga);
     }
 
     @PostMapping("/vaga/candidatar/{id}")

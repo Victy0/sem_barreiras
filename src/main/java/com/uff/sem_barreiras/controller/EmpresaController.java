@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.uff.sem_barreiras.dto.LoginObject;
 import com.uff.sem_barreiras.dto.ResponseObject;
+import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Empresa;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -76,6 +78,12 @@ public class EmpresaController {
 
         return new ResponseObject(false, "Erro de autentificação");
 
+    }
+
+    // mapeamento Put para alterar empresa
+    @PutMapping("/empresa/alterar")
+    public Empresa alterarempresa(@RequestBody final Empresa empresa) throws NotFoundException, IdNullException {
+        return this.empresaService.alterarEmpresa(empresa);
     }
 
     @Autowired

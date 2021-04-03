@@ -3,6 +3,7 @@ package com.uff.sem_barreiras.service;
 import java.util.List;
 
 import com.uff.sem_barreiras.dao.CursoDao;
+import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Curso;
@@ -40,6 +41,15 @@ public class CursoService {
         }catch(final Exception e ){
             throw new NotFoundException("Curso", id);
         }
+    }
+
+    // alterar curso
+    public Curso alterarCurso(Curso curso) throws IdNullException{
+        if(curso.getId() == null){
+            throw new IdNullException("Curso");
+        }
+        this.cursoDao.save(curso);
+        return this.cursoDao.findById(curso.getId()).get();
     }
 
     @Autowired

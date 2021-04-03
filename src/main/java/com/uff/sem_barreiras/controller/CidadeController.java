@@ -3,6 +3,7 @@ package com.uff.sem_barreiras.controller;
 import java.util.List;
 
 import com.uff.sem_barreiras.dto.ResponseObject;
+import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Cidade;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,9 +34,14 @@ public class CidadeController {
 
     // mapeamento Post para criar uma cidade
     @PostMapping("/cidade")
-    public ResponseObject criarCidade(@RequestBody final Cidade cidade) throws InsertException{
-        this.cidadeService.criarCidade(cidade);
-        return new ResponseObject(true, "Cidade salva com sucesso");
+    public Cidade criarCidade(@RequestBody final Cidade cidade) throws InsertException{
+        return this.cidadeService.criarCidade(cidade);
+    }
+
+    // mapeamento Put para alterar cidade
+    @PutMapping("/cidade/alterar")
+    public Cidade alterarCidade(@RequestBody final Cidade cidade) throws NotFoundException, IdNullException {
+        return this.cidadeService.alterarCidade(cidade);
     }
 
     @Autowired

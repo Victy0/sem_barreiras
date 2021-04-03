@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.uff.sem_barreiras.dao.EmpresaDao;
+import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Empresa;
@@ -47,6 +48,15 @@ public class EmpresaService {
         }catch(final Exception e ){
             throw new NotFoundException("Empresa", id);
         }
+    }
+
+    // alterar empresa
+    public Empresa alterarEmpresa(Empresa empresa) throws IdNullException{
+        if(empresa.getId() == null){
+            throw new IdNullException("Empresa");
+        }
+        this.empresaDao.save(empresa);
+        return this.empresaDao.findById(empresa.getId()).get();
     }
 
     public Integer getIdByEmail(String email){

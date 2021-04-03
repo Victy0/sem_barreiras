@@ -3,6 +3,7 @@ package com.uff.sem_barreiras.service;
 import java.util.List;
 
 import com.uff.sem_barreiras.dao.DeficienciaDao;
+import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Deficiencia;
@@ -45,6 +46,15 @@ public class DeficienciaService {
         }catch(final Exception e ){
             throw new NotFoundException("Deficiência", id);
         }
+    }
+
+    // alterar deficiencia
+    public Deficiencia alterarDeficiencia(Deficiencia deficiencia) throws IdNullException{
+        if(deficiencia.getId() == null){
+            throw new IdNullException("Deficiência");
+        }
+        this.deficienciaDao.save(deficiencia);
+        return this.deficienciaDao.findById(deficiencia.getId()).get();
     }
 
     @Autowired

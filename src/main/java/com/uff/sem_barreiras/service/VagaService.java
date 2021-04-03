@@ -3,6 +3,7 @@ package com.uff.sem_barreiras.service;
 import java.util.List;
 
 import com.uff.sem_barreiras.dao.VagaDao;
+import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Vaga;
@@ -36,6 +37,15 @@ public class VagaService {
         }catch(Exception e){
             throw new NotFoundException("Vaga", id);
         }
+    }
+
+    // alterar vaga
+    public Vaga alterarVaga(Vaga vaga) throws IdNullException{
+        if(vaga.getId() == null){
+            throw new IdNullException("Vaga");
+        }
+        this.vagaDao.save(vaga);
+        return this.vagaDao.findById(vaga.getId()).get();
     }
 
     public Boolean realizarCandidatura(String nome, String email, String telefone, Integer idVaga) throws NotFoundException {
