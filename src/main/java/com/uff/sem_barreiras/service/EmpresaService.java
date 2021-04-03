@@ -2,7 +2,6 @@ package com.uff.sem_barreiras.service;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.uff.sem_barreiras.dao.EmpresaDao;
@@ -12,14 +11,17 @@ import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Empresa;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmpresaService {
 
     // listar todos os empresas
-    public List<Empresa> listarEmpresas() {
-        return this.empresaDao.findAll();
+    public Page<Empresa> listarEmpresas( Specification<Empresa> spec, final Pageable page ) {
+        return this.empresaDao.findAll(spec, page);
     }
 
     // encontrar empresa pelo id

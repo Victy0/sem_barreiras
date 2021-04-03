@@ -1,21 +1,22 @@
 package com.uff.sem_barreiras.service;
 
-import java.util.List;
-
 import com.uff.sem_barreiras.dao.EstadoDao;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Estado;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 
 @Service
 public class EstadoService {
     
     // listar todos os estados
-    public List<Estado> listarEstados(){
-        return this.estadoDao.findAll();
+    public Page<Estado> listarEstados( Specification<Estado> spec, final Pageable page ){
+        return this.estadoDao.findAll(spec, page);
     }
 
     // encontrar estado pelo id

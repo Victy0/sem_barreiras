@@ -1,21 +1,22 @@
 package com.uff.sem_barreiras.service;
 
-import java.util.List;
-
 import com.uff.sem_barreiras.dao.AreaAtuacaoDao;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import com.uff.sem_barreiras.model.AreaAtuacao;
 
 @Service
 public class AreaAtuacaoService {
 
-    public List<AreaAtuacao> listarAreaAtuacao(){
-        return this.areaAtuacaoDao.findAll();
+    public Page<AreaAtuacao> listarAreaAtuacao(Specification<AreaAtuacao> spec, final Pageable page){
+        return this.areaAtuacaoDao.findAll(spec, page);
     }
 
     public AreaAtuacao encontrarAreaAtuacao(Integer id) throws NotFoundException{

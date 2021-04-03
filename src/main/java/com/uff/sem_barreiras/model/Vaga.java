@@ -29,6 +29,9 @@ public class Vaga {
     
     @Column( name = "data_criacao" )
     private Date dataCriacao;
+
+    @Column( name = "remuneracao" )
+    private Double remuneracao;
     
     @Column( name = "funcao" )
     private String funcao;

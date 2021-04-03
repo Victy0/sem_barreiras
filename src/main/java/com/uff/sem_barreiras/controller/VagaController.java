@@ -1,7 +1,5 @@
 package com.uff.sem_barreiras.controller;
 
-import java.util.List;
-
 import com.uff.sem_barreiras.dto.CandidatoDados;
 import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.IdNullException;
@@ -11,6 +9,10 @@ import com.uff.sem_barreiras.model.Vaga;
 import com.uff.sem_barreiras.service.VagaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +21,27 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import net.kaczmarzyk.spring.data.jpa.domain.Equal;
+import net.kaczmarzyk.spring.data.jpa.domain.GreaterThanOrEqual;
+import net.kaczmarzyk.spring.data.jpa.domain.In;
+import net.kaczmarzyk.spring.data.jpa.domain.Like;
+import net.kaczmarzyk.spring.data.jpa.web.annotation.And;
+import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
+
 @RestController
 public class VagaController {
     @GetMapping("/vaga")
-    public List <Vaga> listarCursos(){
+    public Page<Vaga> listarVagas(
+        @And( value = {	@Spec( path = "empresa.id", params = "empresa", spec = Equal.class ),
+						@Spec( path = "area.id", params = "area", spec = Equal.class ),
+                        @Spec( path = "escolaridade.id", params = "escolaridade", spec = Equal.class ),
+                        @Spec( path = "deficiencia.id", params = "deficiencia", spec = In.class ),
+						@Spec( path = "remuneracao", spec = GreaterThanOrEqual.class ),
+						@Spec( path = "funcao", spec = Like.class )} ) final Specification<Vaga> spec,
+		@PageableDefault( size = 50, sort = "uf" ) final Pageable page
+    ){
         
-        return this.vagaService.listarVagas();
+        return this.vagaService.listarVagas(spec, page);
     }
 
     @GetMapping("/vaga/{id}")

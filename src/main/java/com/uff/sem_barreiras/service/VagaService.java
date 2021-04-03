@@ -1,7 +1,5 @@
 package com.uff.sem_barreiras.service;
 
-import java.util.List;
-
 import com.uff.sem_barreiras.dao.VagaDao;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
@@ -9,13 +7,18 @@ import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Vaga;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 @Service
 public class VagaService {
 
-    public List<Vaga> listarVagas( ){
-        return this.vagaDao.findAll();
+    public Page<Vaga> listarVagas( Specification<Vaga> spec, final Pageable page ){
+        final Page<Vaga> base =  this.vagaDao.findAll(spec, page);
+        return base;
     }
 
     public Vaga criarVaga(Vaga vaga) throws InsertException{
