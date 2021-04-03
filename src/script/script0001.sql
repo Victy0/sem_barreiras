@@ -81,6 +81,7 @@ CREATE TABLE vaga
 	id SERIAL NOT NULL,
     resumo VARCHAR(100),
 	data_criacao DATE NOT NULL,
+    remuneracao DECIMAL NULL,
     funcao VARCHAR(50) NOT NULL,
 	nivel VARCHAR(50) NOT NULL,
 	descricao VARCHAR(5000) NULL,
@@ -109,21 +110,6 @@ CREATE TABLE curso
 	CONSTRAINT PK_curso PRIMARY KEY (id)
 );
 
--- criacao tabela candidato
-CREATE TABLE candidato
-(
-	id SERIAL NOT NULL,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(50) NOT NULL,
-	telefone VARCHAR(50) NOT NULL,
-	curriculo VARCHAR(5000) NULL,
-    id_estado SERIAL NOT NULL,
-    id_escolaridade SERIAL NOT NULL,
-	CONSTRAINT PK_candidato PRIMARY KEY (id),
-    CONSTRAINT FK_candidato_x_estado FOREIGN KEY (id_estado) REFERENCES estado(id),
-    CONSTRAINT FK_candidato_x_escolaridade FOREIGN KEY (id_escolaridade) REFERENCES escolaridade(id)
-);
-
 -- criacao tabela deficiencia
 CREATE TABLE deficiencia
 (
@@ -135,15 +121,6 @@ CREATE TABLE deficiencia
 	CONSTRAINT PK_deficiencia PRIMARY KEY (id)
 );
 
--- criacao tabela candidato_x_deficiencia
-CREATE TABLE candidato_x_deficiencia
-(
-    id_candidato INTEGER NOT NULL,
-    id_deficiencia INTEGER NOT NULL,
-    CONSTRAINT FK_deficiencia_X_candidato FOREIGN KEY (id_candidato) REFERENCES candidato(id),
-    CONSTRAINT FK_candidato_X_deficiencia FOREIGN KEY (id_deficiencia) REFERENCES deficiencia(id)
-);
-
 -- criacao tabela vaga_x_deficiencia
 CREATE TABLE vaga_x_deficiencia
 (
@@ -151,15 +128,6 @@ CREATE TABLE vaga_x_deficiencia
     id_deficiencia INTEGER NOT NULL,
     CONSTRAINT FK_deficiencia_X_vaga FOREIGN KEY (id_vaga) REFERENCES vaga(id),
     CONSTRAINT FK_vaga_X_deficiencia FOREIGN KEY (id_deficiencia) REFERENCES deficiencia(id)
-);
-
--- criacao tabela candidato_x_vaga
-CREATE TABLE candidato_x_vaga
-(
-    id_candidato INTEGER NOT NULL,
-    id_vaga INTEGER NOT NULL,
-    CONSTRAINT FK_vaga_X_candidato FOREIGN KEY (id_candidato) REFERENCES candidato(id),
-    CONSTRAINT FK_candidato_X_vaga FOREIGN KEY (id_vaga) REFERENCES vaga(id)
 );
 
 -- criacao tabela vaga_x_curso
