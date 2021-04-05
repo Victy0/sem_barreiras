@@ -1,6 +1,8 @@
 package com.uff.sem_barreiras.model;
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +36,7 @@ public class Curso{
     @Column(name= "preco")
     private Double preco ;
 
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable( name = "vaga_x_curso", joinColumns = @JoinColumn( name = "id_curso" ), inverseJoinColumns = @JoinColumn( name = "id_vaga" ) )
     private List<Vaga> vagas ;
 }

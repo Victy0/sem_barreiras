@@ -1,6 +1,8 @@
 package com.uff.sem_barreiras.model;
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +36,7 @@ public class Deficiencia{
     @Column( name = "necessidade_sonora" )
     private Boolean necessidadeSonora;
     
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable( name = "vaga_x_deficiencia", joinColumns = @JoinColumn( name = "id_deficiencia" ), inverseJoinColumns = @JoinColumn( name = "id_vaga" ) )
     private List<Vaga> vagas;
 }

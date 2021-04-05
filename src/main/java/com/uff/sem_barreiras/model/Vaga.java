@@ -1,5 +1,6 @@
 package com.uff.sem_barreiras.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -57,11 +58,11 @@ public class Vaga {
     @Column( name = "duracao_vaga" )
     private Integer duracaoVaga;
     
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn( name = "id_empresa")
     private Empresa empresa;
     
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn( name = "id_area_atuacao")
     private AreaAtuacao area;
     
@@ -69,11 +70,11 @@ public class Vaga {
     @JoinColumn( name = "id_escolaridade")
     private Escolaridade escolaridade;
     
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable( name = "vaga_x_curso", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_curso" ) )
     private List<Curso> cursos;  
     
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable( name = "vaga_x_deficiencia", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_deficiencia" ) )
     private List<Deficiencia> deficiencias;
 
