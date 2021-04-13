@@ -8,7 +8,12 @@
 .corpoPagina{
     box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
     background-color: white;
+    min-height: 80vh;
 }
 body{
     background-color: #F2F2F2 !important;
 }   
+.footerPage{
+    background-color: #480048;
+    color: white;
+}
