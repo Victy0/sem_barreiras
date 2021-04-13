@@ -55,8 +55,8 @@ CREATE TABLE area_atuacao
 CREATE TABLE empresa 
 (
 	id SERIAL NOT NULL,
-    nome VARCHAR(100),
-	nomeFantasia VARCHAR(100) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+	nomeFantasia VARCHAR(100) NULL,
     cnpj VARCHAR(50) NOT NULL,
 	email VARCHAR(50) NOT NULL,
 	endereco VARCHAR(50) NULL,
