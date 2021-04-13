@@ -1,0 +1,14 @@
+.navbar{
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, #C04848, #480048);
+    border-image-slice: 1;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
+    margin: auto;
+}
+.corpoPagina{
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
+    background-color: white;
+}
+body{
+    background-color: #F2F2F2 !important;
+}   
