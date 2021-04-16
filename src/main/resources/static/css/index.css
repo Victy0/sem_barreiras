@@ -50,7 +50,8 @@ body{
 /* Home */
 
 .inputBuscar{
-    width: 90%;
+    min-width: 90%;
+    width: auto;
     background-color: white;
     color: #C04848;
     padding: 10px 20px 10px 20px;
@@ -58,7 +59,8 @@ body{
     border-radius: 30px;
 }
 .buttonFiltro{
-    width: 75%;
+    min-width: 100%;
+    width: auto;
     background-color: #C04848;
     color: white;
     padding: 10px 20px 10px 20px;
