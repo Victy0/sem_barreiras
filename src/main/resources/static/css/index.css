@@ -1,3 +1,6 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
 .navbar{
     border-bottom: 5px solid;
     border-image: linear-gradient(to right, #C04848, #480048);
@@ -6,9 +9,9 @@
     margin: auto;
 }
 .corpoPagina{
-    box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
     background-color: white;
-    min-height: 80vh;
+    border: 1px solid #E5E5E5;
+    min-height: 100vh;
 }
 body{
     background-color: #F2F2F2 !important;
@@ -42,4 +45,31 @@ body{
 .quartaColunaFooter > i {
     margin: 10px;
     font-size: 30px;
+}
+
+/* Home */
+
+.inputBuscar{
+    width: 90%;
+    background-color: white;
+    color: #C04848;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+    border-radius: 30px;
+}
+.buttonFiltro{
+    width: 75%;
+    background-color: #C04848;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    border: 0;
+}
+.inputBuscar > input, .inputBuscar > input:focus, .inputBuscar > input::placeholder{
+    color: #C04848;
+    border-width: 0px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
 }
