@@ -45,16 +45,29 @@ function salvar(){
     empresa.cnpj = document.getElementById('cnpj').value;
     empresa.email = document.getElementById('email').value;
     empresa.telefone = document.getElementById('telefone').value;
-    empresa.cidade = document.getElementById('cidade').options[document.getElementById('cidade').selectedIndex].value;
+    empresa.cidade = { id: document.getElementById('cidade').options[document.getElementById('cidade').selectedIndex].value };
     empresa.endereco = document.getElementById('endereco').value;
 
-    if(id == ""){
-        $.postJSON("/empresa", {empresa}, function(data) { 
-            console.log(data)
-        }); 
+    if(empresa.id == ""){
+        empresa.id = null;
+        $.ajax({
+            type: 'POST', 
+            contentType: "application/json; charset=utf-8",
+            url: "/empresa", 
+            data: JSON.stringify(empresa),
+            success: function(data) { 
+                console.log(data)
+            }
+        });
     }else{
-        $.putJSON("/empresa/alterar", {empresa}, function(data) { 
-            console.log(data)
-        }); 
+        $.ajax({
+            type: 'PUT', 
+            contentType: "application/json; charset=utf-8",
+            url: "/empresa/alterar", 
+            data: JSON.stringify(empresa),
+            success: function(data) { 
+                console.log(data)
+            }
+        });
     }
 }
