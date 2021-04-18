@@ -38,7 +38,7 @@ public class VagaController {
                         @Spec( path = "deficiencia.id", params = "deficiencia", spec = In.class ),
 						@Spec( path = "remuneracao", spec = GreaterThanOrEqual.class ),
 						@Spec( path = "funcao", spec = Like.class )} ) final Specification<Vaga> spec,
-		@PageableDefault( size = 50, sort = "uf" ) final Pageable page
+		@PageableDefault( size = 50, sort = "id" ) final Pageable page
     ){
         
         return this.vagaService.listarVagas(spec, page);
