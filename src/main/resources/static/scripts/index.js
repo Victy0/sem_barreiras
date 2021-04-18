@@ -1,6 +1,5 @@
 $(document).ready( function(){
     $.getJSON("/vaga", {}, function(data) { 
-        console.log(data);
 
         for(var i =0; i < data.totalElements; i++){
             var vaga = data.content[i];
