@@ -3,10 +3,17 @@ package com.uff.sem_barreiras.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import lombok.Data;
 import java.util.Date;
 import java.util.List;
@@ -66,15 +73,18 @@ public class Vaga {
     @JoinColumn( name = "id_area_atuacao")
     private AreaAtuacao area;
     
-    @ManyToOne
+    @ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn( name = "id_escolaridade")
     private Escolaridade escolaridade;
     
-    @ManyToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @Fetch(FetchMode.SELECT)
+    @JsonIgnoreProperties({"vagas"})
     @JoinTable( name = "vaga_x_curso", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_curso" ) )
     private List<Curso> cursos;  
     
-    @ManyToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @Fetch(FetchMode.SELECT)
     @JoinTable( name = "vaga_x_deficiencia", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_deficiencia" ) )
     private List<Deficiencia> deficiencias;
 
