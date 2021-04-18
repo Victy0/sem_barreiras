@@ -26,6 +26,5 @@ public class Cidade{
 
     @ManyToOne
     @JoinColumn(name= "id_estado")
-    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id_estado")
     private  Estado estado;
 }
