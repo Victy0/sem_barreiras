@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +13,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import lombok.Data;
 
 @Entity
@@ -36,7 +43,21 @@ public class Curso{
     @Column(name= "preco")
     private Double preco ;
 
-    @ManyToMany(cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @Fetch(FetchMode.SELECT)
+    @JsonIgnoreProperties({ "curso",
+                            "resumo",
+                            "dataCriacao",
+                            "remuneracao",
+                            "funcao",
+                            "nivel",
+                            "descricao",
+                            "requisitosNecessarios",
+                            "requisitosDesejados",
+                            "beneficios",
+                            "jornadaTrabalho",
+                            "duracaoVaga"
+                        })
     @JoinTable( name = "vaga_x_curso", joinColumns = @JoinColumn( name = "id_curso" ), inverseJoinColumns = @JoinColumn( name = "id_vaga" ) )
     private List<Vaga> vagas ;
 }

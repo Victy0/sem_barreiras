@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import net.kaczmarzyk.spring.data.jpa.web.SpecificationArgumentResolver;
@@ -26,4 +29,25 @@ public class SemBarreirasApplication extends WebMvcConfigurationSupport{
 		argumentResolvers.add(new PageableHandlerMethodArgumentResolver());
     }
 
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**");
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/img/**")
+			.addResourceLocations("classpath:/static/img/");
+		registry.addResourceHandler("/scripts/**")
+			.addResourceLocations("classpath:/static/scripts/");
+		registry.addResourceHandler("/css/**")
+			.addResourceLocations("classpath:/static/css/");
+	}
+
+	//mapeamento dos HTML do front devem ser colocados aqui
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/").setViewName("index");
+	}
+	
 }

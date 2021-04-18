@@ -2,6 +2,7 @@ package com.uff.sem_barreiras.service;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.uff.sem_barreiras.dao.EmpresaDao;
@@ -9,6 +10,7 @@ import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
 import com.uff.sem_barreiras.model.Empresa;
+import com.uff.sem_barreiras.model.Vaga;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -33,6 +35,16 @@ public class EmpresaService {
         }
     }
 
+    // encontrar vagas da empresa pelo id
+    public List<Vaga> encontrarVagas(Integer id) throws NotFoundException {
+        try{
+            this.empresaDao.findById(id).get();
+            return this.empresaDao.getVagas(id);
+        }catch(final Exception e ){
+            throw new NotFoundException("Empresa", id);
+        }
+    }
+
     // salvar empresa
     public Empresa criarEmpresa(Empresa empresa) throws InsertException {
         try{
@@ -45,6 +57,7 @@ public class EmpresaService {
     // deletar empresa
     public void deletarEmpresa(Integer id) throws NotFoundException {
         try{
+            this.empresaDao.deleteVagasDaEmpresa(id);
             this.empresaDao.deleteById(id);
         }catch(final Exception e ){
             throw new NotFoundException("Empresa", id);

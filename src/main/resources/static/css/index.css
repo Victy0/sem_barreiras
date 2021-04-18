@@ -1,0 +1,150 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.navbar{
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, #C04848, #480048);
+    border-image-slice: 1;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
+    margin: auto;
+}
+.corpoPagina{
+    background-color: white;
+    border: 1px solid #E5E5E5;
+    min-height: 100vh;
+}
+body{
+    background-color: #F2F2F2 !important;
+}  
+
+/* Footer */
+
+.footerPage{
+    background-color: #480048;
+    color: white;
+    z-index: 0;
+}
+.imgFooter{
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.primeiraColunaFooter > p{
+    text-align: right;
+    font-size: 0.7em;
+    margin-top: 10px;
+}
+.terceiraColunaFooter > p{
+    text-align: left;
+    font-size: 0.7em;
+    margin-top: 10px;
+}
+.terceiraColunaFooter{
+    border-right: 2px solid white;
+}
+.quartaColunaFooter > i {
+    margin: 10px;
+    font-size: 30px;
+}
+
+/* Home */
+
+.inputBuscar{
+    min-width: 15%;
+    width: 1vw;
+    background-color: white;
+    color: #C04848;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    position: fixed;
+    top: 150px;
+}
+
+.inputBuscar > input, .inputBuscar > input:focus, .inputBuscar > input::placeholder{
+    color: #C04848;
+    border-width: 0px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+    min-width: 70%;
+    width: 0.7vw;
+}
+
+.buttonFiltro{
+    min-width: 7%;
+    width: 1vw;
+    background-color: #C04848;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    border: 0;
+    position: fixed;
+    top: 230px;
+    left: 84%;
+}
+.textoResultado{
+    color: #480048;
+    position: fixed;
+    top: 230px;
+    left: 77%;
+}
+
+/* Botões inferiores */
+
+.buttonsAssistente{
+    position: fixed;
+    bottom: 50px;
+    left: 77%;
+    z-index: 9;
+}
+.buttonAssistente1{
+    background-color: #E0E0E0;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 30px;
+    width: 85%;
+}
+.buttonAssistente2{
+    background-color: #E0E0E0;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 30px;
+    width: 85%;
+}
+.buttonAssistente1 > div> .col-3 > i {
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+.buttonAssistente1 > div> .col-8 > img {
+    margin: 20px 0 0 20px;
+    padding: auto;
+    width: 40px;
+}
+.buttonAssistente1 > div> .col-8 > p {
+    text-align: center;
+    color: black;
+    line-height: 1;
+    font-size: 0.5em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.buttonAssistente2 > div> .col-3 > i {
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+.buttonAssistente2 > div> .col-8 > img {
+    margin: 20px 0 0 10px;
+    padding: auto;
+    width: 40px;
+}
+.buttonAssistente2 > div> .col-8 > p {
+    text-align: center;
+    color: black;
+    line-height: 1;
+    font-size: 0.5em;
+    font-weight: bold;
+    margin-left: 10px;
+}
