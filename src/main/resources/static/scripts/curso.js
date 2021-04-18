@@ -1,6 +1,5 @@
 $(document).ready( function(){
-    $.getJSON("/vaga", {}, function(data) { 
+    $.getJSON("/curso", {}, function(data) { 
         console.log(data)
      });
 });
-

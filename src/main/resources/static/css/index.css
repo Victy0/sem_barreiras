@@ -148,3 +148,26 @@ body{
     font-weight: bold;
     margin-left: 10px;
 }
+.btn-cur{
+    border: 2px solid #5CA2FF  ;
+    box-sizing: border-box;
+    border-radius: 20px;
+    position: absolute;
+    width: 170px;
+    height: 48px;
+    left: 45%;
+}
+.btn-curri{
+    background: #5CA2FF;
+    border-radius: 20px;
+    color:#F2F2F2;
+    border: 2px solid #5CA2FF  ;
+    position: absolute;
+    width: 175px;
+    height: 48px;
+    left: 60%;
+   
+}
+.primeiras-infos{
+    margin-top: 30%;
+}
