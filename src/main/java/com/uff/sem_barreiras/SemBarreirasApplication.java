@@ -50,6 +50,7 @@ public class SemBarreirasApplication extends WebMvcConfigurationSupport{
 		registry.addViewController("/").setViewName("index");
 		registry.addViewController("/listar-curso").setViewName("curso");
 		registry.addViewController("/cadastro-empresa").setViewName("empresa");
+		registry.addViewController("/cadastro-vaga").setViewName("cadastroVaga");
 	}
 	
 }
