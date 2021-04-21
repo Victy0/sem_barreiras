@@ -49,8 +49,16 @@ function salvar(){
     empresa.endereco = document.getElementById('endereco').value;
 
     if(id == ""){
-        $.postJSON("/empresa", {empresa}, function(data) { 
-            console.log(data)
+       
+        $.ajax({
+            type: 'POST', 
+            contentType: "application/json; charset=utf-8",
+            url: "/empresa", 
+            data: JSON.stringify(empresa),
+            success: function(data) { 
+                console.log(data)
+            }
+        
         }); 
     }else{
         $.putJSON("/empresa/alterar", {empresa}, function(data) { 
