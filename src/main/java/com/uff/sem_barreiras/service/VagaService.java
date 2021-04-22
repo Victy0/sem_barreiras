@@ -22,9 +22,11 @@ public class VagaService {
     }
 
     public Vaga criarVaga(Vaga vaga) throws InsertException{
-        
+        try{
             return this.vagaDao.save(vaga);
-        
+        }catch(Exception e){
+            throw new InsertException( "a Vaga" );
+        }
     }
 
     public void deletarVaga(Integer id){
