@@ -16,6 +16,9 @@
 }
 body{
     background-color: #F2F2F2 !important;
+}
+h1, h2, h3, p {
+    font-family: 'Roboto Condensed', sans-serif;
 }  
 
 /* Footer */
@@ -178,4 +181,17 @@ body{
 }
 .button-row{
     margin-top:3% !important;
+}
+
+/* Vagas listagem */
+
+.tituloVaga{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.textoLocalVaga{
+    font-size: 1.2em;
+}
+.textoEmpresaVaga{
+    font-size: 0.8em;
 }
