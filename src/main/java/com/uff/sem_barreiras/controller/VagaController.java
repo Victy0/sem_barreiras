@@ -1,5 +1,7 @@
 package com.uff.sem_barreiras.controller;
 
+import java.util.Date;
+
 import com.uff.sem_barreiras.dto.CandidatoDados;
 import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.IdNullException;
@@ -51,6 +53,7 @@ public class VagaController {
 
     @PostMapping("/vaga") 
     public ResponseObject cadastrar(@RequestBody final Vaga vaga  ) throws InsertException{
+        vaga.setDataCriacao(new Date());
         this.vagaService.criarVaga(vaga);
         return new ResponseObject(true, "Vaga salva com sucesso");
     }
