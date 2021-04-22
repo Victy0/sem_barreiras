@@ -2,7 +2,6 @@ package com.uff.sem_barreiras.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -44,7 +43,7 @@ public class Curso{
     @Column(name= "preco")
     private Double preco ;
 
-    @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @ManyToMany( fetch=FetchType.EAGER)
     @Fetch(FetchMode.SELECT)
     @JsonIgnoreProperties({ "curso",
                             "resumo",

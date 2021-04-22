@@ -107,6 +107,7 @@ function salvar(){
             success: function(data) { 
                 console.log(data)
             }
+        
         });
     }else{
         $.ajax({

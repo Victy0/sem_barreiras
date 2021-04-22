@@ -25,7 +25,7 @@ public class VagaService {
         try{
             return this.vagaDao.save(vaga);
         }catch(Exception e){
-            throw new InsertException("a Vaga");
+            throw new InsertException( "a Vaga" );
         }
     }
 
