@@ -31,7 +31,7 @@ public class DeficienciaController {
     @GetMapping("/deficiencia")
     public Page<Deficiencia> listarDeficiencias(
         @And( value = {	@Spec( path = "descricao", spec = Like.class)} ) final Specification<Deficiencia> spec,
-		@PageableDefault( size = 50, sort = "nome" ) final Pageable page
+		@PageableDefault( size = 50, sort = "descricao" ) final Pageable page
     ) {
         return this.deficienciaService.listarDeficiencias(spec, page);
     }

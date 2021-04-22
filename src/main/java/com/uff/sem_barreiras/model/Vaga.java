@@ -65,25 +65,25 @@ public class Vaga {
     @Column( name = "duracao_vaga" )
     private Integer duracaoVaga;
     
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     @JoinColumn( name = "id_empresa")
     private Empresa empresa;
     
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     @JoinColumn( name = "id_area_atuacao")
     private AreaAtuacao area;
     
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     @JoinColumn( name = "id_escolaridade")
     private Escolaridade escolaridade;
     
-    @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @ManyToMany( fetch=FetchType.EAGER)
     @Fetch(FetchMode.SELECT)
     @JsonIgnoreProperties({"vagas"})
     @JoinTable( name = "vaga_x_curso", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_curso" ) )
     private List<Curso> cursos;  
     
-    @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @ManyToMany( fetch=FetchType.EAGER)
     @Fetch(FetchMode.SELECT)
     @JoinTable( name = "vaga_x_deficiencia", joinColumns = @JoinColumn( name = "id_vaga" ), inverseJoinColumns = @JoinColumn( name = "id_deficiencia" ) )
     private List<Deficiencia> deficiencias;

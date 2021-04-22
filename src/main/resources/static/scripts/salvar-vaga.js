@@ -3,6 +3,12 @@ $(document).ready( function(){
     $.getJSON("/escolaridade/", {}, function(data) { 
         data.content.forEach(insertEsc)
      });
+     $.getJSON("/area/", {}, function(data) { 
+        data.content.forEach(insertArea)
+     });
+     $.getJSON("/deficiencia/", {}, function(data) { 
+        data.content.forEach(insertDefi)
+     });
 });
 
 
@@ -36,13 +42,13 @@ function salvarVaga(value){
     vaga.descricao =  document.getElementById('desc-vaga').value;
     vaga.requisitosNecessarios=  document.getElementById('requi-nece').value;
     vaga.requisitosDesejados = document.getElementById('requi-dese').value;
-    vaga.beneficios = checkAppend();
+    vaga.beneficios = "a";
     vaga.jornadaTrabalho =  document.getElementById('jornada').value;
     vaga.duracaoVaga =  document.getElementById('durac-vaga').value;
     vaga.empresa ={"id":document.getElementById('empresa').value};
     vaga.area =  {"id":document.getElementById('area').value};
     vaga.escolaridade = {id: document.getElementById('esc').value};
-    vaga.deficiencias =  [document.getElementById('defi').value];
+    vaga.deficiencias =  [{"id":document.getElementById('defi').value}];
     console.log(vaga)
     if(value == "0"){
         $.ajax({
@@ -77,6 +83,24 @@ function insertEsc (index , item){
     document.getElementById("esc").appendChild(node) ; 
   
 }
+function insertArea (index , item){
+    console.log(index)
+    var node = document.createElement("option");
+    node.value = index.id ;
+    var textnode = document.createTextNode(index.descricao); 
+    node.appendChild(textnode);
+    document.getElementById("area").appendChild(node) ; 
+  
+}
+function insertDefi (index , item){
+    console.log(index)
+    var node = document.createElement("option");
+    node.value = index.id ;
+    var textnode = document.createTextNode(index.descricao); 
+    node.appendChild(textnode);
+    document.getElementById("defi").appendChild(node) ; 
+  
+}
 
 function checkAppend(){
     bene=[]
@@ -87,5 +111,6 @@ function checkAppend(){
         }
 
     }
-    console.log(bene)
+
+    return bene.toString();
 }
