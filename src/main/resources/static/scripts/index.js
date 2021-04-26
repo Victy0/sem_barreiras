@@ -7,7 +7,7 @@ $(document).ready( function(){
             var body = document.getElementById('corpo');
             var div = document.createElement('div'); //create a div
             var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
-            div.innerHTML = createMyElement(vaga.resumo, local, vaga.empresa.nome);   
+            div.innerHTML = createMyElement(vaga.id, vaga.resumo, local, vaga.empresa.nome);   
             div.id = vaga.id;                      //add an id
             body.appendChild(div);                 //append to the doc.body
             body.insertBefore(div, body.firstChild) //OR insert it
@@ -53,14 +53,14 @@ $(document).ready( function(){
 //     document.body.appendChild(div);
 // }
 
-function createMyElement(vagaNome, local, empresa){
+function createMyElement(vagaId, vagaNome, local, empresa){
     return [
         '<div class="row">', 
             '<div class="col-2">',
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
-                '<a href="../templates/acessarVaga.html">',
+                '<a href="/acessar-vaga?id=' + vagaId + '">',
                     '<h3 class="tituloVaga">', vagaNome,'</h3>',
                     '<p class="textoLocalVaga">', local,'</p>',
                     '<p class="textoEmpresaVaga">', empresa,'</p>',

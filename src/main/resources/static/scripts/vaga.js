@@ -1,16 +1,20 @@
 $(document).ready( function(){
-    $.getJSON("/vaga", {}, function(data) { 
 
-        for(var i =0; i < data.totalElements; i++){
-            var vaga = data.content[i];
-    
-            var body = document.getElementById('corpo');
-            var div = document.createElement('div'); //create a div
-            div.innerHTML = createMyElement(vaga);   
-            div.id = vaga.id;                      //add an id
-            body.appendChild(div);                 //append to the doc.body
-            body.insertBefore(div, body.firstChild) //OR insert it
-        }
+    var id = new URL(window.location.href).searchParams.get("id");
+    history.pushState(null, "", location.href.split("?")[0]);
+
+    console.log(id);
+
+    $.getJSON("/vaga/"+id, {}, function(data) { 
+
+        var vaga = data;
+
+        var body = document.getElementById('corpo');
+        var div = document.createElement('div'); //create a div
+        div.innerHTML = createMyElement(vaga);   
+        div.id = vaga.id;                      //add an id
+        body.appendChild(div);                 //append to the doc.body
+        body.insertBefore(div, body.firstChild) //OR insert it
     }); 
 
 });
