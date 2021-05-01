@@ -1,5 +1,7 @@
 package com.uff.sem_barreiras.service;
 
+import java.util.List;
+
 import com.uff.sem_barreiras.dao.VagaDao;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -58,6 +61,14 @@ public class VagaService {
         this.emailService.enviar(vaga.getEmpresa().getEmail(), "Interesse em vaga", content);
 
         return true;
+    }
+
+    @Scheduled( cron = "${cronSchedule.limpaControleLogin:-}", zone = "${cronSchedule.timeZone:-}" )
+    private void deletarVagaPassado30Dias(){
+        List<Integer> idsParaRemover = this.vagaDao.recuperaVagaPassado30Dias();
+        for(Integer idRemover : idsParaRemover){
+            this.deletarVaga(idRemover);
+        }
     }
 
     @Autowired
