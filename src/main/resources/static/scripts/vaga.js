@@ -4,7 +4,7 @@ $(document).ready( function(){
     history.replaceState(null, "", location.href.split("?")[0]);
 
     $.getJSON("/vaga/"+id, {}, function(data) { 
-
+       
         var vaga = data;
         var body = document.getElementById('corpo');
         var div = document.createElement('div'); //create a div
@@ -88,10 +88,12 @@ function createMyElement(vaga){
 
 function preencherDadosListados(vaga){
     if(vaga.requisitosNecessarios != 'sem requisitos listados'){
-        for(var i = 0; i < vaga.requisitosNecessarios.length ; i++){
-            var requisito = vaga.content[i];
+        var req = vaga.requisitosNecessarios.split(",")
+        for(var i = 0; i < req.length ; i++){
+            var requisito = req[i];
+           
             var listItem = document.createElement("li");
-            listItem.innerHTML = requisito.descricao;
+            listItem.innerHTML = requisito;
             document.getElementById("listRequisitosNecessarios").appendChild(listItem);
         }
     }
@@ -103,10 +105,12 @@ function preencherDadosListados(vaga){
         document.getElementById("listRequisitosNecessarios").appendChild(listItem);
     }
     if(vaga.requisitosDesejados != 'sem requisitos listados'){
-        for(var i = 0; i < vaga.requisitosDesejados.length ; i++){
-            var requisito = vaga.content[i];
+        var req2 = vaga.requisitosDesejados.split(",")
+        for(var i = 0; i < req2.length ; i++){
+            var requisito = req2[i];
+            
             var listItem = document.createElement("li");
-            listItem.innerHTML = requisito.descricao; 
+            listItem.innerHTML = requisito; 
             document.getElementById("listRequisitosDesejados").appendChild(listItem);
         }
     }
