@@ -12,7 +12,7 @@
     background-color: white;
     border: 1px solid #E5E5E5;
     min-height: 100vh;
-    padding-top: 20%;
+    padding-top: 25%;
 }
 body{
     background-color: #F2F2F2 !important;
@@ -22,7 +22,12 @@ p{
 }
 h1, h2, h3, p {
     font-family: 'Roboto Condensed', sans-serif;
-}  
+} 
+
+a {
+    text-decoration: none !important;
+    color: black !important;
+}
 
 /* Footer */
 
@@ -199,6 +204,8 @@ h1, h2, h3, p {
     font-size: 0.8em;
     line-height: 1.2em;
     margin: 0 !important;
+    text-decoration: none !important;
+    color: black !important;
 }
 .imgVaga{
     border-radius: 50%;

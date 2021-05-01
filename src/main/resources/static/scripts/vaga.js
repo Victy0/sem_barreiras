@@ -21,6 +21,15 @@ $(document).ready( function(){
 
 function createMyElement(vaga){
     var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
+    for(var i = 0; i < vaga.requisitosDesejados; i++){
+        var requisito = data.content[i];
+
+        var requisito = document.createElement("li");
+        requisito.value= escolaridade.id;
+        requisito.innerHTML = escolaridade.descricao; 
+
+        document.getElementById("listEscolaridade").appendChild(opt);
+    }
     return [
         '<div class="row">', 
             '<div class="col-2">',
@@ -93,3 +102,4 @@ function createMyElement(vaga){
         '</div>', 
         ].join('\n');
  }
+
