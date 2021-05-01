@@ -181,6 +181,9 @@ function createMyElement(vagaId, vagaNome, local, empresa){
         url: "/vaga" + filterParam,
         async: false, 
         success: function(data) { 
+
+            console.log(data)
+
             for(var i = 0; i < data.totalElements; i++){
                 var vaga = data.content[i];
         

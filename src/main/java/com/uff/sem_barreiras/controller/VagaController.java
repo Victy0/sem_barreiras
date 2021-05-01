@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.kaczmarzyk.spring.data.jpa.domain.Equal;
 import net.kaczmarzyk.spring.data.jpa.domain.GreaterThanOrEqual;
-import net.kaczmarzyk.spring.data.jpa.domain.In;
 import net.kaczmarzyk.spring.data.jpa.domain.Like;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.And;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
@@ -38,11 +38,18 @@ public class VagaController {
                         @Spec( path = "empresa.cidade.estado.id", params = "estado", spec = Equal.class ),
 						@Spec( path = "area.id", params = "area", spec = Equal.class ),
                         @Spec( path = "escolaridade.id", params = "escolaridade", spec = Equal.class ),
-                        @Spec( path = "deficiencia.id", params = "deficiencia", spec = In.class ),
 						@Spec( path = "remuneracao", spec = GreaterThanOrEqual.class ),
-						@Spec( path = "funcao", spec = Like.class )} ) final Specification<Vaga> spec,
+						@Spec( path = "funcao", spec = Like.class )} ) Specification<Vaga> spec,
+        @RequestParam( name = "deficiencia", required = false ) final Integer deficiencia,
 		@PageableDefault( size = 50, sort = "id" ) final Pageable page
     ){ 
+        if(deficiencia != null){
+            if(spec == null){
+                spec = this.vagaService.hasDeficiencia(deficiencia);
+            }else{
+                spec = spec.and(this.vagaService.hasDeficiencia(deficiencia));
+            }
+        }
         return this.vagaService.listarVagas(spec, page);
     }
 
