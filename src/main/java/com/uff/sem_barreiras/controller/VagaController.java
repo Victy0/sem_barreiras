@@ -35,14 +35,14 @@ public class VagaController {
     @GetMapping("/vaga")
     public Page<Vaga> listarVagas(
         @And( value = {	@Spec( path = "empresa.id", params = "empresa", spec = Equal.class ),
+                        @Spec( path = "empresa.cidade.estado.id", params = "estado", spec = Equal.class ),
 						@Spec( path = "area.id", params = "area", spec = Equal.class ),
                         @Spec( path = "escolaridade.id", params = "escolaridade", spec = Equal.class ),
                         @Spec( path = "deficiencia.id", params = "deficiencia", spec = In.class ),
 						@Spec( path = "remuneracao", spec = GreaterThanOrEqual.class ),
 						@Spec( path = "funcao", spec = Like.class )} ) final Specification<Vaga> spec,
 		@PageableDefault( size = 50, sort = "id" ) final Pageable page
-    ){
-        
+    ){ 
         return this.vagaService.listarVagas(spec, page);
     }
 
