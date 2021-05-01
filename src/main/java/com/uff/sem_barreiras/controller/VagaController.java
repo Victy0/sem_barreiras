@@ -67,6 +67,7 @@ public class VagaController {
     // mapeamento Put para alterar vaga
     @PutMapping("/vaga/alterar")
     public Vaga alterarVaga(@RequestBody final Vaga vaga) throws NotFoundException, IdNullException {
+        vaga.setDataCriacao(new Date());
         return this.vagaService.alterarVaga(vaga);
     }
 
