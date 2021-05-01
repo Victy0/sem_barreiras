@@ -1,11 +1,13 @@
 package com.uff.sem_barreiras.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.uff.sem_barreiras.dao.EmpresaDao;
+import com.uff.sem_barreiras.exceptions.AlredyExistsException;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
@@ -16,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -46,7 +49,11 @@ public class EmpresaService {
     }
 
     // salvar empresa
-    public Empresa criarEmpresa(Empresa empresa) throws InsertException {
+    public Empresa criarEmpresa(Empresa empresa) throws InsertException, AlredyExistsException {
+        Integer id = this.empresaDao.getIdByEmail(empresa.getEmail());
+        if(id != null){
+            throw new AlredyExistsException("Empresa com e-mail " + empresa.getEmail() + " cadastrado!");
+        }
         try{
             return this.empresaDao.save(empresa);
         }catch(Exception e){
@@ -103,6 +110,21 @@ public class EmpresaService {
 
         controleLogin.remove(id);
         return true;
+    }
+
+    @Scheduled( cron = "${cronSchedule.limpaControleLogin:-}", zone = "${cronSchedule.timeZone:-}" )
+    private void limpaControleLogin(){
+        List<Integer> listaDeKeyParaRemover = new ArrayList<Integer>();
+        Long milis = new Date().getTime();
+        for (Map.Entry<Integer, Long> entry : controleLogin.entrySet()) {
+            long difference = milis - entry.getValue();
+            if(difference > 600000){
+                listaDeKeyParaRemover.add(entry.getKey());
+            }
+        }
+        for(Integer keyParaRemover : listaDeKeyParaRemover){
+            controleLogin.remove(keyParaRemover);
+        }
     }
 
     @Autowired

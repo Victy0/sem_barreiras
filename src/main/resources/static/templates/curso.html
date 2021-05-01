@@ -11,7 +11,6 @@
 </head>
 <body>
     <header>
-        
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -23,13 +22,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 me-auto ms-auto">
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="/listar-vaga">VAGAS</a>
+                            <a class="nav-link" aria-current="page" href="/">VAGAS</a>
                         </li>
                         <li class="nav-item mx-4">
                             <a class="nav-link" href="#">RECRUTAR</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link active" aria-current="page">CURSOS</a>
+                            <a class="nav-link active" href="/listar-curso">CURSOS</a>
                         </li>
                         <li class="nav-item mx-4">
                             <a class="nav-link" href="/login">PERFIL</a>
@@ -46,54 +45,12 @@
         <div class="row justify-content-md-center">
             <div class="col-1 col-sm-3"></div>
             <div class="col-8 col-sm-6">
-                    <div class="container corpoPagina">
-                        <div class=" primeiras-infos">
-                            <div class="row ">
-                                <div class=" col-2 col-sm-3">   
-                                <img src="..\img\assistente-icon-1.png">
-                                </div>   
-                                <div class=" col-2 col-sm-3">
-                                    <p id="Nome">Nome:</p>
-                                    <p id="Preco">Preço:</p>
-                                   
-                                </div>
-                            </div>    
-                        </div>        
+                <div id="corpo" class="container corpoPagina">
                     
-                    <div class="description">
-                        <p>Descrição:</p> 
-                        <p id="description-content-course" class="description-content"></p>
-                    </div>
-                    <div class="requisitos">
-                        <p> Link  curso :</p> 
-                        <p id="course-link" class="description-content"></p>
-                    </div>
-                    
-                        <div class="row">
-                            <div class="col-1 col-sm-3">
-                                <img src="..\img\assistente-icon-1.png">
-    
-                            </div>
-                            <div class="col-1 col-sm-3">
-                                <img src="..\img\assistente-icon-1.png">
-                                
-                            </div>
-                            <div class="col-1 col-sm-3">
-                                <img src="..\img\assistente-icon-1.png">
-                                
-                            </div>
-                            <div class="col-1 col-sm-3">
-                                <img src="..\img\assistente-icon-1.png">
-                                
-                            </div>
-                        </div>
-                        
-                    </div>
-                
                 </div>
             </div>
             <div class="col-3 col-sm-3 mt-5">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-10">
                         <div class="inputBuscar">
                             <i class="fas fa-search"></i>
@@ -101,9 +58,43 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="row mt-3 align-items-center">
+                    <div class="col-6">
+                        <p class="mt-2 textoResultado">5 resultados</p>
+                        <div class="buttonsAssistente">
+                            <div class="buttonAssistente1">
+                                <div class="row align-items-center">
+                                    <div class="col-3">
+                                        <i class="fas fa-toggle-on"></i>
+                                    </div>
+                                    <div class="col-8">
+                                        <img src="../img/assistente-icon-1.png">
+                                        <p>ASSISTENTE <br> DE LIBRAS</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <br>
+                            <div class="buttonAssistente2">
+                                <div class="row align-items-center">
+                                    <div class="col-3">
+                                        <i class="fas fa-toggle-on"></i>
+                                    </div>
+                                    <div class="col-8">
+                                        <img src="../img/assistente-icon-2.png">
+                                        <p>ASSISTENTE <br> DE VOZ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-            
+                    <div class="col-4">
+                        <button class="buttonFiltro" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
+                            <i class="fas fa-filter"></i>
+                            Filtro
+                        </button>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -114,7 +105,8 @@
                     <div class="row align-items-center">
                         <div class="col-3 primeiraColunaFooter">
                             <p>+55 21 98321-6549 <br> 
-                            sembarreiras@gmail.com</p>
+                            sembarreiras@gmail.com
+                            </p>
                         </div>
                         <div class="col-2">
                             <img src="../img/image 2.png" class="imgFooter">
@@ -135,7 +127,5 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    
 </body>
 </html>
