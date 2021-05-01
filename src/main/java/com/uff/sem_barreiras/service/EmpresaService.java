@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.uff.sem_barreiras.dao.EmpresaDao;
+import com.uff.sem_barreiras.exceptions.AlredyExistsException;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
@@ -48,7 +49,11 @@ public class EmpresaService {
     }
 
     // salvar empresa
-    public Empresa criarEmpresa(Empresa empresa) throws InsertException {
+    public Empresa criarEmpresa(Empresa empresa) throws InsertException, AlredyExistsException {
+        Integer id = this.empresaDao.getIdByEmail(empresa.getEmail());
+        if(id != null){
+            throw new AlredyExistsException("Empresa com e-mail " + empresa.getEmail() + " cadastrado!");
+        }
         try{
             return this.empresaDao.save(empresa);
         }catch(Exception e){

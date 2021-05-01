@@ -10,7 +10,10 @@ $(document).ready( function(){
             div.innerHTML = createMyElement(vaga.id, vaga.resumo, local, vaga.empresa.nome);   
             div.id = vaga.id;                      //add an id
             body.appendChild(div);                 //append to the doc.body
-            body.insertBefore(div, body.firstChild) //OR insert it
+            body.insertBefore(div, body.firstChild);
+            var result = document.getElementById('textoResultado');
+            result.innerHTML = data.totalElements + ' resultados';
+             //OR insert it
         }
     }); 
 

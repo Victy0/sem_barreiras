@@ -72,7 +72,7 @@
                 </div>
                 <div class="row mt-3 align-items-center">
                     <div class="col-6">
-                        <p class="mt-2 textoResultado">5 resultados</p>
+                        <p class="mt-2 textoResultado" id="textoResultado"></p>
                         <div class="buttonsAssistente">
                             <div class="buttonAssistente1">
                                 <div class="row align-items-center">
@@ -110,39 +110,37 @@
             </div>
         </div>
     </div>
-    <footer>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Adicionar filtro:</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label for="listEmpresa">Empresa:</label>
-                    <select class="form-select mb-3" aria-label="lista de empresas" id="listEmpresa">
-                    </select>
-                    <label for="listEstado">Estado:</label>
-                    <select class="form-select mb-3" aria-label="lista de estados" id="estado">
-                    </select>
-                    <label for="listEstado">Escolaridade:</label>
-                    <select class="form-select mb-3" aria-label="lista de escolaridade" id="listEscolaridade">
-                    </select>
-                    <label for="listEstado">Área de atuação:</label>
-                    <select class="form-select mb-3" aria-label="lista de area" id="listArea">
-                    </select>
-                    <label for="listEstado">Tipo de deficiência:</label>
-                    <select class="form-select mb-3" aria-label="lista de deficiencia" id="listDeficiencia">
-                    </select>
-                    <label for="customRange2" class="form-label">Remuneração:</label>
-                    <input type="range" class="form-range" min="0" max="100000" id="customRange2" style="color:red">
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
-            </div>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Adicionar filtro:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="listEmpresa">Empresa:</label>
+                        <select class="form-select mb-3" aria-label="lista de empresas" id="listEmpresa">
+                        </select>
+                        <label for="listEstado">Estado:</label>
+                        <select class="form-select mb-3" aria-label="lista de estados" id="estado">
+                        </select>
+                        <label for="listEstado">Escolaridade:</label>
+                        <select class="form-select mb-3" aria-label="lista de escolaridade" id="listEscolaridade">
+                        </select>
+                        <label for="listEstado">Área de atuação:</label>
+                        <select class="form-select mb-3" aria-label="lista de area" id="listArea">
+                        </select>
+                        <label for="listEstado">Tipo de deficiência:</label>
+                        <select class="form-select mb-3" aria-label="lista de deficiencia" id="listDeficiencia">
+                        </select>
+                        <label for="customRange2" class="form-label">Remuneração:</label>
+                        <input type="range" class="form-range" min="0" max="100000" id="customRange2">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-confirm">FILTRAR</button>
+                </div>
             </div>
         </div>
     </div>

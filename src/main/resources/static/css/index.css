@@ -104,6 +104,13 @@ a {
     left: 77%;
 }
 
+.btn-confirm{
+    text-transform: uppercase;
+    border-radius: 30px !important;
+    background-color: #5CA2FF !important;
+    color: white !important;
+    padding: 10px 20px 10px 20px;
+}
 /* Botões inferiores */
 
 .buttonsAssistente{
@@ -196,12 +203,13 @@ a {
 .tituloVaga{
     font-weight: bold;
     font-size: 1.2em;
+    margin: 0;
 }
 .textoLocalVaga{
     font-size: 1.2em;
 }
 .textoEmpresaVaga{
-    font-size: 0.8em;
+    font-size: 1.2em;
     line-height: 1.2em;
     margin: 0 !important;
     text-decoration: none !important;

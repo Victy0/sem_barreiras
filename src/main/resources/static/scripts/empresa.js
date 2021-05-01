@@ -60,9 +60,6 @@ $(document).ready( function(){
 function resgatarEmpresa(){
     $(document).ready( function(){
 
-        var id = new URL(window.location.href).searchParams.get("id");
-        history.pushState(null, "", location.href.split("?")[0]);
-
         $.ajax({
             type: 'GET', 
             contentType: "application/json; charset=utf-8",
