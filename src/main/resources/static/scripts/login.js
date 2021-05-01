@@ -1,7 +1,7 @@
 function entrar(){
 
     var login = {};
-    login.email = document.getElementById('email').innerHTML;
+    login.email = document.getElementById('email').value;
 
     $.ajax({
         type: 'POST', 
