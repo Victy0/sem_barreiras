@@ -213,3 +213,12 @@ a {
     margin: 0;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16)
 }
+
+.modal-password{
+  margin-top:20%;
+  height:200px;
+}
+
+.veri{
+    margin-top: 5%;
+}
