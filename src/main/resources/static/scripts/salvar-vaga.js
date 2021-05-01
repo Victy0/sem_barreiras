@@ -1,6 +1,7 @@
 
 $(document).ready( function(){
-    
+    var loged= localStorage.getItem("on")
+   if(loged){
     $.ajax({
         type: 'GET', 
         contentType: "application/json; charset=utf-8",
@@ -74,6 +75,9 @@ $(document).ready( function(){
             }
         }); 
      }
+    }else{
+        window.location.replace("/login");
+    }
 });
 
 
