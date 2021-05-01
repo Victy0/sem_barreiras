@@ -175,10 +175,10 @@ function insertDefi (index , item){
 function checkAppend(){
     bene=[]
     for(i=1 ; i< 6;i++){
-     document.getElementById("option"+i).value;
+     
       if(document.getElementById("option"+i).checked ==true){
           
-        bene.push(i)
+        bene.push(document.getElementById("option"+i).value);
         }
 
     }
@@ -188,23 +188,23 @@ function checkAppend(){
 
 function checkDissolve(value){
     var array = value.split(",")
-    for(i=1 ; i< 6;i++){
-      if(array[i] == 1){
+    for(i=0 ; i< 6;i++){
+      if(array[i] =="Vale Transporte"){
         document.getElementById("option1").checked = true
       }
-      if(array[i] == 2){
+      if(array[i] =="Plano de Saúde"){
         document.getElementById("option2").checked = true
       }
-      if(array[i] == 3){
+      if(array[i] == "Vale Refeição"){
         document.getElementById("option3").checked = true
       }
-      if(array[i] == 4){
+      if(array[i] =="Plano Odontológico" ){
         document.getElementById("option4").checked = true
       }
-      if(array[i] == 5){
+      if(array[i] == "Vale Alimentação"){
         document.getElementById("option5").checked = true
       }
-      if(array[i] == 6){
+      if(array[i] == "Seguro de Vida"){
         document.getElementById("option6").checked = true
       }
     }
