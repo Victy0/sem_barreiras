@@ -35,11 +35,11 @@ function verificaCodigo(){
         data: JSON.stringify(login),
         success: function(data) { 
             if(data.sucesso){
-                localStorage.SetItem("on",true);
+                localStorage.setItem("on",true);
                 window.location.replace("/");
             }else{
                 console.log(data)
-                document.getElementById('erro').innerHTML = data.mensagem;
+                document.getElementById('erroPopup').innerHTML = data.mensagem;
             }
         }
     }); 
