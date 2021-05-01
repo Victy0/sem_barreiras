@@ -47,6 +47,7 @@
             <div class="col-8 col-sm-7">
                     <div class="container corpoPagina">
                         <div class="form-vaga">
+                            <input id="id" type="hidden">
                             <div class="row">
                                        
                                 <div class="col-1 col-sm-5">
@@ -86,7 +87,7 @@
                                 <div class=" col-2 col-sm-5">
                                     <label for="funcao">Deficiencia:</label>
                                     <br>
-                                    <select class="input-model" name="brands" id="defi" >
+                                    <select class="input-model" name="brands" id="defi" multiple >
                                         <option value="-">---</option>
                                     
                                     </select> 
@@ -108,12 +109,6 @@
                         </div>       
                         
                            
-                        
-                        <div class="description">
-                            <label for="funcao">Local:</label>
-                            <br>
-                            <input type="text" id="local" name="local"> 
-                        </div>
                         <div class="requisitos">
                             <label for="funcao">Descrição de vaga:</label>
                             <br>
@@ -134,7 +129,7 @@
                             <p>Beneficios:</p>
                             <div class="row">
                                 <div class="col-1 col-sm-4">
-                                    <input type="checkbox" id="option1" name="option1" value="Vale transporte">
+                                    <input type="checkbox" id="option1" name="option1" value="Seguro de Vida">
                                     <label for="vehicle1"> Vale transporte</label><br>
                                     <input type="checkbox" id="option2" name="option2" value="Plano de Saúde">
                                     <label for="vehicle2"> Plano de Saúde</label><br>
@@ -149,7 +144,7 @@
                                 </div>
                                 <div class="col-1 col-sm-4">
                                     <input type="checkbox" id="option5" name="option5" value="Vale Alimentação">
-                                    <label for="vehicle1">Vale Alimentação"</label><br>
+                                    <label for="vehicle1">Vale Alimentação</label><br>
                                     <input type="checkbox" id="option6" name="option6" value="Seguro de Vida">
                                     <label for="vehicle2">Seguro de Vida</label><br>
                                     
@@ -178,7 +173,7 @@
                                         <button type="button" class="btn-cur ">Anexar Fotos</button>
                                     </div>
                                     <div class="col-1 col-sm-3">   
-                                        <button type="button" class="btn-curri " onclick="salvarVaga('0')">Publicar Vaga</button>
+                                        <button type="button" class="btn-curri " onclick="salvarVaga()">Publicar Vaga</button>
                                     </div>     
                                 </div>
                         </div>
