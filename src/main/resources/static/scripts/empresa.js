@@ -57,6 +57,48 @@ $(document).ready( function(){
 
 });
 
+function resgatarEmpresa(){
+    $(document).ready( function(){
+
+        var id = new URL(window.location.href).searchParams.get("id");
+        history.pushState(null, "", location.href.split("?")[0]);
+
+        $.ajax({
+            type: 'GET', 
+            contentType: "application/json; charset=utf-8",
+            url: "/empresa",
+            async: false, 
+            success: function(data) { 
+                for(var i = 0; i < data.totalElements; i++){
+                    var empresa = data.content[i];
+        
+                    var opt = document.createElement("option");
+                    opt.value= empresa.id;
+                    opt.innerHTML = empresa.nome; 
+        
+                    document.getElementById("listEmpresa").appendChild(opt);
+                }
+            }
+        }); 
+        $.ajax({
+            type: 'GET', 
+            contentType: "application/json; charset=utf-8",
+            url: "/empresa",
+            async: false, 
+            success: function(data) { 
+                console.log(data)
+                for (var i = 0; i < document.getElementById('listEmpresa').options.length; i++) {
+                    if (document.getElementById('listEmpresa').options[i].value == data.id) {
+                        document.getElementById('listEmpresa')[i].selected = true;
+                    }
+                }   
+            }
+        }); 
+        
+
+    });
+}
+
 function popularCidade(){
 
     var selectEstado = document.getElementById('estado');
@@ -121,3 +163,5 @@ function salvar(){
         });
     }
 }
+
+resgatarEmpresa();
