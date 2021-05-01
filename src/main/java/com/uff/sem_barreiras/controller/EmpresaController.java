@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.uff.sem_barreiras.dto.LoginObject;
 import com.uff.sem_barreiras.dto.ResponseObject;
+import com.uff.sem_barreiras.exceptions.AlredyExistsException;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
@@ -56,7 +57,7 @@ public class EmpresaController {
 
     // mapeamento Post para criar uma empresa
     @PostMapping("/empresa")
-    public Empresa criarEmpresa(@RequestBody final Empresa empresa) throws InsertException {
+    public Empresa criarEmpresa(@RequestBody final Empresa empresa) throws InsertException, AlredyExistsException {
         return this.empresaService.criarEmpresa(empresa);
     }
 
