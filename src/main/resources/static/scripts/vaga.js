@@ -104,7 +104,21 @@ function createMyElement(vaga){
             '<div class="col-4">',
                 '<button class="btn btn-outline-confirm" onclick="candidatarVaga()">Enviar currículo</button>',
             '</div>',
+            '<button class="btn-vag" onclick=" abre() ">Candidatar-se a vaga</button>' ,
         '</div>',
+        '<div id="id01" class="w3-modal">',
+        '<div class="w3-modal-content">',
+          '<div class="w3-container modal-password ">',
+             '<h3> Coloque suas informações para se candidatar a vaga </h3>' ,
+           ' <span onclick=" fecha() " class="w3-button w3-display-topright">&times;</span>',
+            '<input id="email" class="form-control" type="text" placeholder="Coloque seu email">',
+            '<input id="nome" class="form-control" type="text"  placeholder="Nome">',
+            '<input id="telefone" class="form-control" type="text"  placeholder="Telefone">',
+            '<button class="btn btn-primary veri " onclick="candidatarVaga()">Entrar</button>',
+          '</div>',
+        '</div>',
+      '</div>',
+    '</div>'
         
         ].join('\n');
  }
@@ -160,4 +174,23 @@ function preencherDadosListados(vaga){
         var texto = document.getElementById("textJornada");
         texto.innerHTML = "Sem dados fornecidos.";
     }
+}
+
+function candidatarVaga(){
+
+    $.ajax({
+        type: 'POST', 
+        contentType: "application/json; charset=utf-8",
+        url: "/vaga", 
+        data: JSON.stringify(vaga),
+        success: function(data) { 
+            console.log(data)
+        }
+    });
+}
+function abre(){
+document.getElementById("id01").style.display="block";
+}
+function fecha(){
+document.getElementById('id01').style.display='none';
 }
