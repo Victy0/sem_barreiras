@@ -2,13 +2,21 @@ import { loadingAnimation } from './loading.js';
 
 $(document).ready( function(){
     loadingAnimation();
-    $.getJSON("/vaga", {}, function(data) { 
+    var loged= sessionStorage.getItem("on");
+    var url = "/vaga";
+    if(loged != null && loged != undefined){
+        url = "/vaga?empresa=" + loged;
+        document.getElementById("listEmpresa").style.display = "none";
+        document.getElementById("listEmpresaLabel").style.display = "none";
+    }
+
+    $.getJSON(url, {}, function(data) { 
         for(var i = 0; i < data.totalElements; i++){
             var vaga = data.content[i];
             var body = document.getElementById('corpo');
             var div = document.createElement('div'); 
             var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
-            div.innerHTML = createMyElement(vaga.id, vaga.resumo, local, vaga.empresa.nome);   
+            div.innerHTML = createMyElement(vaga.id, vaga.resumo, local, vaga.empresa.nome, vaga.deficiencias);   
             div.id = vaga.id;                      
             body.appendChild(div);                 
             body.insertBefore(div, body.firstChild);
@@ -124,23 +132,40 @@ $(document).ready( function(){
     loadingAnimation('none');
 });
 
-function createMyElement(vagaId, vagaNome, local, empresa){
+function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
+
+    var loged= sessionStorage.getItem("on");
+    var url = "/acessar-vaga?id=";
+    if(loged != null && loged != undefined){
+        url = "/cadastro-vaga?id=";
+    }
+
+    var complemento = "";
+    for( var i =0; i < deficiencias.length; i++){
+        if(complemento != ""){
+            complemento = complemento + '<br>';
+        }
+        if(deficiencias[i].descricao == "auditiva" ){
+            complemento = complemento + '<img src="../img/Vector2.png" class="vectorVaga1">';
+        }
+        if(deficiencias[i].descricao == "visual" ){
+            complemento = complemento + '<img src="../img/Vector.png" class="vectorVaga2 mt-4">';
+        }
+    }
+
     return [
         '<div class="row">', 
             '<div class="col-2">',
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
-                '<a href="/acessar-vaga?id=' + vagaId + '">',
+                '<a href="' + url + vagaId + '">',
                     '<h3 class="tituloVaga">', vagaNome,'</h3>',
                     '<p class="textoLocalVaga">', local,'</p>',
                     '<p class="textoEmpresaVaga">', empresa,'</p>',
                 '</a>',
             '</div>',
-            '<div class="col-1">',
-                '<img src="../img/Vector2.png" class="vectorVaga1">',
-                '<br>',
-                '<img src="../img/Vector.png" class="vectorVaga2 mt-4">',
+            '<div class="col-1">' + complemento,
             '</div>',
         '</div>',
         '<hr>'
@@ -197,7 +222,7 @@ function createMyElement(vagaId, vagaNome, local, empresa){
                 var body = document.getElementById('corpo');
                 var div = document.createElement('div'); 
                 var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
-                div.innerHTML = createMyElement(vaga.id, vaga.resumo, local, vaga.empresa.nome);   
+                div.innerHTML = createMyElement(vaga.id, vaga.resumo, local, vaga.empresa.nome, vaga.deficiencias);   
                 div.id = vaga.id;                      
                 body.appendChild(div);                 
                 body.insertBefore(div, body.firstChild);

@@ -105,11 +105,36 @@ public class EmpresaController {
 
     }
 
+    // mapeamento Post para recuperar empresa na sessão
+    @PostMapping("/empresa/session")
+    public Object sessionEmpresa( HttpSession session  ){
+        
+        if(session.getAttribute("login") != null){
+            return session.getAttribute("login");
+        }
+        return null;
+
+    }
+
+    // mapeamento Post para fazer logout
+    @PostMapping("/empresa/logout")
+    public ResponseObject logoutnEmpresa( HttpSession session  ){
+        
+        if(session.getAttribute("login") != null){
+            session.removeAttribute("login");
+            return new ResponseObject(true, "Logout concluída com sucesso");
+        }
+        return new ResponseObject(false, "Nenhuma empresa com login efetuado");
+
+    }
+
     // mapeamento Put para alterar empresa
     @PutMapping("/empresa/alterar")
     public Empresa alterarempresa(@RequestBody final Empresa empresa) throws NotFoundException, IdNullException {
         return this.empresaService.alterarEmpresa(empresa);
     }
+
+
 
     @Autowired
     private EmpresaService empresaService;

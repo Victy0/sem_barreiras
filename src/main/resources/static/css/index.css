@@ -208,6 +208,18 @@ a {
     left: 60%;
    
 }
+.btn-vag{
+    background: #5CA2FF;
+    border-radius: 20px;
+    color:#F2F2F2;
+    border: 2px solid #5CA2FF  ;
+    position: relative;
+    width: 40% !important;
+    height: 48px;
+    left: 60%;
+   margin-top: 20%;
+  margin-bottom: 5%;
+}
 .primeiras-infos{
     margin-top: 30%;
 }
