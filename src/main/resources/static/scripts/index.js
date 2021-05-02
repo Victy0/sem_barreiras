@@ -1,9 +1,10 @@
-$(document).ready( function(){
-    $.getJSON("/vaga", {}, function(data) { 
+import { loadingAnimation } from './loading.js';
 
+$(document).ready( function(){
+    loadingAnimation();
+    $.getJSON("/vaga", {}, function(data) { 
         for(var i = 0; i < data.totalElements; i++){
             var vaga = data.content[i];
-    
             var body = document.getElementById('corpo');
             var div = document.createElement('div'); 
             var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
@@ -14,8 +15,7 @@ $(document).ready( function(){
             var result = document.getElementById('textoResultado');
             result.innerHTML = data.totalElements + ' resultados';
         }
-    }); 
-
+    });
     // popular filtros
     $.ajax({
         type: 'GET', 
@@ -51,8 +51,8 @@ $(document).ready( function(){
                 var estado = data.content[i];
     
                 var opt = document.createElement("option");
-                opt.value= estado.id;
-                opt.innerHTML = estado.uf; 
+                // opt.value= estado.id;
+                // opt.innerHTML = estado.uf; 
     
                 document.getElementById("listEstado").appendChild(opt);
             }
@@ -121,7 +121,7 @@ $(document).ready( function(){
             }
         }
     }); 
-
+    loadingAnimation('none');
 });
 
 function createMyElement(vagaId, vagaNome, local, empresa){
@@ -146,7 +146,7 @@ function createMyElement(vagaId, vagaNome, local, empresa){
         '<hr>'
         ].join('\n');
  }
-
+;
  function filtrar(origem, event){
 
     if(origem == "P" && (event.keyCode || event.which) != 13){
@@ -206,4 +206,4 @@ function createMyElement(vagaId, vagaNome, local, empresa){
             }
         }
     });  
- }
+};
