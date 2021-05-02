@@ -35,10 +35,17 @@ function verificaCodigo(){
         data: JSON.stringify(login),
         success: function(data) { 
             if(data.sucesso){
-                localStorage.setItem("on",true);
-                window.location.replace("/");
+                $.ajax({
+                    type: 'POST', 
+                    contentType: "application/json; charset=utf-8",
+                    url: "/empresa/session",
+                    async:false,
+                    success: function(data) { 
+                        sessionStorage.setItem("on", data);
+                        window.location.replace("/");
+                    }
+                }); 
             }else{
-                console.log(data)
                 document.getElementById('erroPopup').innerHTML = data.mensagem;
             }
         }
