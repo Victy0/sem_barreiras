@@ -39,7 +39,7 @@ public class VagaController {
 						@Spec( path = "area.id", params = "area", spec = Equal.class ),
                         @Spec( path = "escolaridade.id", params = "escolaridade", spec = Equal.class ),
 						@Spec( path = "remuneracao", spec = GreaterThanOrEqual.class ),
-						@Spec( path = "funcao", spec = Like.class )} ) Specification<Vaga> spec,
+                        @Spec( path = "resumo", params = "pesq", spec = Like.class )} ) Specification<Vaga> spec,
         @RequestParam( name = "deficiencia", required = false ) final Integer deficiencia,
 		@PageableDefault( size = 50, sort = "id" ) final Pageable page
     ){ 

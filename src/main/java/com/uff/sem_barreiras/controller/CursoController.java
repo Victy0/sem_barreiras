@@ -28,7 +28,7 @@ import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
 public class CursoController {
     @GetMapping("/curso")
     public Page<Curso> listarCursos(
-        @And( value = {	@Spec( path = "precoMinimo", spec = GreaterThanOrEqual.class  ),
+        @And( value = {	@Spec( path = "preco", params = "precoMinimo", spec = GreaterThanOrEqual.class  ),
                         @Spec( path = "nome", spec = Like.class)} ) final Specification<Curso> spec,
 		@PageableDefault( size = 50, sort = "nome" ) final Pageable page
     ){ 

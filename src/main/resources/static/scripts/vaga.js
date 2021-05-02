@@ -82,7 +82,11 @@ function createMyElement(vaga){
                 '<h2 class="tituloVaga"> Faixa salarial: </h2>',
                 '<p id="textRemuneracao"></p>',
             '</div>',
-        '</div>', 
+        '</div>',
+        `<div class="row">`,
+            '<button class="btn btn" onclick="candidatarVaga()">Candidatar-se a vaga</button>' ,
+        '</div>',
+        
         ].join('\n');
  }
 
