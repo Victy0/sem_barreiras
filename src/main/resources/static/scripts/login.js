@@ -11,7 +11,7 @@ function entrar(){
         data: JSON.stringify(login),
         success: function(data) { 
             if(data.sucesso){
-                document.getElementById('id01').style.display='block'
+                document.getElementById('id01').style.display='block';
                 document.getElementById('mensagens').innerHTML = data.mensagem;
             }else{
                 console.log(data)

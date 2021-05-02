@@ -8,6 +8,10 @@
     box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
     margin: auto;
 }
+.active{
+    font-weight: bold;
+    color: black;
+}
 .corpoPagina{
     background-color: white;
     border: 1px solid #E5E5E5;
@@ -20,7 +24,7 @@ body{
 p{
     margin: 0 !important;
 }
-h1, h2, h3, p {
+h1, h2, h3, p, button, b {
     font-family: 'Roboto Condensed', sans-serif;
 } 
 
@@ -106,10 +110,24 @@ a {
 
 .btn-confirm{
     text-transform: uppercase;
-    border-radius: 30px !important;
+    border-radius: 25px !important;
     background-color: #5CA2FF !important;
     color: white !important;
-    padding: 10px 20px 10px 20px;
+    padding: 15px 10px 15px 10px !important;
+    font-size: 0.8em !important;
+    font-weight: 700 !important;
+    width: 100%;
+}
+.btn-outline-confirm{
+    text-transform: uppercase;
+    border-radius: 25px !important;
+    background-color: white !important;
+    color: #5CA2FF !important;
+    border: 2px solid  #5CA2FF !important;
+    padding: 15px 10px 15px 10px !important;
+    font-size: 0.8em !important;
+    font-weight: 700 !important;
+    width: 100%;
 }
 /* Botões inferiores */
 
@@ -231,7 +249,7 @@ a {
     border-radius: 50%;
     padding: 0;
     margin: 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16)
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
 
 .modal-password{
@@ -242,3 +260,48 @@ a {
 .veri{
     margin-top: 5%;
 }
+
+.modal-success{
+    width: 50% !important; 
+    margin-left: 25%;
+    background-color: #E5E5E5 !important;
+    border-radius: 30px !important;
+    border: 0 !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16)
+}
+
+/* Loading */
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+  }
+  

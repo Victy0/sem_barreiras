@@ -95,6 +95,7 @@ function buscarCurso() {
 
 
 function createMyElement(curso){
+
     return [
         '<div class="row">', 
             '<div class="col-2">',
@@ -106,11 +107,6 @@ function createMyElement(curso){
                     '<p class="textoLocalVaga">', curso.descricao,'</p>',
                     '<p class="textoEmpresaVaga">', curso.preco,'</p>',
                 '</a>',
-            '</div>',
-            '<div class="col-1">',
-                '<img src="../img/Vector2.png" class="vectorVaga1">',
-                '<br>',
-                '<img src="../img/Vector.png" class="vectorVaga2 mt-4">',
             '</div>',
         '</div>',
         '<hr>'
@@ -126,9 +122,6 @@ function createMyElement(curso){
     filterParam = filterParam.replace("&", "?");
 
     document.getElementById('corpo').innerHTML = "";
-
-    //document.getElementById('exampleModal').style.display = "none";
-    //document.getElementsByClassName('modal-backdrop fade show').style.display = "none";
 
     $.ajax({
         type: 'GET', 
