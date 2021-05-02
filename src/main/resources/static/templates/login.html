@@ -36,7 +36,7 @@
                             <a class="nav-link active" aria-current="page">PERFIL</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">CONFIGURAÇÕES</a>
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">SAIR</a>
                         </li>
                     </ul>
                 </div>
@@ -55,19 +55,6 @@
                     <hr>
                     <button class="btn btn-primary" onclick="entrar()">Entrar</button>
                     <a href="/cadastro-empresa">Cadastrar minha Empresa</a>
-                </div>
-                <div id="id01" class="w3-modal">
-                    <div class="w3-modal-content">
-                      <div class="w3-container modal-password ">
-                         <h3>Digite seu codigo de verificação </h3> 
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                        <p id="mensagens"></p>
-                        <input id="codigo" class="form-control" type="text">
-                        <span id="erroPopup" class="text-danger"></span>
-                        <button class="btn btn-primary veri " onclick=" verificaCodigo()">Entrar</button>
-                      </div>
-                    </div>
-                  </div>
                 </div>
             </div>
             <div class="col-3 col-sm-3 mt-5">
@@ -104,6 +91,25 @@
             </div>
         </div>
     </div>
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container modal-password ">
+             <h3>Digite seu codigo de verificação </h3> 
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <p id="mensagens"></p>
+            <input id="codigo" class="form-control" type="text">
+            <span id="erroPopup" class="text-danger"></span>
+            <button class="btn btn-primary veri " onclick=" verificaCodigo()">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
     <footer>
         <div class="container-fluid footerPage p-3">
             <div class="row justify-content-md-center align-items-center no-gutters">
@@ -132,5 +138,9 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 </body>
 </html>

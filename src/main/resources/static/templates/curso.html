@@ -34,7 +34,7 @@
                             <a class="nav-link" href="/login">PERFIL</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">CONFIGURAÇÕES</a>
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">SAIR</a>
                         </li>
                     </ul>
                 </div>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="col-3 col-sm-3 mt-5">
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-10">
                         <div class="inputBuscar">
                             <i class="fas fa-search"></i>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="row mt-3 align-items-center">
                     <div class="col-6">
-                        <p class="mt-2 textoResultado">5 resultados</p>
+                        <p class="mt-2 textoResultado" id="textoResultado"></p>
                         <div class="buttonsAssistente">
                             <div class="buttonAssistente1">
                                 <div class="row align-items-center">
@@ -94,8 +94,46 @@
                             Filtro
                         </button>
                     </div>
-                </div> -->
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: -20px;">
+        <div class="row justify-content-md-center">
+            <div class="col-1 col-sm-3"></div>
+            <div class="col-8 col-sm-6">
+                <div id="corpo" class="container corpoPagina">
+                    
+                </div>
+            </div>
+            <div class="col-3 col-sm-3 mt-5">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Adicionar filtro:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="precoMinimo" class="form-label">Preço:</label>
+                        <input type="number" class="form-range" min="0" id="precoMinimo">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-confirm" onclick="filtrar()">FILTRAR</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
         </div>
     </div>
     <footer>
@@ -127,5 +165,9 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 </body>
 </html>

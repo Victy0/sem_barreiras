@@ -1,5 +1,14 @@
 $(document).ready( function(){
-    $.getJSON("/vaga", {}, function(data) { 
+
+    var loged= sessionStorage.getItem("on");
+    var url = "/vaga";
+    if(loged != null && loged != undefined){
+        url = "/vaga?empresa=" + loged;
+        document.getElementById("listEmpresa").style.display = "none";
+        document.getElementById("listEmpresaLabel").style.display = "none";
+    }
+
+    $.getJSON(url, {}, function(data) { 
 
         for(var i = 0; i < data.totalElements; i++){
             var vaga = data.content[i];
@@ -125,13 +134,20 @@ $(document).ready( function(){
 });
 
 function createMyElement(vagaId, vagaNome, local, empresa){
+
+    var loged= sessionStorage.getItem("on");
+    var url = "/acessar-vaga?id=";
+    if(loged != null && loged != undefined){
+        url = "/cadastro-vaga?id=";
+    }
+
     return [
         '<div class="row">', 
             '<div class="col-2">',
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
-                '<a href="/acessar-vaga?id=' + vagaId + '">',
+                '<a href="' + url + vagaId + '">',
                     '<h3 class="tituloVaga">', vagaNome,'</h3>',
                     '<p class="textoLocalVaga">', local,'</p>',
                     '<p class="textoEmpresaVaga">', empresa,'</p>',
@@ -147,9 +163,16 @@ function createMyElement(vagaId, vagaNome, local, empresa){
         ].join('\n');
  }
 
- function filtrar(){
+ function filtrar(origem, event){
+
+    if(origem == "P" && (event.keyCode || event.which) != 13){
+        return;
+    }
 
     var filterParam = "";
+    if (document.getElementById("pesquisar").value != ""){
+        filterParam = filterParam + "&pesq=" + document.getElementById("pesquisar").value;
+    }
     if (document.getElementById("listEmpresa").value != "0"){
         filterParam = filterParam + "&empresa=" + document.getElementById("listEmpresa").value;
     }

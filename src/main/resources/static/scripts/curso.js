@@ -11,12 +11,14 @@ $(document).ready(function () {
             var curso = data.content[i];
             console.log(curso);
             var body = document.getElementById('corpo');
-            var div = document.createElement('div'); //create a div
+            var div = document.createElement('div'); 
             div.innerHTML = createMyElement(curso);   
-            div.id = curso.id;                      //add an id
-            body.appendChild(div);                 //append to the doc.body
-            body.insertBefore(div, body.firstChild) //OR insert it
+            div.id = curso.id;                      
+            body.appendChild(div);                 
+            body.insertBefore(div, body.firstChild) 
         }
+        var result = document.getElementById('textoResultado');
+        result.innerHTML = data.totalElements + ' resultados';
     });
 });
 
@@ -113,4 +115,46 @@ function createMyElement(curso){
         '</div>',
         '<hr>'
         ].join('\n');
+ }
+
+ function filtrar(){
+
+    var filterParam = "";
+    if(document.getElementById("precoMinimo").value != ""){
+        filterParam = filterParam + "&precoMinimo=" + document.getElementById("precoMinimo").value;
+    }
+    filterParam = filterParam.replace("&", "?");
+
+    document.getElementById('corpo').innerHTML = "";
+
+    //document.getElementById('exampleModal').style.display = "none";
+    //document.getElementsByClassName('modal-backdrop fade show').style.display = "none";
+
+    $.ajax({
+        type: 'GET', 
+        contentType: "application/json; charset=utf-8",
+        url: "/curso" + filterParam,
+        async: false, 
+        success: function(data) { 
+
+            console.log(data)
+
+            for(var i = 0; i < data.totalElements; i++){
+                var vaga = data.content[i];
+        
+                for(var i =0; i < data.totalElements; i++){
+                    var curso = data.content[i];
+                    console.log(curso);
+                    var body = document.getElementById('corpo');
+                    var div = document.createElement('div'); 
+                    div.innerHTML = createMyElement(curso);   
+                    div.id = curso.id;                      
+                    body.appendChild(div);                 
+                    body.insertBefore(div, body.firstChild) 
+                }
+                var result = document.getElementById('textoResultado');
+                result.innerHTML = data.totalElements + ' resultados';
+            }
+        }
+    });  
  }

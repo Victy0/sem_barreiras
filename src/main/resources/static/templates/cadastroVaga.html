@@ -34,7 +34,7 @@
                             <a class="nav-link" href="/login">PERFIL</a>
                         </li>
                         <li class="nav-item mx-4">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">CONFIGURAÇÕES</a>
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">SAIR</a>
                         </li>
                     </ul>
                 </div>
@@ -129,24 +129,24 @@
                             <p>Beneficios:</p>
                             <div class="row">
                                 <div class="col-1 col-sm-4">
-                                    <input type="checkbox" id="option1" name="option1" value="Seguro de Vida">
-                                    <label for="vehicle1"> Vale transporte</label><br>
+                                    <input type="checkbox" id="option1" name="option1" value="Vale Transporte">
+                                    <label for="option1"> Vale Transporte</label><br>
                                     <input type="checkbox" id="option2" name="option2" value="Plano de Saúde">
-                                    <label for="vehicle2"> Plano de Saúde</label><br>
+                                    <label for="option2"> Plano de Saúde</label><br>
                                     
                                 </div>
                                 <div class="col-1 col-sm-4">
                                     <input type="checkbox" id="option3" name="option3" value="Vale Refeição">
                                     <label for="vehicle1">Vale Refeição</label><br>
                                     <input type="checkbox" id="option4" name="option4" value="Plano Odontológico">
-                                    <label for="vehicle2">Plano Odontológico</label><br>
+                                    <label for="option4">Plano Odontológico</label><br>
                                     
                                 </div>
                                 <div class="col-1 col-sm-4">
                                     <input type="checkbox" id="option5" name="option5" value="Vale Alimentação">
-                                    <label for="vehicle1">Vale Alimentação</label><br>
+                                    <label for="option5">Vale Alimentação</label><br>
                                     <input type="checkbox" id="option6" name="option6" value="Seguro de Vida">
-                                    <label for="vehicle2">Seguro de Vida</label><br>
+                                    <label for="option6">Seguro de Vida</label><br>
                                     
                                 </div>
                                 
@@ -187,6 +187,12 @@
             
         </div>
     </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
     <footer>
         <div class="container-fluid footerPage p-3">
             <div class="row justify-content-md-center align-items-center no-gutters">
@@ -215,5 +221,9 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 </body>
 </html>
