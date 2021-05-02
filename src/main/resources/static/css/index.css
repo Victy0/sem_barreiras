@@ -24,10 +24,12 @@ body{
 p{
     margin: 0 !important;
 }
-h1, h2, h3, p, button, b {
+h1, h2, h3, h4, p, button, b {
     font-family: 'Roboto Condensed', sans-serif;
 } 
-
+h4{
+    font-weight: bold !important;
+}
 a {
     text-decoration: none !important;
     color: black !important;
