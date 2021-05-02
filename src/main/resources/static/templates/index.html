@@ -28,11 +28,14 @@
                         <li class="nav-item mx-4">
                             <a class="nav-link active" href="#">VAGAS</a>
                         </li>
-                        <li class="nav-item mx-4">
+                        <li class="nav-item mx-4" id="curso">
                             <a class="nav-link" href="/listar-curso">CURSOS</a>
                         </li>                      
-                        <li class="nav-item mx-4">
+                        <li class="nav-item mx-4" id="empresaLogin">
                             <a class="nav-link" href="/login">PERFIL EMPRESA</a>
+                        </li>
+                        <li class="nav-item mx-4" id="empresaEdit">
+                            <a class="nav-link" href="#" onclick="editEmpresa()">PERFIL EMPRESA</a>
                         </li>
                         <li class="nav-item mx-4" id="recrutar">
                             <a class="nav-link" href="/cadastro-vaga">RECRUTAR</a>
@@ -52,16 +55,14 @@
                 <div id="corpo" class="container corpoPagina">
                     
                 </div>
-                <div class="background-loading" id="background-loading">
-                    <div class="lds-ripple" style="position: absolute; left: 50%; top: 50%;"><div></div><div></div></div>
-                </div>
+                
             </div>
             <div class="col-3 col-sm-3 mt-5">
                 <div class="row">
                     <div class="col-10">
                         <div class="inputBuscar">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="pesquisar" placeholder="Pesquisar" aria-label="Username" aria-describedby="basic-addon1" onkeypress="filtrar('P',event)">
+                            <input type="text" id="pesquisar" placeholder="Pesquisar" aria-label="Username" aria-describedby="basic-addon1" onkeypress="filtrarResultado()">
                         </div>
                     </div>
                 </div>
@@ -134,7 +135,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-confirm" onclick="filtrar('F', event)">FILTRAR</button>
+                    <button type="button" class="btn btn-confirm" onclick="filtrarResultado()">FILTRAR</button>
                 </div>
             </div>
         </div>
