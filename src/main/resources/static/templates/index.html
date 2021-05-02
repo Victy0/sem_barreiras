@@ -62,7 +62,7 @@
                     <div class="col-10">
                         <div class="inputBuscar">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="input-search" placeholder="Pesquisar" aria-label="Username" aria-describedby="basic-addon1">
+                            <input type="text" id="pesquisar" placeholder="Pesquisar" aria-label="Username" aria-describedby="basic-addon1" onkeypress="filtrar('P',event)">
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-confirm" onclick="filtrar()">FILTRAR</button>
+                    <button type="button" class="btn btn-confirm" onclick="filtrar('F', event)">FILTRAR</button>
                 </div>
             </div>
         </div>

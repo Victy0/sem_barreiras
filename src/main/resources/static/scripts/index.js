@@ -147,9 +147,16 @@ function createMyElement(vagaId, vagaNome, local, empresa){
         ].join('\n');
  }
 
- function filtrar(){
+ function filtrar(origem, event){
+
+    if(origem == "P" && (event.keyCode || event.which) != 13){
+        return;
+    }
 
     var filterParam = "";
+    if (document.getElementById("pesquisar").value != ""){
+        filterParam = filterParam + "&pesq=" + document.getElementById("pesquisar").value;
+    }
     if (document.getElementById("listEmpresa").value != "0"){
         filterParam = filterParam + "&empresa=" + document.getElementById("listEmpresa").value;
     }
