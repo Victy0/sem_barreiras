@@ -6,6 +6,7 @@ $(document).ready( function(){
     $.getJSON("/vaga/"+id, {}, function(data) { 
        
         var vaga = data;
+        localStorage.setItem("cursos", JSON.stringify(vaga.cursos));
         var body = document.getElementById('corpo');
         var div = document.createElement('div'); //create a div
         div.innerHTML = createMyElement(vaga);   
@@ -121,7 +122,7 @@ function createMyElement(vaga){
         '</div>',
         '<div class="row mb-5 mr-3 justify-content-end">',
             '<div class="col-5">',
-                '<button class="btn btn-confirm" onclick="resgataCursos('+vaga.id+')" data-bs-toggle="modal" data-bs-target="#modalCursos">Ver cursos relacionados</button>',
+                '<button class="btn btn-confirm" onclick="showCursos()" data-bs-toggle="modal" data-bs-target="#modalCursos">Ver cursos relacionados</button>',
             '</div>',
             '<div class="col-4">',
                 '<button class="btn btn-outline-confirm" onclick="abre()">Candidatar-se a vaga</button>',
@@ -179,6 +180,19 @@ function preencherDadosListados(vaga){
         var texto = document.getElementById("textJornada");
         texto.innerHTML = "Sem dados fornecidos.";
     }
+}
+
+
+function showCursos(){
+    var cursos = JSON.parse( localStorage.getItem("cursos") );
+    var div = document.createElement('div'); 
+    for(var i = 0; i < cursos.length ; i++){
+       
+        div.innerHTML = div.innerHTML + '<a href="' + cursos[i].hyperLink + '">'+
+            '<h3 class="tituloVaga">'+ cursos[i].nome +'</h3>'+
+        '</a><br>';
+    }
+    document.getElementById("cursosRelacionados").insertBefore(div, document.getElementById("cursosRelacionados").firstChild);
 }
 
 function candidatarVaga(){
