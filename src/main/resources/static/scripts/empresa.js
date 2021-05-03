@@ -106,6 +106,10 @@ function salvar(){
             data: JSON.stringify(empresa),
             success: function(data) { 
                 console.log(data)
+                if(data.id){
+                    document.getElementById("modal").click();
+                    localStorage.setItem("p", "/login");
+                }
             }
         
         });
@@ -116,8 +120,17 @@ function salvar(){
             url: "/empresa/alterar", 
             data: JSON.stringify(empresa),
             success: function(data) { 
-                console.log(data)
+                if(data.id){
+                    document.getElementById("modal").click();
+                    localStorage.setItem("p", "/listar-vaga");
+                }
             }
         });
     }
+}
+
+function alterarPagina(){
+    var url = localStorage.getItem("p");
+    localStorage.removeItem("p");
+    window.location.replace(url);
 }

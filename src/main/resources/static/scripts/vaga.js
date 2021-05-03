@@ -20,7 +20,6 @@ $(document).ready( function(){
 
 function createMyElement(vaga){
     var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
-    console.log(vaga.beneficios, vaga.requisitoDesejados);
 
     var complemento = "";
     for( var i =0; i < vaga.deficiencias.length; i++){
@@ -57,6 +56,18 @@ function createMyElement(vaga){
                 '<p class="textoLocalVaga">', vaga.resumo,'</p>',
             '</div>',
         '</div>', 
+        `<div class="row">`,
+            '<div class="col-6">',
+                '<h2 class="tituloVaga"> Deficiências: </h2>',
+                '<ul>',
+                    listaDeficiencias(vaga.deficiencias),
+                '</ul>',
+            '</div>',
+            '<div class="col-6">',
+                '<h2 class="tituloVaga"> Faixa salarial: </h2>',
+                '<p id="textRemuneracao"></p>',
+            '</div>',
+        '</div>',
         `<div class="row">`,
             '<div class="col-12">',
                 '<h2 class="tituloVaga"> Requisitos necessários: </h2>',
@@ -111,7 +122,7 @@ function createMyElement(vaga){
         '</div>',
         '<div class="row mb-5 mr-3 justify-content-end">',
             '<div class="col-5">',
-                '<button class="btn btn-confirm" onclick="resgataCursos('+vaga.id+')" data-bs-toggle="modal" data-bs-target="#modalCursos">Ver cursos relacionados</button>',
+                '<button class="btn btn-confirm" data-bs-toggle="modal" onclick="resgataCursos('+vaga.id+')" data-bs-target="#modalCursos">Ver cursos relacionados</button>',
             '</div>',
             '<div class="col-4">',
                 '<button class="btn btn-outline-confirm" onclick="abre()">Candidatar-se a vaga</button>',
@@ -135,7 +146,6 @@ function preencherDadosListados(vaga){
         var requisito = vaga;
         var listItem = document.createElement("li");
         listItem.innerHTML = "Sem dados fornecidos."; 
-        console.log(vaga, listItem);
         document.getElementById("listRequisitosNecessarios").appendChild(listItem);
     }
     if(vaga.requisitosDesejados != 'sem requisitos listados'){
@@ -152,7 +162,6 @@ function preencherDadosListados(vaga){
         var requisito = vaga;
         var listItem = document.createElement("li");
         listItem.innerHTML = "Sem dados fornecidos."; 
-        console.log(vaga, listItem);
         document.getElementById("listRequisitosDesejados").appendChild(listItem);
     }
     if(vaga.remuneracao){
@@ -178,8 +187,6 @@ function candidatarVaga(){
     document.getElementById('id01').style.display='none';
 
     var idVaga = document.getElementById("idVaga").value;
-    console.log(document.getElementById("idVaga"))
-    console.log(idVaga)
     var dados = {};
     dados.nome = document.getElementById("nome").value;
     dados.email = document.getElementById("email").value;
@@ -198,7 +205,6 @@ function abre(){
 }
 
 function resgataCursos(id){
-    console.log(id);
     $.getJSON("/vaga/"+id, {}, function(data) { 
         vaga = data;
         var body = document.getElementById('modal-body');
@@ -232,3 +238,11 @@ function createCurso(curso){
         '<hr>'
         ].join('\n');
  }
+
+function listaDeficiencias(deficiencias){
+    var li = "";
+    for(var i=0; i<deficiencias.length; i++){
+        li = li + '<li>' + deficiencias[i].descricao + '</li>';
+    }
+    return li;
+}
