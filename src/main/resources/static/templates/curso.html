@@ -25,11 +25,14 @@
                         <li class="nav-item mx-4">
                             <a class="nav-link" href="/listar-vaga">VAGAS</a>
                         </li>
-                        <li class="nav-item mx-4">
+                        <li class="nav-item mx-4" id="curso">
                             <a class="nav-link active" href="#">CURSOS</a>
                         </li>                      
-                        <li class="nav-item mx-4">
+                        <li class="nav-item mx-4" id="empresaLogin">
                             <a class="nav-link" href="/login">PERFIL EMPRESA</a>
+                        </li>
+                        <li class="nav-item mx-4" id="empresaEdit">
+                            <a class="nav-link" href="#" onclick="editEmpresa()">PERFIL EMPRESA</a>
                         </li>
                         <li class="nav-item mx-4" id="recrutar">
                             <a class="nav-link" href="/cadastro-vaga">RECRUTAR</a>
@@ -62,7 +65,7 @@
                 <div class="row mt-3 align-items-center">
                     <div class="col-6">
                         <p class="mt-2 textoResultado" id="textoResultado"></p>
-                        <div class="buttonsAssistente">
+                        <!-- <div class="buttonsAssistente">
                             <div class="buttonAssistente1">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -87,7 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-4">
                         <button class="buttonFiltro" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
