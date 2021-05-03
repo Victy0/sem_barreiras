@@ -42,6 +42,9 @@
                         <li class="nav-item mx-4" id="recrutar">
                             <a class="nav-link" href="/cadastro-vaga">RECRUTAR</a>
                         </li>
+                        <li class="nav-item mx-4" id="cadcurso">
+                            <a class="nav-link" href="/cadastro-curso">CADASTRAR CURSO</a>
+                        </li>
                         <li class="nav-item mx-4" id="sair">
                             <a class="nav-link" href="#" onclick="logout()">SAIR</a>
                         </li>
@@ -56,7 +59,7 @@
 
             <div class="col-1 col-sm-3"></div>
             
-            <div class="col-8 col-sm-6">
+            <div id="corpo" class="col-8 col-sm-6">
                 <div class="container corpoPagina">
                     <div class="form-vaga">
 
@@ -94,7 +97,7 @@
 
                     <div class="row">
                         <div class="col-1 col-sm-3">
-                            <button type="button" class="btn-curri" onclick="salvarCurso()">
+                            <button type="button" class="btn-cur" onclick="salvarCurso()">
                                 Salvar Curso
                             </button>
                         </div>
@@ -148,6 +151,7 @@
         crossorigin="anonymous"
     ></script>
     <script src="../scripts/curso.js"></script>
+    <script src="../scripts/logout.js"></script>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
       new window.VLibras.Widget('https://vlibras.gov.br/app');

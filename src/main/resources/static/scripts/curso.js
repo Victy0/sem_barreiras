@@ -1,4 +1,9 @@
 $(document).ready(function () {
+
+    var loged= sessionStorage.getItem("on");
+     if(loged == null || loged == undefined){
+       window.location.replace("/login");
+     }
     $.getJSON("/curso", {}, function (data) {
         console.log(data)
     });
@@ -17,8 +22,7 @@ $(document).ready(function () {
             body.appendChild(div);                 
             body.insertBefore(div, body.firstChild) 
         }
-        var result = document.getElementById('textoResultado');
-        result.innerHTML = data.totalElements + ' resultados';
+    
     });
 });
 
