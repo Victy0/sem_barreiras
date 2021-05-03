@@ -34,9 +34,11 @@ $(document).ready( function(){
             lendef= data.content.length;
         }
     }); 
-     var id = new URL(window.location.href).searchParams.get("id");
-      history.replaceState(null, "", location.href.split("?")[0]);
-     if(id){
+
+    var id = new URL(window.location.href).searchParams.get("id");
+    history.replaceState(null, "", location.href.split("?")[0]);
+    
+    if(id){
         $.ajax({
             type: 'GET', 
             contentType: "application/json; charset=utf-8",
@@ -45,19 +47,19 @@ $(document).ready( function(){
             success: function(data) { 
                 console.log(data)
                 document.getElementById('id').value = data.id;
-                 document.getElementById('resumo-vaga').value = data.resumo ;
-                 document.getElementById('remunera').value = data.remuneracao;
-                 document.getElementById('funcao').value   = data.funcao;
-                 document.getElementById('nivel').value  = data.nivel ;
-                 document.getElementById('desc-vaga').value = data.descricao ;
-                 document.getElementById('requi-nece').value = data.requisitosNecessarios;
-                 document.getElementById('requi-dese').value = data.requisitosDesejados ;
-                 checkDissolve(data.beneficios)
+                    document.getElementById('resumo-vaga').value = data.resumo ;
+                    document.getElementById('remunera').value = data.remuneracao;
+                    document.getElementById('funcao').value   = data.funcao;
+                    document.getElementById('nivel').value  = data.nivel ;
+                    document.getElementById('desc-vaga').value = data.descricao ;
+                    document.getElementById('requi-nece').value = data.requisitosNecessarios;
+                    document.getElementById('requi-dese').value = data.requisitosDesejados ;
+                    checkDissolve(data.beneficios)
                 document.getElementById('jornada').value = data.jornadaTrabalho ;
                 document.getElementById('durac-vaga').value = data.duracaoVaga ;
                 for (var i = 0; i < document.getElementById('area').options.length; i++) {
                     if (document.getElementById('area').options[i].value == data.area.id) {
-                     
+                        
 
                         document.getElementById('area')[i].selected = true;
                     }
@@ -69,12 +71,11 @@ $(document).ready( function(){
                     }
                 }
                 defDissolve(data.deficiencias);
-                 
-               
-                    
             }
         }); 
-     }
+    }else{
+        document.getElementById('deletar').style.display = "none";
+    }
     
 });
 

@@ -47,144 +47,168 @@
     </header>
     <div class="container-fluid" style="margin-top: -20px;">
         <div class="row justify-content-md-center">
-            <div class="col-1 col-sm-2"></div>
-            <div class="col-8 col-sm-7">
-                    <div class="container corpoPagina">
-                        <div class="form-vaga">
-                            <input id="id" type="hidden">
-                            <div class="row">
-                                       
-                                <div class="col-1 col-sm-5">
-                                    <label for="funcao">Resumo Vaga:</label>
-                                    <br>
-                                    <input type="text" id="resumo-vaga" name="resumo-vaga"> 
-                                </div>
-                                <div class="col-1 col-sm-5">
-                                    <label for="remuneracao">Remuneração:</label>
-                                    <br>
-                                    <input type="text" id="remunera" name="remunera"> 
-                                </div> 
-                            </div>
-                            <div class="row "> 
-                                <div class=" col-2 col-sm-5">
-                                    <label for="funcao">Função:</label>
-                                    <br>
-                                    <input type="text" id="funcao" name="funcao">  
-                                </div>
-                                <div class=" col-2 col-sm-5">
-                                    <label for="area">Área:</label>
-                                    <br>
-                                    <select class="input-model" name="brands" id="area" >
-                                        <option value="-">---</option>
-                                        
-                                  </select>   
-                                </div>
-                               
-                            </div>
-                            <div class="row "> 
-                               
-                                <div class=" col-2 col-sm-5">
-                                    <label for="funcao">Nível:</label>
-                                    <br>
-                                    <input type="text" id="nivel" name="area">
-                                </div>
-                                <div class=" col-2 col-sm-5">
-                                    <label for="funcao">Deficiencia:</label>
-                                    <ul id="defi"></ul>
-                                </div>
-                               
-                            </div>    
-                        </div>   
-                        <div class="row "> 
-                               
-                            <div class=" col-2 col-sm-5">
-                                <label for="funcao">Escolaridade:</label>
+            <div class="col-1 col-sm-3"></div>
+            <div class="col-8 col-sm-6">
+                <div class="container corpoPagina">
+                    <div class="form-vaga">
+                        <input id="id" type="hidden">
+                        <div class="row">                     
+                            <div class="col-1 col-sm-5">
+                                <label for="funcao">Resumo Vaga:</label>
                                 <br>
-                                <select class="input-model" name="brands" id="esc" >
+                                <input type="text" id="resumo-vaga" name="resumo-vaga"> 
+                            </div>
+                            <div class="col-1 col-sm-5">
+                                <label for="remuneracao">Remuneração:</label>
+                                <br>
+                                <input type="text" id="remunera" name="remunera"> 
+                            </div> 
+                        </div>
+                        <div class="row "> 
+                            <div class=" col-2 col-sm-5">
+                                <label for="funcao">Função:</label>
+                                <br>
+                                <input type="text" id="funcao" name="funcao">  
+                            </div>
+                            <div class=" col-2 col-sm-5">
+                                <label for="area">Área:</label>
+                                <br>
+                                <select class="input-model" name="brands" id="area" >
                                     <option value="-">---</option>
                                     
-                              </select> 
+                                </select>   
                             </div>
                             
-                        </div>       
+                        </div>
+                        <div class="row "> 
+                            
+                            <div class=" col-2 col-sm-5">
+                                <label for="funcao">Nível:</label>
+                                <br>
+                                <input type="text" id="nivel" name="area">
+                            </div>
+                            <div class=" col-2 col-sm-5">
+                                <label for="funcao">Deficiencia:</label>
+                                <ul id="defi"></ul>
+                            </div>
+                            
+                        </div>    
+                    </div>   
+                    <div class="row "> 
+                            
+                        <div class=" col-2 col-sm-5">
+                            <label for="funcao">Escolaridade:</label>
+                            <br>
+                            <select class="input-model" name="brands" id="esc" >
+                                <option value="-">---</option>
+                                
+                            </select> 
+                        </div>
+                        
+                    </div>       
                         
                            
-                        <div class="requisitos">
-                            <label for="funcao">Descrição de vaga:</label>
-                            <br>
-                            <textarea id="desc-vaga" name="desc-vaga"></textarea>textarea
+                    <div class="requisitos">
+                        <label for="funcao">Descrição de vaga:</label>
+                        <br>
+                        <textarea id="desc-vaga" name="desc-vaga"></textarea>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-1 col-sm-5">
+                            <p>Requisitos necessarios:</p>
+                            <input type="text" id="requi-nece" name="requi-nece">
                         </div>
-                       
-                        <div class="row">
-                            <div class="col-1 col-sm-5">
-                                <p>Requisitos necessarios:</p>
-                                <input type="text" id="requi-nece" name="requi-nece">
-                            </div>
-                            <div class="col-1 col-sm-5">
-                                <p>Requisitos desejados :</p> 
-                                <input type="text" id="requi-dese" name="requi-dese"> 
-                            </div>
-                            
-                        </div>
-                            <p>Beneficios:</p>
-                            <div class="row">
-                                <div class="col-1 col-sm-4">
-                                    <input type="checkbox" id="option1" name="option1" value="Vale Transporte">
-                                    <label for="option1"> Vale Transporte</label><br>
-                                    <input type="checkbox" id="option2" name="option2" value="Plano de Saúde">
-                                    <label for="option2"> Plano de Saúde</label><br>
-                                    
-                                </div>
-                                <div class="col-1 col-sm-4">
-                                    <input type="checkbox" id="option3" name="option3" value="Vale Refeição">
-                                    <label for="vehicle1">Vale Refeição</label><br>
-                                    <input type="checkbox" id="option4" name="option4" value="Plano Odontológico">
-                                    <label for="option4">Plano Odontológico</label><br>
-                                    
-                                </div>
-                                <div class="col-1 col-sm-4">
-                                    <input type="checkbox" id="option5" name="option5" value="Vale Alimentação">
-                                    <label for="option5">Vale Alimentação</label><br>
-                                    <input type="checkbox" id="option6" name="option6" value="Seguro de Vida">
-                                    <label for="option6">Seguro de Vida</label><br>
-                                    
-                                </div>
-                                
-                            </div>
-                            <div class="description">
-                                <div class="col-1 col-sm-5"></div>
-                                    <label for="funcao">Outros Beneficios:</label>
-                                    <br>
-                                    <input type="text" id="beneficios" name="beneficios"> 
-                                </div>
-                                <div class="row">
-                                    <div class="col-1 col-sm-5">
-                                        <label for="funcao">Jornada de Trabalho:</label>
-                                        <input type="text" id="jornada" name="jornada"> 
-                                    </div>     
-                                    <div class="col-1 col-sm-5">
-                                        <label for="funcao">Duração da Vaga:</label>
-                                        <input type="text" id="durac-vaga" name="durac-vaga"> 
-                                    </div>
-                                </div>
-                                
-                                <div class="row button-row">
-                                    <div class="col-1 col-sm-5">   
-                                        <button type="button" onclick="deletarVaga()" class="btn-cur ">Deletar Vaga</button>
-                                    </div>
-                                    <div class="col-1 col-sm-3">   
-                                        <button type="button" class="btn-curri " onclick="salvarVaga()">Publicar Vaga</button>
-                                    </div>     
-                                </div>
+                        <div class="col-1 col-sm-5">
+                            <p>Requisitos desejados :</p> 
+                            <input type="text" id="requi-dese" name="requi-dese"> 
                         </div>
                         
-                       
-                       
-                    
-                
+                    </div>
+                    <p>Beneficios:</p>
+                    <div class="row">
+                        <div class="col-1 col-sm-4">
+                            <input type="checkbox" id="option1" name="option1" value="Vale Transporte">
+                            <label for="option1"> Vale Transporte</label><br>
+                            <input type="checkbox" id="option2" name="option2" value="Plano de Saúde">
+                            <label for="option2"> Plano de Saúde</label><br>
+                            
+                        </div>
+                        <div class="col-1 col-sm-4">
+                            <input type="checkbox" id="option3" name="option3" value="Vale Refeição">
+                            <label for="vehicle1">Vale Refeição</label><br>
+                            <input type="checkbox" id="option4" name="option4" value="Plano Odontológico">
+                            <label for="option4">Plano Odontológico</label><br>
+                            
+                        </div>
+                        <div class="col-1 col-sm-4">
+                            <input type="checkbox" id="option5" name="option5" value="Vale Alimentação">
+                            <label for="option5">Vale Alimentação</label><br>
+                            <input type="checkbox" id="option6" name="option6" value="Seguro de Vida">
+                            <label for="option6">Seguro de Vida</label><br>
+                            
+                        </div>
+                            
+                    </div>
+                    <div class="description">
+                        <div class="col-1 col-sm-5"></div>
+                            <label for="funcao">Outros Beneficios:</label>
+                            <br>
+                            <input type="text" id="beneficios" name="beneficios"> 
+                        </div>
+                        <div class="row">
+                            <div class="col-1 col-sm-5">
+                                <label for="funcao">Jornada de Trabalho:</label>
+                                <input type="text" id="jornada" name="jornada"> 
+                            </div>     
+                            <div class="col-1 col-sm-5">
+                                <label for="funcao">Duração da Vaga:</label>
+                                <input type="text" id="durac-vaga" name="durac-vaga"> 
+                            </div>
+                        </div>
+                        
+                        <div class="row button-row">
+                            <div class="col-1 col-sm-5">   
+                                <button id="deletar" type="button" onclick="deletarVaga()" class="btn-cur ">Deletar Vaga</button>
+                            </div>
+                            <div class="col-1 col-sm-3">   
+                                <button type="button" class="btn-curri " onclick="salvarVaga()">Publicar Vaga</button>
+                            </div>     
+                        </div>
+                    </div>
                 </div>
-            </div>
-            
+                <div class="col-3 col-sm-3 mt-5">
+                    <div class="row mt-3 align-items-center">
+                        <div class="col-6">
+                            <div class="buttonsAssistente">
+                                <!--<div class="buttonAssistente1">
+                                    <div class="row align-items-center">
+                                        <div class="col-3">
+                                            <i class="fas fa-toggle-on"></i>
+                                        </div>
+                                        <div class="col-8">
+                                            <img src="../img/assistente-icon-1.png">
+                                            <p>ASSISTENTE <br> DE LIBRAS</p>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <br>
+                                <div class="buttonAssistente2">
+                                    <div class="row align-items-center">
+                                        <div class="col-3">
+                                            <i class="fas fa-toggle-on"></i>
+                                        </div>
+                                        <div class="col-8">
+                                            <img src="../img/assistente-icon-2.png">
+                                            <p>ASSISTENTE <br> DE VOZ</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
     <div vw class="enabled">

@@ -19,7 +19,6 @@ $(document).ready( function(){
 
 function createMyElement(vaga){
     var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
-    console.log(vaga.beneficios, vaga.requisitoDesejados);
 
     var complemento = "";
     for( var i =0; i < vaga.deficiencias.length; i++){
@@ -56,6 +55,18 @@ function createMyElement(vaga){
                 '<p class="textoLocalVaga">', vaga.resumo,'</p>',
             '</div>',
         '</div>', 
+        `<div class="row">`,
+            '<div class="col-6">',
+                '<h2 class="tituloVaga"> Deficiências: </h2>',
+                '<ul>',
+                    listaDeficiencias(vaga.deficiencias),
+                '</ul>',
+            '</div>',
+            '<div class="col-6">',
+                '<h2 class="tituloVaga"> Faixa salarial: </h2>',
+                '<p id="textRemuneracao"></p>',
+            '</div>',
+        '</div>',
         `<div class="row">`,
             '<div class="col-12">',
                 '<h2 class="tituloVaga"> Requisitos necessários: </h2>',
@@ -134,7 +145,6 @@ function preencherDadosListados(vaga){
         var requisito = vaga;
         var listItem = document.createElement("li");
         listItem.innerHTML = "Sem dados fornecidos."; 
-        console.log(vaga, listItem);
         document.getElementById("listRequisitosNecessarios").appendChild(listItem);
     }
     if(vaga.requisitosDesejados != 'sem requisitos listados'){
@@ -151,7 +161,6 @@ function preencherDadosListados(vaga){
         var requisito = vaga;
         var listItem = document.createElement("li");
         listItem.innerHTML = "Sem dados fornecidos."; 
-        console.log(vaga, listItem);
         document.getElementById("listRequisitosDesejados").appendChild(listItem);
     }
     if(vaga.remuneracao){
@@ -177,8 +186,6 @@ function candidatarVaga(){
     document.getElementById('id01').style.display='none';
 
     var idVaga = document.getElementById("idVaga").value;
-    console.log(document.getElementById("idVaga"))
-    console.log(idVaga)
     var dados = {};
     dados.nome = document.getElementById("nome").value;
     dados.email = document.getElementById("email").value;
@@ -197,12 +204,10 @@ function abre(){
 }
 
 function resgataCursos(id){
-    console.log(id);
     $.getJSON("/vaga/"+id, {}, function(data) { 
         vaga = data;
         for(var i =0; i < vaga.cursos.length; i++){
             var curso = vaga.cursos[i];
-            console.log(curso);
             var body = document.getElementById('modal-body');
             var div = document.createElement('div'); 
             div.innerHTML = createCurso(curso);   
@@ -231,3 +236,11 @@ function createCurso(curso){
         '<hr>'
         ].join('\n');
  }
+
+function listaDeficiencias(deficiencias){
+    var li = "";
+    for(var i=0; i<deficiencias.length; i++){
+        li = li + '<li>' + deficiencias[i].descricao + '</li>';
+    }
+    return li;
+}
