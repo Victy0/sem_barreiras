@@ -255,21 +255,36 @@ a {
 }
 
 .modal-password{
-  margin-top:20%;
-  height:200px;
+  margin-top: 20%;
+  height: auto;
+  min-height: 200px;
 }
 
-.veri{
-    margin-top: 5%;
+.w3-modal-content{
+  border-radius: 10px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
-
+.modal-title{
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 .modal-success{
     width: 50% !important; 
     margin-left: 25%;
     background-color: #E5E5E5 !important;
     border-radius: 30px !important;
     border: 0 !important;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16)
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+.modal-cursos{
+    width: 100% !important; 
+    background-color: #E5E5E5 !important;
+    border-radius: 30px !important;
+    border: 0 !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
 
 /* Loading */

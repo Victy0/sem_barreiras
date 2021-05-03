@@ -110,7 +110,7 @@ function createMyElement(vaga){
         '</div>',
         '<div class="row mb-5 mr-3 justify-content-end">',
             '<div class="col-5">',
-                '<button class="btn btn-confirm">Ver cursos relacionados</button>',
+                '<button class="btn btn-confirm" onclick="resgataCursos('+vaga.id+')" data-bs-toggle="modal" data-bs-target="#modalCursos">Ver cursos relacionados</button>',
             '</div>',
             '<div class="col-4">',
                 '<button class="btn btn-outline-confirm" onclick="abre()">Candidatar-se a vaga</button>',
@@ -191,6 +191,43 @@ function candidatarVaga(){
         data: JSON.stringify(dados)
     });
 }
+
 function abre(){
     document.getElementById("id01").style.display="block";
 }
+
+function resgataCursos(id){
+    console.log(id);
+    $.getJSON("/vaga/"+id, {}, function(data) { 
+        vaga = data;
+        for(var i =0; i < vaga.cursos.length; i++){
+            var curso = vaga.cursos[i];
+            console.log(curso);
+            var body = document.getElementById('modal-body');
+            var div = document.createElement('div'); 
+            div.innerHTML = createCurso(curso);   
+            div.id = curso.id;                      
+            body.appendChild(div);                 
+            body.insertBefore(div, body.firstChild) 
+        }
+        
+    }); 
+}
+
+function createCurso(curso){
+    return [
+        '<div class="row">', 
+            '<div class="col-3">',
+                '<img src="../img/Rectangle.png" class="imgVaga">',
+            '</div>',
+            '<div class="col-9">',
+                '<a href="' + curso.hyperLink + '">',
+                    '<h3 class="tituloVaga">', curso.nome,'</h3>',
+                    '<p class="textoLocalVaga">', curso.descricao,'</p>',
+                    '<p class="textoEmpresaVaga">', curso.preco,'</p>',
+                '</a>',
+            '</div>',
+        '</div>',
+        '<hr>'
+        ].join('\n');
+ }
