@@ -2,9 +2,9 @@ var lendef;
 $(document).ready( function(){
     
     var loged= sessionStorage.getItem("on");
-    if(loged == null || loged == undefined){
-        window.location.replace("/login");
-    }
+    // if(loged == null || loged == undefined){
+    //     window.location.replace("/login");
+    // }
 
     $.ajax({
         type: 'GET', 
@@ -81,8 +81,7 @@ $(document).ready( function(){
 
 
 function salvarVaga(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('id');
+   
     vaga={
             "id":"",
             "resumo": "",
@@ -237,4 +236,17 @@ function defDissolve(value){
 
    })
   
+}
+
+function deletarVaga(){
+    var id = document.getElementById("id").value;
+    $.ajax({
+        type: 'DELETE', 
+        contentType: "application/json; charset=utf-8",
+        url: "/vaga/"+id , 
+        
+        success: function(data) { 
+            console.log(data)
+        }
+    });
 }
