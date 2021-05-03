@@ -2,9 +2,9 @@ var lendef;
 $(document).ready( function(){
     
     var loged= sessionStorage.getItem("on");
-    // if(loged == null || loged == undefined){
-    //     window.location.replace("/login");
-    // }
+    if(loged == null || loged == undefined){
+        window.location.replace("/login");
+    }
 
     $.ajax({
         type: 'GET', 
