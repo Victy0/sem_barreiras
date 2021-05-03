@@ -13,6 +13,7 @@ $(document).ready( function(){
         body.appendChild(div);                 //append to the doc.body
         body.insertBefore(div, body.firstChild);
         preencherDadosListados(vaga);
+        
     }); 
 
 });
@@ -200,15 +201,15 @@ function resgataCursos(id){
     console.log(id);
     $.getJSON("/vaga/"+id, {}, function(data) { 
         vaga = data;
+        var body = document.getElementById('modal-body');
+        body.innerHTML = '';
         for(var i =0; i < vaga.cursos.length; i++){
-            var curso = vaga.cursos[i];
-            console.log(curso);
-            var body = document.getElementById('modal-body');
+            var curso = vaga.cursos[i];           
             var div = document.createElement('div'); 
             div.innerHTML = createCurso(curso);   
             div.id = curso.id;                      
             body.appendChild(div);                 
-            body.insertBefore(div, body.firstChild) 
+            body.insertBefore(div, body.firstChild);
         }
         
     }); 
