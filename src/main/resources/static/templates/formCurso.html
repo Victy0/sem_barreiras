@@ -28,19 +28,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 me-auto ms-auto">
                         <li class="nav-item mx-4">
-                            <a class="nav-link active" href="/listar-vaga">VAGAS</a>
+                            <a class="nav-link" href="/listar-vaga">VAGAS</a>
                         </li>
-                        <li class="nav-item mx-4">
-                            <a class="nav-link" href="#">RECRUTAR</a>
-                        </li>
-                        <li class="nav-item mx-4">
+                        <li class="nav-item mx-4" id="curso">
                             <a class="nav-link" href="/listar-curso">CURSOS</a>
+                        </li>                      
+                        <li class="nav-item mx-4" id="empresaLogin">
+                            <a class="nav-link" href="/login">PERFIL EMPRESA</a>
                         </li>
-                        <li class="nav-item mx-4">
-                            <a class="nav-link" href="/login">PERFIL</a>
+                        <li class="nav-item mx-4" id="empresaEdit">
+                            <a class="nav-link" href="#" onclick="editEmpresa()">PERFIL EMPRESA</a>
                         </li>
-                        <li class="nav-item mx-4">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">SAIR</a>
+                        <li class="nav-item mx-4" id="recrutar">
+                            <a class="nav-link" href="/cadastro-vaga">RECRUTAR</a>
+                        </li>
+                        <li class="nav-item mx-4" id="sair">
+                            <a class="nav-link" href="#" onclick="logout()">SAIR</a>
                         </li>
                     </ul>
                 </div>

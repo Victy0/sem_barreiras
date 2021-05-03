@@ -48,7 +48,7 @@ values ('Programdor Júnior Python', CURRENT_DATE, 'Programador', 'júnior', 'Va
 insert into vaga_x_curso(id_vaga, id_curso) values (1,1);
 
 -- tabela vaga_x_deficiencia
-insert into vaga_x_curso(id_vaga, id_curso) values (1,1);
+insert into vaga_x_deficiencia(id_vaga, id_deficiencia) values (1,1);
 
 -- insert na tabela de versionamento
 INSERT INTO db_version(numeracao) VALUES (4);

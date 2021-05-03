@@ -20,23 +20,34 @@ $(document).ready( function(){
 function createMyElement(vaga){
     var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
     console.log(vaga.beneficios, vaga.requisitoDesejados);
+
+    var complemento = "";
+    for( var i =0; i < vaga.deficiencias.length; i++){
+        if(complemento != ""){
+            complemento = complemento + '<br>';
+        }
+        if( vaga.deficiencias[i].descricao == "auditiva" ){
+            complemento = complemento + '<img src="../img/Vector2.png" class="vectorVaga1">';
+        }
+        if( vaga.deficiencias[i].descricao == "visual" ){
+            complemento = complemento + '<img src="../img/Vector.png" class="vectorVaga2 mt-4">';
+        }
+    }
     
     return [
         '<div class="row">', 
+            '<input type="hidden" id="idVaga" value="' +  vaga.id + '">',
             '<div class="col-2">',
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
                 '<h3 class="tituloVaga">', vaga.resumo,'</h3>',
-                '<p class="textoLocalVaga">', local,'</p>',
-                '<p class="textoEmpresaVaga">', vaga.empresa.nome,'</p>',
-                '<p class="textoEmpresaVaga">', vaga.nivel,'</p>',
-                '<p class="textoEmpresaVaga">', vaga.area.descricao,'</p>',
+                '<p class="textoLocalVaga"> <b>Local: </b>', local,'</p>',
+                '<p class="textoEmpresaVaga"> <b>Empresa: </b>', vaga.empresa.nome,'</p>',
+                '<p class="textoEmpresaVaga"> <b>Nível: </b>', vaga.nivel,'</p>',
+                '<p class="textoEmpresaVaga"> <b>Área de atuação: </b>', vaga.area.descricao,'</p>',
             '</div>',
-            '<div class="col-1">',
-                '<img src="../img/Vector2.png" class="vectorVaga1">',
-                '<br>',
-                '<img src="../img/Vector.png" class="vectorVaga2 mt-4">',
+            '<div class="col-1">' + complemento,
             '</div>',
         '</div>',
         `<div class="row mt-4 mb-3">`,
@@ -83,10 +94,28 @@ function createMyElement(vaga){
                 '<p id="textRemuneracao"></p>',
             '</div>',
         '</div>',
-        `<div class="row">`,
-            '<button class="btn btn" onclick="candidatarVaga()">Candidatar-se a vaga</button>' ,
+        '<div class="row my-5 justify-content-end no-gutters">',
+            '<div class="col-3">',
+                '<img class="img-responsive" src="../img/img1.png" style="border-radius: 10px;">',
+            '</div>',
+            '<div class="col-3">',
+                '<img class="img-responsive" src="../img/img2.png" style="border-radius: 10px;">',
+            '</div>',
+            '<div class="col-3">',
+                '<img class="img-responsive" src="../img/img3.png" style="border-radius: 10px;">',
+            '</div>',
+            '<div class="col-3">',
+                '<img class="img-responsive" src="../img/img4.png" style="border-radius: 10px;">',
+            '</div>',
         '</div>',
-        
+        '<div class="row mb-5 mr-3 justify-content-end">',
+            '<div class="col-5">',
+                '<button class="btn btn-confirm">Ver cursos relacionados</button>',
+            '</div>',
+            '<div class="col-4">',
+                '<button class="btn btn-outline-confirm" onclick="abre()">Candidatar-se a vaga</button>',
+            '</div>',
+        '</div>'
         ].join('\n');
  }
 
@@ -141,4 +170,27 @@ function preencherDadosListados(vaga){
         var texto = document.getElementById("textJornada");
         texto.innerHTML = "Sem dados fornecidos.";
     }
+}
+
+function candidatarVaga(){
+
+    document.getElementById('id01').style.display='none';
+
+    var idVaga = document.getElementById("idVaga").value;
+    console.log(document.getElementById("idVaga"))
+    console.log(idVaga)
+    var dados = {};
+    dados.nome = document.getElementById("nome").value;
+    dados.email = document.getElementById("email").value;
+    dados.telefone = document.getElementById("telefone").value;
+
+    $.ajax({
+        type: 'POST', 
+        contentType: "application/json; charset=utf-8",
+        url: "/vaga/candidatar/" + idVaga, 
+        data: JSON.stringify(dados)
+    });
+}
+function abre(){
+    document.getElementById("id01").style.display="block";
 }

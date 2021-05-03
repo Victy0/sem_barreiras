@@ -1,10 +1,10 @@
-
+var lendef;
 $(document).ready( function(){
     
     var loged= sessionStorage.getItem("on");
-    if(loged == null || loged == undefined){
-        window.location.replace("/login");
-    }
+    // if(loged == null || loged == undefined){
+    //     window.location.replace("/login");
+    // }
 
     $.ajax({
         type: 'GET', 
@@ -31,6 +31,7 @@ $(document).ready( function(){
         async: false, 
         success: function(data) { 
             data.content.forEach(insertDefi)
+            lendef= data.content.length;
         }
     }); 
      var id = new URL(window.location.href).searchParams.get("id");
@@ -67,12 +68,7 @@ $(document).ready( function(){
                         document.getElementById('esc')[i].selected = true;
                     }
                 }
-                for (var i = 0; i < document.getElementById('defi').options.length; i++) {
-                    if (document.getElementById('defi').options[i].value == data.deficiencias[0].id) {
-                        
-                        document.getElementById('defi')[i].selected = true;
-                    }
-                }
+                defDissolve(data.deficiencias);
                  
                
                     
@@ -85,8 +81,7 @@ $(document).ready( function(){
 
 
 function salvarVaga(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const myParam = urlParams.get('id');
+   
     vaga={
             "id":"",
             "resumo": "",
@@ -120,7 +115,7 @@ function salvarVaga(){
     vaga.empresa ={"id":1};
     vaga.area =  {"id":document.getElementById('area').value};
     vaga.escolaridade = {id: document.getElementById('esc').value};
-    vaga.deficiencias =  [{"id":document.getElementById('defi').value}];
+    vaga.deficiencias = defAppend();
     console.log(vaga)
     if(vaga.id == ""){
         $.ajax({
@@ -166,11 +161,16 @@ function insertArea (index , item){
 }
 function insertDefi (index , item){
     
-    var node = document.createElement("option");
+    var node = document.createElement("input");
+    var anode = document.createElement("li");
+    var text = document.createElement("label");
+    text.innerText= index.descricao;
     node.value = index.id ;
-    var textnode = document.createTextNode(index.descricao); 
-    node.appendChild(textnode);
-    document.getElementById("defi").appendChild(node) ; 
+    node.id= "optiondef"+ item
+    node.type = "checkbox"; 
+    anode.appendChild(node)
+    anode.appendChild(text)
+    document.getElementById("defi").appendChild(anode) ; 
   
 }
 
@@ -210,6 +210,43 @@ function checkDissolve(value){
         document.getElementById("option6").checked = true
       }
     }
+  
+}
 
-    
+function defAppend(){
+    def=[]
+    console.log("lendef",lendef)
+    for(var i=0 ; i< lendef ;i++){
+     
+      if(document.getElementById("optiondef"+i).checked == true){
+          console.log(document.getElementById("optiondef"+i).value)
+        def.push({"id":document.getElementById("optiondef"+i).value});
+        }
+
+    }
+    console.log(def)
+    return def;
+}
+
+function defDissolve(value){
+  
+   value.forEach(function(item,index){
+      
+    document.getElementById("optiondef"+index).checked= true;
+
+   })
+  
+}
+
+function deletarVaga(){
+    var id = document.getElementById("id").value;
+    $.ajax({
+        type: 'DELETE', 
+        contentType: "application/json; charset=utf-8",
+        url: "/vaga/"+id , 
+        
+        success: function(data) { 
+            console.log(data)
+        }
+    });
 }
