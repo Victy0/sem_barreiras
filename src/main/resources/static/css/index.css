@@ -287,6 +287,12 @@ a {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
 
+ul#defi li{
+    display: inline;
+}
+.list-group-item > input{
+    margin-right: 10px;
+}
 /* Loading */
 
 .lds-ripple {
