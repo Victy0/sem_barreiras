@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $.getJSON("/curso", {}, function (data) {
         console.log(data)
     });
@@ -17,8 +18,7 @@ $(document).ready(function () {
             body.appendChild(div);                 
             body.insertBefore(div, body.firstChild) 
         }
-        var result = document.getElementById('textoResultado');
-        result.innerHTML = data.totalElements + ' resultados';
+    
     });
 });
 

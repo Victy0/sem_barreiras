@@ -5,7 +5,9 @@ $(document).ready( function(){
         document.getElementById("sair").style.display = "none";
         document.getElementById("empresaEdit").style.display = "none";
         document.getElementById("empresaLogin").style.display = "flex";
+        document.getElementById("cadcurso").style.display = "none";
     }else{
+
         document.getElementById("curso").style.display = "none";
         document.getElementById("empresaEdit").style.display = "flex";
         document.getElementById("empresaLogin").style.display = "none";
@@ -18,6 +20,7 @@ function logout(){
         contentType: "application/json; charset=utf-8",
         url: "/empresa/logout",
         success: function(data) { 
+            console.log(data)
             if(data.sucesso){
                 sessionStorage.removeItem("on");
                 window.location.replace("/"); 
