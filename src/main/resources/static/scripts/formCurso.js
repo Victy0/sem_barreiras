@@ -17,7 +17,12 @@ function salvarCurso() {
             success: function (data) {
                 if(data.id){
                     document.getElementById("modal").click();
+                }else{
+                    document.getElementById("modal2").click();
                 }
+            },
+            error: function() {
+                document.getElementById("modal2").click();
             }
         });
     } else {
@@ -29,7 +34,12 @@ function salvarCurso() {
             success: function (data) {
                 if(data.id){
                     document.getElementById("modal").click();
+                }else{
+                    document.getElementById("modal2").click();
                 }
+            },
+            error: function() {
+                document.getElementById("modal2").click();
             }
         });
     }

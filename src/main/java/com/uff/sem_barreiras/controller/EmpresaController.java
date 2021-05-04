@@ -65,7 +65,7 @@ public class EmpresaController {
     @DeleteMapping("/empresa/{id}")
     public ResponseObject deletarEmpresa(@PathVariable(value = "id") final Integer id) throws NotFoundException {
         this.empresaService.deletarEmpresa(id);
-        return new ResponseObject(false, "Empresa removida com sucesso");
+        return new ResponseObject(true, "Empresa removida com sucesso");
     }
 
     // mapeamento Get para recuperar vagas de 1 empresa informando o id da mesma

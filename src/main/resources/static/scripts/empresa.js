@@ -109,11 +109,13 @@ function salvar(){
                 if(data.id){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/login");
+                }else{
+                    document.getElementById("modal2").click();
                 }
             },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
+            error: function() {
                 document.getElementById("modal2").click();
-             }
+            }
         
         });
     }else{
@@ -126,7 +128,12 @@ function salvar(){
                 if(data.id){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/listar-vaga");
+                }else{
+                    document.getElementById("modal2").click();
                 }
+            },
+            error: function() {
+                document.getElementById("modal2").click();
             }
         });
     }

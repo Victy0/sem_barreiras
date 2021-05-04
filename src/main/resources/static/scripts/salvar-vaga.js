@@ -128,7 +128,12 @@ function salvarVaga(){
                 if(data.sucesso){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/listar-vaga");
+                }else{
+                    document.getElementById("modal2").click();
                 }
+            },
+            error: function() {
+                document.getElementById("modal2").click();
             }
         });
     }else{
@@ -141,7 +146,12 @@ function salvarVaga(){
                 if(data.id){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/listar-vaga");
+                }else{
+                    document.getElementById("modal2").click();
                 }
+            },
+            error: function() {
+                document.getElementById("modal2").click();
             }
         });
     }

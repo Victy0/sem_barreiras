@@ -1,5 +1,6 @@
 package com.uff.sem_barreiras.controller;
 
+import com.uff.sem_barreiras.dto.ResponseObject;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
 import com.uff.sem_barreiras.exceptions.NotFoundException;
@@ -41,8 +42,9 @@ public class CursoController {
     }
 
     @GetMapping("/curso/{id}")
-    public Curso encontrarCurso(@PathVariable( value = "id" ) final Integer id)throws NotFoundException{
-        return this.cursoService.encontrarCurso(id);
+    public ResponseObject encontrarCurso(@PathVariable( value = "id" ) final Integer id)throws NotFoundException{
+        this.cursoService.encontrarCurso(id);
+        return new ResponseObject(true, "Vaga removida com sucesso");
     }
     
     @DeleteMapping("/curso/{id}")
