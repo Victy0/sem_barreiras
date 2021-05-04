@@ -2,9 +2,9 @@ var lendef;
 $(document).ready( function(){
     
     var loged= sessionStorage.getItem("on");
-     if(loged == null || loged == undefined){
-       window.location.replace("/login");
-     }
+    if(loged == null || loged == undefined){
+        window.location.replace("/login");
+    }
 
     $.ajax({
         type: 'GET', 
@@ -34,9 +34,11 @@ $(document).ready( function(){
             lendef= data.content.length;
         }
     }); 
-     var id = new URL(window.location.href).searchParams.get("id");
-      history.replaceState(null, "", location.href.split("?")[0]);
-     if(id){
+
+    var id = new URL(window.location.href).searchParams.get("id");
+    history.replaceState(null, "", location.href.split("?")[0]);
+    
+    if(id){
         $.ajax({
             type: 'GET', 
             contentType: "application/json; charset=utf-8",
@@ -45,19 +47,19 @@ $(document).ready( function(){
             success: function(data) { 
                 console.log(data)
                 document.getElementById('id').value = data.id;
-                 document.getElementById('resumo-vaga').value = data.resumo ;
-                 document.getElementById('remunera').value = data.remuneracao;
-                 document.getElementById('funcao').value   = data.funcao;
-                 document.getElementById('nivel').value  = data.nivel ;
-                 document.getElementById('desc-vaga').value = data.descricao ;
-                 document.getElementById('requi-nece').value = data.requisitosNecessarios;
-                 document.getElementById('requi-dese').value = data.requisitosDesejados ;
-                 checkDissolve(data.beneficios)
+                    document.getElementById('resumo-vaga').value = data.resumo ;
+                    document.getElementById('remunera').value = data.remuneracao;
+                    document.getElementById('funcao').value   = data.funcao;
+                    document.getElementById('nivel').value  = data.nivel ;
+                    document.getElementById('desc-vaga').value = data.descricao ;
+                    document.getElementById('requi-nece').value = data.requisitosNecessarios;
+                    document.getElementById('requi-dese').value = data.requisitosDesejados ;
+                    checkDissolve(data.beneficios)
                 document.getElementById('jornada').value = data.jornadaTrabalho ;
                 document.getElementById('durac-vaga').value = data.duracaoVaga ;
                 for (var i = 0; i < document.getElementById('area').options.length; i++) {
                     if (document.getElementById('area').options[i].value == data.area.id) {
-                     
+                        
 
                         document.getElementById('area')[i].selected = true;
                     }
@@ -69,12 +71,11 @@ $(document).ready( function(){
                     }
                 }
                 defDissolve(data.deficiencias);
-                 
-               
-                    
             }
         }); 
-     }
+    }else{
+        document.getElementById('deletar').style.display = "none";
+    }
     
 });
 
@@ -101,7 +102,7 @@ function salvarVaga(){
             "cursos": [],
             "deficiencias": []
     }
-   vaga.id = document.getElementById("id").value;
+    vaga.id = document.getElementById("id").value;
     vaga.resumo = document.getElementById('resumo-vaga').value;
     vaga.remuneracao=  document.getElementById('remunera').value;
     vaga.funcao =document.getElementById('funcao').value;
@@ -112,7 +113,7 @@ function salvarVaga(){
     vaga.beneficios = checkAppend();
     vaga.jornadaTrabalho =  document.getElementById('jornada').value;
     vaga.duracaoVaga =  document.getElementById('durac-vaga').value;
-    vaga.empresa ={"id":};
+    vaga.empresa ={"id":sessionStorage.getItem('on')};
     vaga.area =  {"id":document.getElementById('area').value};
     vaga.escolaridade = {id: document.getElementById('esc').value};
     vaga.deficiencias = defAppend();
@@ -163,6 +164,7 @@ function insertDefi (index , item){
     
     var node = document.createElement("input");
     var anode = document.createElement("li");
+    anode.className = "list-group-item";
     var text = document.createElement("label");
     text.innerText= index.descricao;
     node.value = index.id ;

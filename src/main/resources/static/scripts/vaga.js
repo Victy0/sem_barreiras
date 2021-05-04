@@ -13,13 +13,13 @@ $(document).ready( function(){
         body.appendChild(div);                 //append to the doc.body
         body.insertBefore(div, body.firstChild);
         preencherDadosListados(vaga);
+        
     }); 
 
 });
 
 function createMyElement(vaga){
     var local = vaga.empresa.cidade.nome + ' - ' + vaga.empresa.cidade.estado.uf;
-    console.log(vaga.beneficios, vaga.requisitoDesejados);
 
     var complemento = "";
     for( var i =0; i < vaga.deficiencias.length; i++){
@@ -56,6 +56,18 @@ function createMyElement(vaga){
                 '<p class="textoLocalVaga">', vaga.resumo,'</p>',
             '</div>',
         '</div>', 
+        `<div class="row">`,
+            '<div class="col-6">',
+                '<h2 class="tituloVaga"> Deficiências: </h2>',
+                '<ul>',
+                    listaDeficiencias(vaga.deficiencias),
+                '</ul>',
+            '</div>',
+            '<div class="col-6">',
+                '<h2 class="tituloVaga"> Faixa salarial: </h2>',
+                '<p id="textRemuneracao"></p>',
+            '</div>',
+        '</div>',
         `<div class="row">`,
             '<div class="col-12">',
                 '<h2 class="tituloVaga"> Requisitos necessários: </h2>',
@@ -110,7 +122,7 @@ function createMyElement(vaga){
         '</div>',
         '<div class="row mb-5 mr-3 justify-content-end">',
             '<div class="col-5">',
-                '<button class="btn btn-confirm">Ver cursos relacionados</button>',
+                '<button class="btn btn-confirm" data-bs-toggle="modal" onclick="resgataCursos('+vaga.id+')" data-bs-target="#modalCursos">Ver cursos relacionados</button>',
             '</div>',
             '<div class="col-4">',
                 '<button class="btn btn-outline-confirm" onclick="abre()">Candidatar-se a vaga</button>',
@@ -134,7 +146,6 @@ function preencherDadosListados(vaga){
         var requisito = vaga;
         var listItem = document.createElement("li");
         listItem.innerHTML = "Sem dados fornecidos."; 
-        console.log(vaga, listItem);
         document.getElementById("listRequisitosNecessarios").appendChild(listItem);
     }
     if(vaga.requisitosDesejados != 'sem requisitos listados'){
@@ -151,7 +162,6 @@ function preencherDadosListados(vaga){
         var requisito = vaga;
         var listItem = document.createElement("li");
         listItem.innerHTML = "Sem dados fornecidos."; 
-        console.log(vaga, listItem);
         document.getElementById("listRequisitosDesejados").appendChild(listItem);
     }
     if(vaga.remuneracao){
@@ -177,8 +187,6 @@ function candidatarVaga(){
     document.getElementById('id01').style.display='none';
 
     var idVaga = document.getElementById("idVaga").value;
-    console.log(document.getElementById("idVaga"))
-    console.log(idVaga)
     var dados = {};
     dados.nome = document.getElementById("nome").value;
     dados.email = document.getElementById("email").value;
@@ -191,6 +199,50 @@ function candidatarVaga(){
         data: JSON.stringify(dados)
     });
 }
+
 function abre(){
     document.getElementById("id01").style.display="block";
+}
+
+function resgataCursos(id){
+    $.getJSON("/vaga/"+id, {}, function(data) { 
+        vaga = data;
+        var body = document.getElementById('modal-body');
+        body.innerHTML = '';
+        for(var i =0; i < vaga.cursos.length; i++){
+            var curso = vaga.cursos[i];           
+            var div = document.createElement('div'); 
+            div.innerHTML = createCurso(curso);   
+            div.id = curso.id;                      
+            body.appendChild(div);                 
+            body.insertBefore(div, body.firstChild);
+        }
+        
+    }); 
+}
+
+function createCurso(curso){
+    return [
+        '<div class="row">', 
+            '<div class="col-3">',
+                '<img src="../img/Rectangle.png" class="imgVaga">',
+            '</div>',
+            '<div class="col-9">',
+                '<a href="' + curso.hyperLink + '">',
+                    '<h3 class="tituloVaga">', curso.nome,'</h3>',
+                    '<p class="textoLocalVaga">', curso.descricao,'</p>',
+                    '<p class="textoEmpresaVaga">', curso.preco,'</p>',
+                '</a>',
+            '</div>',
+        '</div>',
+        '<hr>'
+        ].join('\n');
+ }
+
+function listaDeficiencias(deficiencias){
+    var li = "";
+    for(var i=0; i<deficiencias.length; i++){
+        li = li + '<li>' + deficiencias[i].descricao + '</li>';
+    }
+    return li;
 }

@@ -64,7 +64,7 @@
             <div class="col-3 col-sm-3 mt-5">
                 <div class="row mt-3 align-items-center">
                     <div class="col-6">
-                        <div class="buttonsAssistente">
+                        <!-- <div class="buttonsAssistente">
                             <div class="buttonAssistente1">
                                 <div class="row align-items-center">
                                     <div class="col-3">
@@ -89,24 +89,24 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="id01" class="w3-modal">
-        <div class="w3-modal-content">
+    <div id="id01" class="w3-modal" >
+        <div class="w3-modal-content" style="height: auto;">
           <div class="w3-container modal-password ">
-             <h3>Informe seus dados de contato</h3> 
+            <h4>Informe seus dados de contato</h4> 
             <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-            <label>Nome*</label>
+            <label>Nome*:</label>
             <input id="nome" class="form-control" type="text">
-            <label>E-mail*</label>
+            <label>E-mail*:</label>
             <input id="email" class="form-control" type="text">
-            <label>Telefone</label>
+            <label>Telefone:</label>
             <input id="telefone" class="form-control" type="text">
-            <button class="btn btn-primary veri " onclick="candidatarVaga()" data-bs-toggle="modal" data-bs-target="#successModal">Enviar dados</button>
+            <button class="btn btn-confirm veri my-3" onclick="candidatarVaga()" data-bs-toggle="modal" data-bs-target="#successModal">Enviar dados</button>
           </div>
         </div>
       </div>
@@ -131,6 +131,21 @@
                             <img src="../img/mdi_check_circle.png" class="img-responsive">
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalCursos" tabindex="-1" aria-labelledby="modalCursos" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-cursos">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCursos">Cursos relacionados com a vaga:</h5>
+                    <div id="cursosRelacionados" class="modal-body">
+                        
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
                 </div>
             </div>
         </div>
