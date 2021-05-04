@@ -43,7 +43,7 @@
                             <a class="nav-link" href="/cadastro-vaga">RECRUTAR</a>
                         </li>
                         <li class="nav-item mx-4" id="cadcurso">
-                            <a class="nav-link" href="/cadastro-curso">CADASTRAR CURSO</a>
+                            <a class="nav-link active" href="/cadastro-curso">CADASTRAR CURSO</a>
                         </li>
                         <li class="nav-item mx-4" id="sair">
                             <a class="nav-link" href="#" onclick="logout()">SAIR</a>
@@ -55,58 +55,50 @@
     </header>
 
     <div class="container-fluid" style="margin-top: -20px;">
-        <div class="row justify-content-md-center">
-
-            <div class="col-1 col-sm-3"></div>
-            
+        <div class="row justify-content-center">            
             <div id="corpo" class="col-8 col-sm-6">
                 <div class="container corpoPagina">
                     <div class="form-vaga">
-
+                        <h4>Publicar curso:</h4>
                         <input type="hidden" id="id-curso" name="id-curso" />
-
                         <div class="row">
                             <div class="col-12">
-                                <label class="form-label" for="nome-curso">Nome do Curso:</label>
+                                <label class="form-label" for="nome-curso">Nome do Curso*:</label>
                                 <input class="form-control" type="text" id="nome-curso" name="nome-curso" />
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-12">
-                                <label class="form-label" for="descricao-curso">Descrição:</label>
+                                <label class="form-label" for="descricao-curso">Descrição*:</label>
                                 <textarea class="form-control" type="text" rows="4" id="descricao-curso" name="descricao-curso"></textarea>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-12">
-                                <label class="form-label" for="hiperlink-curso">Link:</label>
+                        <div class="row mt-3">
+                            <div class="col-12 col-sm-6">
+                                <label class="form-label" for="hiperlink-curso">Link*:</label>
                                 <input class="form-control" type="text" id="hiperlink-curso" name="hiperlink-curso" />
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <label class="form-label" for="preco-curso">Preço (R$):</label>
-                                <input class="form-control" type="number" min="0" id="preco-curso" name="preco-curso" />
+                            <div class="col-12 col-sm-6">
+                                <label for="preco-curso">Preço*:</label>
+                                <div class="input-group mt-2">
+                                    <span class="input-group-text">R$</span>
+                                    <input class="form-control" type="number" id="preco-curso" name="preco-curso">
+                                </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <div class="row">
-                        <div class="col-1 col-sm-3">
-                            <button type="button" class="btn-cur" onclick="salvarCurso()">
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-confirm" onclick="salvarCurso()">
                                 Salvar Curso
                             </button>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-            <div class="col-3 col-sm-3"></div>
 
         </div>
 
