@@ -110,6 +110,16 @@ a {
     left: 77%;
 }
 
+.btn-delete{
+    text-transform: uppercase;
+    border-radius: 25px !important;
+    background-color: #ff4d4d !important;
+    color: white !important;
+    padding: 15px 10px 15px 10px !important;
+    font-size: 0.8em !important;
+    font-weight: 700 !important;
+    width: 100%;
+}
 .btn-confirm{
     text-transform: uppercase;
     border-radius: 25px !important;
@@ -225,9 +235,7 @@ a {
 .primeiras-infos{
     margin-top: 30%;
 }
-.form-vaga{
-    margin-top: 5%;
-}
+
 .button-row{
     margin-top:3% !important;
 }
