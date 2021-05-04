@@ -1,23 +1,29 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>Sem Barreiras</title> 
+
+<head>
+    <title>Sem Barreiras</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
     <script src="../scripts/salvar-vaga.js"></script>
     <script src="../scripts/logout.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
-<body  >
+
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="../img/image 1.png" alt="" width="auto" height="auto">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,7 +33,7 @@
                         </li>
                         <li class="nav-item mx-4" id="curso">
                             <a class="nav-link" href="/listar-curso">CURSOS</a>
-                        </li>                      
+                        </li>
                         <li class="nav-item mx-4" id="empresaLogin">
                             <a class="nav-link" href="/login">PERFIL EMPRESA</a>
                         </li>
@@ -49,175 +55,164 @@
         </nav>
     </header>
     <div class="container-fluid" style="margin-top: -20px;">
-        <div class="row justify-content-md-center">
-            <div class="col-1 col-sm-3"></div>
+        <div class="row justify-content-center">
             <div class="col-8 col-sm-6">
                 <div class="container corpoPagina">
                     <div class="form-vaga">
                         <input id="id" type="hidden">
-                        <div class="row">                     
-                            <div class="col-1 col-sm-5">
-                                <label for="funcao">Resumo Vaga:</label>
-                                <br>
-                                <input type="text" id="resumo-vaga" name="resumo-vaga"> 
-                            </div>
-                            <div class="col-1 col-sm-5">
-                                <label for="remuneracao">Remuneração:</label>
-                                <br>
-                                <input type="text" id="remunera" name="remunera"> 
-                            </div> 
-                        </div>
-                        <div class="row "> 
-                            <div class=" col-2 col-sm-5">
-                                <label for="funcao">Função:</label>
-                                <br>
-                                <input type="text" id="funcao" name="funcao">  
-                            </div>
-                            <div class=" col-2 col-sm-5">
-                                <label for="area">Área:</label>
-                                <br>
-                                <select class="input-model" name="brands" id="area" >
-                                    <option value="-">---</option>
-                                    
-                                </select>   
-                            </div>
-                            
-                        </div>
-                        <div class="row "> 
-                            
-                            <div class=" col-2 col-sm-5">
-                                <label for="funcao">Nível:</label>
-                                <br>
-                                <input type="text" id="nivel" name="area">
-                            </div>
-                            <div class=" col-2 col-sm-5">
-                                <label for="funcao">Deficiencia:</label>
-                                <ul id="defi"></ul>
-                            </div>
-                            
-                        </div>    
-                    </div>   
-                    <div class="row "> 
-                            
-                        <div class=" col-2 col-sm-5">
-                            <label for="funcao">Escolaridade:</label>
-                            <br>
-                            <select class="input-model" name="brands" id="esc" >
-                                <option value="-">---</option>
-                                
-                            </select> 
-                        </div>
-                        
-                    </div>       
-                        
-                           
-                    <div class="requisitos">
-                        <label for="funcao">Descrição de vaga:</label>
-                        <br>
-                        <textarea id="desc-vaga" name="desc-vaga"></textarea>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-1 col-sm-5">
-                            <p>Requisitos necessarios:</p>
-                            <input type="text" id="requi-nece" name="requi-nece">
-                        </div>
-                        <div class="col-1 col-sm-5">
-                            <p>Requisitos desejados :</p> 
-                            <input type="text" id="requi-dese" name="requi-dese"> 
-                        </div>
-                        
-                    </div>
-                    <p>Beneficios:</p>
-                    <div class="row">
-                        <div class="col-1 col-sm-4">
-                            <input type="checkbox" id="option1" name="option1" value="Vale Transporte">
-                            <label for="option1"> Vale Transporte</label><br>
-                            <input type="checkbox" id="option2" name="option2" value="Plano de Saúde">
-                            <label for="option2"> Plano de Saúde</label><br>
-                            
-                        </div>
-                        <div class="col-1 col-sm-4">
-                            <input type="checkbox" id="option3" name="option3" value="Vale Refeição">
-                            <label for="vehicle1">Vale Refeição</label><br>
-                            <input type="checkbox" id="option4" name="option4" value="Plano Odontológico">
-                            <label for="option4">Plano Odontológico</label><br>
-                            
-                        </div>
-                        <div class="col-1 col-sm-4">
-                            <input type="checkbox" id="option5" name="option5" value="Vale Alimentação">
-                            <label for="option5">Vale Alimentação</label><br>
-                            <input type="checkbox" id="option6" name="option6" value="Seguro de Vida">
-                            <label for="option6">Seguro de Vida</label><br>
-                            
-                        </div>
-                            
-                    </div>
-                    <div class="description">
-                        <div class="col-1 col-sm-5"></div>
-                            <label for="funcao">Outros Beneficios:</label>
-                            <br>
-                            <input type="text" id="beneficios" name="beneficios"> 
-                        </div>
+                        <h4>Publicar vaga:</h4>
                         <div class="row">
-                            <div class="col-1 col-sm-5">
-                                <label for="funcao">Jornada de Trabalho:</label>
-                                <input type="text" id="jornada" name="jornada"> 
-                            </div>     
-                            <div class="col-1 col-sm-5">
-                                <label for="funcao">Duração da Vaga:</label>
-                                <input type="text" id="durac-vaga" name="durac-vaga"> 
+                            <div class="col-12">
+                                <label for="funcao">Resumo Vaga*:</label>
+                                <br>
+                                <input class="form-control" type="text" id="resumo-vaga" name="resumo-vaga">
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12 col-sm-6">
+                                <label for="funcao">Função*:</label>
+                                <br>
+                                <input class="form-control" type="text" id="funcao" name="funcao">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="area">Área*:</label>
+                                <br>
+                                <select class="input-model form-control" name="brands" id="area">
+                                    <option value="-">---</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class=" col-12 col-sm-6">
+                                <label for="funcao">Nível*:</label>
+                                <br>
+                                <input class="form-control" type="text" id="nivel" name="area">
+                            </div>
+                            <div class=" col-12 col-sm-6">
+                                <label for="funcao">Escolaridade*:</label>
+                                <br>
+                                <select class="input-model form-control" name="brands" id="esc">
+                                    <option value="-">---</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <label for="funcao">Deficiência*:</label>
+                                <ul id="defi" class="list-group"></ul>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="requisitos">
+                                    <label for="funcao">Descrição de vaga*:</label>
+                                    <br>
+                                    <textarea class="form-control" id="desc-vaga" name="desc-vaga"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12 col-sm-6">
+                                <p>Requisitos necessarios*:</p>
+                                <input class="form-control" type="text" id="requi-nece" name="requi-nece">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <p>Requisitos desejados*:</p>
+                                <input class="form-control" type="text" id="requi-dese" name="requi-dese">
+                            </div>
+
+                        </div>
+
+                        <div class="row mt-3">
+                            <label>Benefícios: </label>
+                            <div class="col-12 col-sm-4">
+                                <input class="form-check-input" type="checkbox" id="option1" name="option1"
+                                    value="Vale Transporte">
+                                <label for="option1"> Vale Transporte</label><br>
+                                <input class="form-check-input" type="checkbox" id="option2" name="option2"
+                                    value="Plano de Saúde">
+                                <label for="option2"> Plano de Saúde</label><br>
+
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <input class="form-check-input" type="checkbox" id="option3" name="option3"
+                                    value="Vale Refeição">
+                                <label for="vehicle1">Vale Refeição</label><br>
+                                <input class="form-check-input" type="checkbox" id="option4" name="option4"
+                                    value="Plano Odontológico">
+                                <label for="option4">Plano Odontológico</label><br>
+
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <input class="form-check-input" type="checkbox" id="option5" name="option5"
+                                    value="Vale Alimentação">
+                                <label for="option5">Vale Alimentação</label><br>
+                                <input class="form-check-input" type="checkbox" id="option6" name="option6"
+                                    value="Seguro de Vida">
+                                <label for="option6">Seguro de Vida</label><br>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="description">
+                                <div class="col-12"></div>
+                                <label for="funcao">Outros Beneficios:</label>
+                                <input class="form-control" type="text" id="beneficios" name="beneficios">
                             </div>
                         </div>
                         
-                        <div class="row button-row">
-                            <div class="col-1 col-sm-5">   
-                                <button id="deletar" type="button" onclick="deletarVaga()" class="btn-cur ">Deletar Vaga</button>
-                            </div>
-                            <div class="col-1 col-sm-3">   
-                                <button type="button" class="btn-curri " onclick="salvarVaga()">Publicar Vaga</button>
-                            </div>     
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 col-sm-3 mt-5">
-                    <div class="row mt-3 align-items-center">
-                        <div class="col-6">
-                            <div class="buttonsAssistente">
-                                <!--<div class="buttonAssistente1">
-                                    <div class="row align-items-center">
-                                        <div class="col-3">
-                                            <i class="fas fa-toggle-on"></i>
-                                        </div>
-                                        <div class="col-8">
-                                            <img src="../img/assistente-icon-1.png">
-                                            <p>ASSISTENTE <br> DE LIBRAS</p>
-                                        </div>
-                                    </div> 
+                        <div class="row mt-3">
+                            <div class="col-12 col-sm-6">
+                                <label for="jornada">Jornada de Trabalho*:</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Horas</span>
+                                    <input class="form-control" type="number" id="jornada" name="jornada">
                                 </div>
-                                <br>
-                                <div class="buttonAssistente2">
-                                    <div class="row align-items-center">
-                                        <div class="col-3">
-                                            <i class="fas fa-toggle-on"></i>
-                                        </div>
-                                        <div class="col-8">
-                                            <img src="../img/assistente-icon-2.png">
-                                            <p>ASSISTENTE <br> DE VOZ</p>
-                                        </div>
-                                    </div>
-                                </div> -->
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <label for="durac-vaga">Duração da Vaga*:</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Dias</span>
+                                    <input class="form-control" type="number" id="durac-vaga" name="durac-vaga">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <label for="remunera">Remuneração:</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">R$</span>
+                                    <input class="form-control" type="number" id="remunera" name="remunera">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row button-row my-3">
+                            <div class="col-12 col-sm-6">
+                                <button id="deletar" type="button" onclick="deletarVaga()" class="btn-danger">DELETAR
+                                    Vaga
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <button type="button" class="btn btn-confirm" onclick="salvarVaga()">DIVULGAR</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
+            <div class="vw-plugin-top-wrapper"></div>
         </div>
     </div>
     <footer>
@@ -226,16 +221,16 @@
                 <div class="col-6">
                     <div class="row align-items-center">
                         <div class="col-3 primeiraColunaFooter">
-                            <p>+55 21 98321-6549 <br> 
-                            sembarreiras@gmail.com</p>
+                            <p>+55 21 98321-6549 <br>
+                                sembarreiras@gmail.com</p>
                         </div>
                         <div class="col-2">
                             <img src="../img/image 2.png" class="imgFooter">
                         </div>
                         <div class="col-3 terceiraColunaFooter">
                             <p>Rua Antonieta Maia, n29<br>
-                            Rio de Janeiro, RJ<br>
-                            CEP: 05207-150</p>
+                                Rio de Janeiro, RJ<br>
+                                CEP: 05207-150</p>
                         </div>
                         <div class="col-4 quartaColunaFooter">
                             <i class="fab fa-facebook-square"></i>
@@ -247,10 +242,13 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
+
 </html>

@@ -102,7 +102,7 @@ function salvarVaga(){
             "cursos": [],
             "deficiencias": []
     }
-   vaga.id = document.getElementById("id").value;
+    vaga.id = document.getElementById("id").value;
     vaga.resumo = document.getElementById('resumo-vaga').value;
     vaga.remuneracao=  document.getElementById('remunera').value;
     vaga.funcao =document.getElementById('funcao').value;
@@ -113,7 +113,7 @@ function salvarVaga(){
     vaga.beneficios = checkAppend();
     vaga.jornadaTrabalho =  document.getElementById('jornada').value;
     vaga.duracaoVaga =  document.getElementById('durac-vaga').value;
-    vaga.empresa ={"id":1};
+    vaga.empresa ={"id":sessionStorage.getItem('on')};
     vaga.area =  {"id":document.getElementById('area').value};
     vaga.escolaridade = {id: document.getElementById('esc').value};
     vaga.deficiencias = defAppend();
@@ -164,6 +164,7 @@ function insertDefi (index , item){
     
     var node = document.createElement("input");
     var anode = document.createElement("li");
+    anode.className = "list-group-item";
     var text = document.createElement("label");
     text.innerText= index.descricao;
     node.value = index.id ;
