@@ -15,7 +15,9 @@ function salvarCurso() {
             url: "/curso",
             data: JSON.stringify(curso),
             success: function (data) {
-                console.log(data)
+                if(data.id){
+                    document.getElementById("modal").click();
+                }
             }
         });
     } else {
@@ -25,9 +27,15 @@ function salvarCurso() {
             url: "/curso/alterar",
             data: JSON.stringify(curso),
             success: function (data) {
-                console.log(data)
+                if(data.id){
+                    document.getElementById("modal").click();
+                }
             }
         });
     }
 
+}
+
+function alterarPagina(){
+    window.location.replace("/listar-curso");
 }

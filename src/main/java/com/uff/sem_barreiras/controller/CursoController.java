@@ -36,13 +36,12 @@ public class CursoController {
     }
 
     @PostMapping("/curso")
-    public void cadastrarCurso(@RequestBody  final Curso curso)throws InsertException{
-        this.cursoService.criarCurso(curso);
+    public Curso cadastrarCurso(@RequestBody  final Curso curso)throws InsertException{
+        return this.cursoService.criarCurso(curso);
     }
 
     @GetMapping("/curso/{id}")
     public Curso encontrarCurso(@PathVariable( value = "id" ) final Integer id)throws NotFoundException{
-        
         return this.cursoService.encontrarCurso(id);
     }
     
