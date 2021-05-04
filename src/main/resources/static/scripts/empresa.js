@@ -110,7 +110,10 @@ function salvar(){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/login");
                 }
-            }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                document.getElementById("modal2").click();
+             }
         
         });
     }else{
