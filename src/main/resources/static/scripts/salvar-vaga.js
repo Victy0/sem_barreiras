@@ -112,7 +112,7 @@ function salvarVaga(){
     vaga.beneficios = checkAppend();
     vaga.jornadaTrabalho =  document.getElementById('jornada').value;
     vaga.duracaoVaga =  document.getElementById('durac-vaga').value;
-    vaga.empresa ={"id":1};
+    vaga.empresa ={"id":};
     vaga.area =  {"id":document.getElementById('area').value};
     vaga.escolaridade = {id: document.getElementById('esc').value};
     vaga.deficiencias = defAppend();
