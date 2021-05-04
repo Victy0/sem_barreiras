@@ -83,24 +83,25 @@ $(document).ready( function(){
 
 function salvarVaga(){
    
-    vaga={
-            "id":"",
-            "resumo": "",
-            "dataCriacao": "",
-            "remuneracao": "",
-            "funcao": "",
-            "nivel": "",
-            "descricao": "",
-            "requisitosNecessarios": "",
-            "requisitosDesejados": "",
-            "beneficios": "",
-            "jornadaTrabalho": "",
-            "duracaoVaga": "",
-            "empresa": "",
-            "area": "",
-            "escolaridade": "",
-            "cursos": [],
-            "deficiencias": []
+    vaga =
+    {
+        "id":"",
+        "resumo": "",
+        "dataCriacao": "",
+        "remuneracao": "",
+        "funcao": "",
+        "nivel": "",
+        "descricao": "",
+        "requisitosNecessarios": "",
+        "requisitosDesejados": "",
+        "beneficios": "",
+        "jornadaTrabalho": "",
+        "duracaoVaga": "",
+        "empresa": "",
+        "area": "",
+        "escolaridade": "",
+        "cursos": [],
+        "deficiencias": []
     }
     vaga.id = document.getElementById("id").value;
     vaga.resumo = document.getElementById('resumo-vaga').value;
@@ -196,9 +197,9 @@ function checkAppend(){
     bene=[]
     for(i=1 ; i< 6;i++){
      
-      if(document.getElementById("option"+i).checked ==true){
+        if(document.getElementById("option"+i).checked ==true){
           
-        bene.push(document.getElementById("option"+i).value);
+            bene.push(document.getElementById("option"+i).value);
         }
 
     }
@@ -207,26 +208,26 @@ function checkAppend(){
 }
 
 function checkDissolve(value){
-    var array = value.split(",")
+    var array = value.split(",");
     for(i=0 ; i< 6;i++){
-      if(array[i] =="Vale Transporte"){
-        document.getElementById("option1").checked = true
-      }
-      if(array[i] =="Plano de Saúde"){
-        document.getElementById("option2").checked = true
-      }
-      if(array[i] == "Vale Refeição"){
-        document.getElementById("option3").checked = true
-      }
-      if(array[i] =="Plano Odontológico" ){
-        document.getElementById("option4").checked = true
-      }
-      if(array[i] == "Vale Alimentação"){
-        document.getElementById("option5").checked = true
-      }
-      if(array[i] == "Seguro de Vida"){
-        document.getElementById("option6").checked = true
-      }
+        if(array[i] =="Vale Transporte"){
+            document.getElementById("option1").checked = true
+        }
+        if(array[i] =="Plano de Saúde"){
+            document.getElementById("option2").checked = true
+        }
+        if(array[i] == "Vale Refeição"){
+            document.getElementById("option3").checked = true
+        }
+        if(array[i] =="Plano Odontológico" ){
+            document.getElementById("option4").checked = true
+        }
+        if(array[i] == "Vale Alimentação"){
+            document.getElementById("option5").checked = true
+        }
+        if(array[i] == "Seguro de Vida"){
+            document.getElementById("option6").checked = true
+        }
     }
   
 }
@@ -236,9 +237,8 @@ function defAppend(){
     console.log("lendef",lendef)
     for(var i=0 ; i< lendef ;i++){
      
-      if(document.getElementById("optiondef"+i).checked == true){
-          console.log(document.getElementById("optiondef"+i).value)
-        def.push({"id":document.getElementById("optiondef"+i).value});
+        if(document.getElementById("optiondef"+i).checked == true){
+            def.push({"id":document.getElementById("optiondef"+i).value});
         }
 
     }
@@ -248,11 +248,11 @@ function defAppend(){
 
 function defDissolve(value){
   
-   value.forEach(function(item,index){
+    value.forEach(function(item,index){
       
-    document.getElementById("optiondef"+index).checked= true;
+        document.getElementById("optiondef"+index).checked= true;
 
-   })
+    })
   
 }
 
@@ -264,7 +264,15 @@ function deletarVaga(){
         url: "/vaga/"+id , 
         
         success: function(data) { 
-            console.log(data)
+            if(data.sucesso){
+                document.getElementById("modal").click();
+                localStorage.setItem("p", "/listar-vaga");
+            }else{
+                document.getElementById("modal2").click();
+            }
+        },
+        error: function() {
+            document.getElementById("modal2").click();
         }
     });
 }
