@@ -125,7 +125,10 @@ function salvarVaga(){
             url: "/vaga", 
             data: JSON.stringify(vaga),
             success: function(data) { 
-                console.log(data)
+                if(data.sucesso){
+                    document.getElementById("modal").click();
+                    localStorage.setItem("p", "/listar-vaga");
+                }
             }
         });
     }else{
@@ -135,7 +138,10 @@ function salvarVaga(){
             url: "/vaga/alterar", 
             data: JSON.stringify(vaga),
             success: function(data) { 
-                console.log(data)
+                if(data.id){
+                    document.getElementById("modal").click();
+                    localStorage.setItem("p", "/listar-vaga");
+                }
             }
         });
     }
@@ -251,4 +257,10 @@ function deletarVaga(){
             console.log(data)
         }
     });
+}
+
+function alterarPagina(){
+    var url = localStorage.getItem("p");
+    localStorage.removeItem("p");
+    window.location.replace(url);
 }
