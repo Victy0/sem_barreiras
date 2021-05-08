@@ -55,25 +55,25 @@
                 <div id="corpo" class="container corpoPagina">
                     <h4>Cadastre sua empresa:</h4>
                     <input id="id" type="hidden">
-                    <label class="mt-3">Nome*:</label>
+                    <label class="mt-3 tituloVaga">Nome*:</label>
                     <input id="nome" class="form-control" type="text">
-                    <label class="mt-3">Nome Fantasia:</label>
+                    <label class="mt-3 tituloVaga">Nome Fantasia:</label>
                     <input id="nomeFantasia" class="form-control" type="text">
-                    <label class="mt-3">E-mail*:</label>
+                    <label class="mt-3 tituloVaga">E-mail*:</label>
                     <input id="email" class="form-control" type="text">
-                    <label class="mt-3">CNPJ*:</label>
+                    <label class="mt-3 tituloVaga">CNPJ*:</label>
                     <input id="cnpj" name="cnpj" class="form-control" type="text">
-                    <label class="mt-3">Telefone*:</label>
+                    <label class="mt-3 tituloVaga">Telefone*:</label>
                     <input id="telefone" class="form-control" type="text">
-                    <label class="mt-3">Estado*:</label>
+                    <label class="mt-3 tituloVaga">Estado*:</label>
                     <select id="estado" class="form-control" onchange="popularCidade()">
                         <option selected disabled>Selecione uma opção</option>
                     </select>
-                    <label class="mt-3">Cidade*:</label>
+                    <label class="mt-3 tituloVaga">Cidade*:</label>
                     <select id="cidade" class="form-control">
                         <option selected disabled>Selecione uma opção</option>
                     </select>
-                    <label class="mt-3">Endereço*:</label>
+                    <label class="mt-3 tituloVaga">Endereço*:</label>
                     <input id="endereco" class="form-control" type="text">
                     <button class="btn btn-confirm my-3" onclick="salvar()">Salvar</button>
                     <button hidden id="modal" data-bs-toggle="modal" data-bs-target="#successModal"></button>

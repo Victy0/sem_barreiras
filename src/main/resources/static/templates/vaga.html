@@ -109,11 +109,11 @@
           <div class="w3-container modal-password ">
             <h4 onclick="falar('Informe seus dados de contato', 't')">Informe seus dados de contato</h4> 
             <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-            <label onclick="falar('nome', 't')">Nome*:</label>
+            <label class="tituloVaga" onclick="falar('nome', 't')">Nome*:</label>
             <input id="nome" class="form-control" type="text"><br>
-            <label onclick="falar('e-mail', 't')">E-mail*:</label>
+            <label class="tituloVaga" onclick="falar('e-mail', 't')">E-mail*:</label>
             <input id="email" class="form-control" type="text"><br>
-            <label onclick="falar('telefone', 't')">Telefone:</label>
+            <label class="tituloVaga" onclick="falar('telefone', 't')">Telefone:</label>
             <input id="telefone" class="form-control" type="text">
             <button class="btn btn-confirm veri my-3" onclick="candidatarVaga()" data-bs-toggle="modal" data-bs-target="#successModal">Enviar dados</button>
           </div>
