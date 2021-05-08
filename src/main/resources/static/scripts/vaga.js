@@ -41,7 +41,7 @@ function createMyElement(vaga){
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
-                `<h3 class="tituloVaga" id="vaga` + vaga.id + `" onclick="falar('vaga` + vaga.id + `', 'i')">`, vaga.resumo,'</h3>',
+                `<h2 class="tituloVaga" id="vaga` + vaga.id + `" onclick="falar('vaga` + vaga.id + `', 'i')">`, vaga.resumo,'</h2>',
                 `<p class="textoLocalVaga" onclick="falar('Local ` + local + `', 't')" > <b>Local: </b>`, local,'</p>',
                 `<p class="textoEmpresaVaga" onclick="falar('Empresa ` + vaga.empresa.nome + `', 't')"> <b>Empresa: </b>`, vaga.empresa.nome,'</p>',
                 `<p class="textoEmpresaVaga" onclick="falar('Nível ` + vaga.nivel + `', 't')"> <b>Nível: </b>`, vaga.nivel,'</p>',

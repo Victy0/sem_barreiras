@@ -19,7 +19,7 @@ $(document).ready( function(){
                 document.getElementById("estado").appendChild(opt);
             }
         }
-    }); 
+    });  
 
     if(id){
 

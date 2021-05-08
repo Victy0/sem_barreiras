@@ -110,9 +110,9 @@
             <h4 onclick="falar('Informe seus dados de contato', 't')">Informe seus dados de contato</h4> 
             <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
             <label onclick="falar('nome', 't')">Nome*:</label>
-            <input id="nome" class="form-control" type="text">
+            <input id="nome" class="form-control" type="text"><br>
             <label onclick="falar('e-mail', 't')">E-mail*:</label>
-            <input id="email" class="form-control" type="text">
+            <input id="email" class="form-control" type="text"><br>
             <label onclick="falar('telefone', 't')">Telefone:</label>
             <input id="telefone" class="form-control" type="text">
             <button class="btn btn-confirm veri my-3" onclick="candidatarVaga()" data-bs-toggle="modal" data-bs-target="#successModal">Enviar dados</button>
@@ -190,8 +190,11 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.js"></script>
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+    $("#telefone").mask("(99) 999999999");
 
     function falar(texto, localTexto){
         if(document.getElementById("voz").value == "0"){
