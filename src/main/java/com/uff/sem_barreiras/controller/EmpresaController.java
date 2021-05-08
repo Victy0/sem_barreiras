@@ -86,9 +86,9 @@ public class EmpresaController {
             return new ResponseObject(false, "Empresa não cadastrada");
         }
 
-        this.empresaService.enviarCodigoVerificacao(login.getEmail());
+        String cod = this.empresaService.enviarCodigoVerificacao(login.getEmail());
 
-        return new ResponseObject(true, "Código de verificação enviado por e-mail");
+        return new ResponseObject(true, "Código de verificação enviado por e-mail | Código : " + cod );
 
     }
 

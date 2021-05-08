@@ -84,7 +84,7 @@ public class EmpresaService {
         return this.empresaDao.getIdByEmail(email);
     }
 
-    public void enviarCodigoVerificacao(String email){
+    public String enviarCodigoVerificacao(String email){
 
         Integer id = this.empresaDao.getIdByEmail(email);
         Long milis = new Date().getTime();
@@ -93,6 +93,8 @@ public class EmpresaService {
         String content = String.format("E-mail enviado devido a solicitação de login em Sem Barreiras\n \n Código de verificação: %s", milis.toString().substring(milis.toString().length() - 4, milis.toString().length()) );
 
         this.emailService.enviar(email, "Sem Barreiras - Código de verificação", content);
+
+        return milis.toString().substring(milis.toString().length() - 4, milis.toString().length());
     }
 
     public Boolean confirmarCodigoVerificacao(String email, String codigo){
