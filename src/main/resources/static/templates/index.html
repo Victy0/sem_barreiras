@@ -93,7 +93,7 @@
                             <div class="buttonAssistente2">
                                 <div class="row align-items-center" onclick="habilitarSom()">
                                     <div class="col-3">
-                                        <i class="fas fa-toggle-on"></i>
+                                        <i class="fas fa-toggle-off assistVozOff" id="assistVoz"></i>
                                     </div>
                                     <div class="col-8">
                                         <img src="../img/assistente-icon-2.png">
@@ -202,7 +202,15 @@
 		};
 
         function habilitarSom(){
-            document.getElementById("voz").value = document.getElementById("voz").value == "0" ? "1" : "0";
+            console.log(document.getElementById("voz").value);
+            if(document.getElementById("voz").value == 1){
+                document.getElementById("voz").value = 0;
+                document.getElementById("assistVoz").className = "fas fa-toggle-off assistVozOff";
+            }
+            else{
+                document.getElementById("voz").value = 1;
+                document.getElementById("assistVoz").className = "fas fa-toggle-on assistVozOn";
+            }
         }
     </script>
 </body>
