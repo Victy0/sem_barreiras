@@ -119,27 +119,27 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="filtroModal">Adicionar filtro:</h5>
+                    <h5 class="modal-title" id="filtroModal" onclick="falar('Adicionar filtro', 't')">Adicionar filtro:</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <label id="listEmpresaLabel" for="listEmpresa">Empresa:</label>
+                        <label id="listEmpresaLabel" for="listEmpresa" onclick="falar('empresa', 't')">Empresa:</label>
                         <select class="form-select mb-3" aria-label="lista de empresas" id="listEmpresa">
                         </select>
-                        <label for="listEstado">Estado:</label>
+                        <label for="listEstado" onclick="falar('estado', 't')">Estado:</label>
                         <select class="form-select mb-3" aria-label="lista de estados" id="listEstado">
                         </select>
-                        <label for="listEstado">Escolaridade:</label>
+                        <label for="listEstado" onclick="falar('escolaridade', 't')">Escolaridade:</label>
                         <select class="form-select mb-3" aria-label="lista de escolaridade" id="listEscolaridade">
                         </select>
-                        <label for="listEstado">Área de atuação:</label>
+                        <label for="listEstado" onclick="falar('área de atuação', 't')">Área de atuação:</label>
                         <select class="form-select mb-3" aria-label="lista de area" id="listArea">
                         </select>
-                        <label for="listEstado">Tipo de deficiência:</label>
+                        <label for="listEstado" onclick="falar('tipo de deficiência', 't')">Tipo de deficiência:</label>
                         <select class="form-select mb-3" aria-label="lista de deficiencia" id="listDeficiencia">
                         </select>
-                        <label for="remuneracao" class="form-label">Valor de remuneração mínimo:</label>
+                        <label for="remuneracao" class="form-label" onclick="falar('valor de remuneração mínimo', 't')">Valor de remuneração mínimo:</label>
                         <input type="number" class="form-control" min="0" id="remuneracao">
                     </form>
                 </div>
