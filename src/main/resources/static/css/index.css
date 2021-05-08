@@ -180,7 +180,13 @@ a {
     font-weight: bold;
     margin-left: 10px;
 }
-.buttonAssistente2 > div> .col-3 > i {
+.assistVozOff{
+    color: darkgray;
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+.assistVozOn{
+    color: #5CA2FF;
     font-size: 30px;
     transform: rotate(90deg);
 }
@@ -198,7 +204,7 @@ a {
     margin-left: 10px;
 }
 .btn-cur{
-    border: 2px solid #5CA2FF  ;
+    border: 2px solid #5CA2FF;
     box-sizing: border-box;
     border-radius: 20px;
     position: relative;
