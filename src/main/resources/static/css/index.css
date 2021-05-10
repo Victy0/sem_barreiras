@@ -110,6 +110,16 @@ a {
     left: 77%;
 }
 
+.btn-delete{
+    text-transform: uppercase;
+    border-radius: 25px !important;
+    background-color: #ff4d4d !important;
+    color: white !important;
+    padding: 15px 10px 15px 10px !important;
+    font-size: 0.8em !important;
+    font-weight: 700 !important;
+    width: 100%;
+}
 .btn-confirm{
     text-transform: uppercase;
     border-radius: 25px !important;
@@ -170,7 +180,13 @@ a {
     font-weight: bold;
     margin-left: 10px;
 }
-.buttonAssistente2 > div> .col-3 > i {
+.assistVozOff{
+    color: darkgray;
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+.assistVozOn{
+    color: #5CA2FF;
     font-size: 30px;
     transform: rotate(90deg);
 }
@@ -188,7 +204,7 @@ a {
     margin-left: 10px;
 }
 .btn-cur{
-    border: 2px solid #5CA2FF  ;
+    border: 2px solid #5CA2FF;
     box-sizing: border-box;
     border-radius: 20px;
     position: relative;
@@ -225,9 +241,7 @@ a {
 .primeiras-infos{
     margin-top: 30%;
 }
-.form-vaga{
-    margin-top: 5%;
-}
+
 .button-row{
     margin-top:3% !important;
 }
@@ -257,23 +271,44 @@ a {
 }
 
 .modal-password{
-  margin-top:20%;
-  height:200px;
+  margin-top: 20%;
+  height: auto;
+  min-height: 200px;
 }
 
-.veri{
-    margin-top: 5%;
+.w3-modal-content{
+  border-radius: 10px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
-
+.modal-title{
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 .modal-success{
     width: 50% !important; 
     margin-left: 25%;
     background-color: #E5E5E5 !important;
     border-radius: 30px !important;
     border: 0 !important;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16)
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+.modal-cursos{
+    width: 100% !important; 
+    background-color: #E5E5E5 !important;
+    border-radius: 30px !important;
+    border: 0 !important;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
 
+ul#defi li{
+    display: inline;
+}
+.list-group-item > input{
+    margin-right: 10px;
+}
 /* Loading */
 
 .lds-ripple {

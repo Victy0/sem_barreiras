@@ -65,7 +65,7 @@ public class EmpresaController {
     @DeleteMapping("/empresa/{id}")
     public ResponseObject deletarEmpresa(@PathVariable(value = "id") final Integer id) throws NotFoundException {
         this.empresaService.deletarEmpresa(id);
-        return new ResponseObject(false, "Empresa removida com sucesso");
+        return new ResponseObject(true, "Empresa removida com sucesso");
     }
 
     // mapeamento Get para recuperar vagas de 1 empresa informando o id da mesma
@@ -86,9 +86,9 @@ public class EmpresaController {
             return new ResponseObject(false, "Empresa não cadastrada");
         }
 
-        this.empresaService.enviarCodigoVerificacao(login.getEmail());
+        String cod = this.empresaService.enviarCodigoVerificacao(login.getEmail());
 
-        return new ResponseObject(true, "Código de verificação enviado por e-mail");
+        return new ResponseObject(true, "Código de verificação enviado por e-mail | Código : " + cod );
 
     }
 

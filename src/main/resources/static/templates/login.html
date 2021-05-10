@@ -39,7 +39,9 @@
                         <li class="nav-item mx-4" id="recrutar">
                             <a class="nav-link" href="/cadastro-vaga">RECRUTAR</a>
                         </li>
-                        
+                        <li class="nav-item mx-4" id="cadcurso">
+                            <a class="nav-link" href="/cadastro-curso">CADASTRAR CURSO</a>
+                        </li>
                         <li class="nav-item mx-4" id="sair">
                             <a class="nav-link" href="#" onclick="logout()">SAIR</a>
                         </li>
@@ -53,10 +55,10 @@
             <div class="col-1 col-sm-3"></div>
             <div class="col-8 col-sm-6">
                 <div id="corpo" class="container corpoPagina">
-                    <h4>Infome e-mail cadastrado da Empresa</h4>
-                    <label>E-mail*: </label>
+                    <h4>Infome e-mail cadastrado da empresa</h4>
+                    <label class="tituloVaga">E-mail*: </label>
                     <input id="email" class="form-control" type="text">
-                    <span id="erro" class="text-danger"></span>
+                    <span id="erro" class="text-danger tituloVaga"></span>
                     <button class="btn btn-confirm my-3" onclick="entrar()">Entrar</button>
                     <a href="/cadastro-empresa" class="btn btn-outline-confirm">Cadastrar minha Empresa</a>
                 </div>
@@ -98,12 +100,12 @@
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content">
           <div class="w3-container modal-password ">
-             <h3>Digite seu codigo de verificação </h3> 
+            <h4>Digite seu codigo de verificação </h4> 
             <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
             <p id="mensagens"></p>
             <input id="codigo" class="form-control" type="text">
             <span id="erroPopup" class="text-danger"></span>
-            <button class="btn btn-primary veri " onclick=" verificaCodigo()">Entrar</button>
+            <button class="btn btn-confirm mt-3" onclick=" verificaCodigo()">Entrar</button>
           </div>
         </div>
       </div>

@@ -147,10 +147,10 @@ function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
             complemento = complemento + '<br>';
         }
         if(deficiencias[i].descricao == "auditiva" ){
-            complemento = complemento + '<img src="../img/Vector2.png" class="vectorVaga1">';
+            complemento = complemento + `<img src="../img/Vector2.png" class="vectorVaga1" onclick="falar('deficiencia auditiva', 't')">`;
         }
         if(deficiencias[i].descricao == "visual" ){
-            complemento = complemento + '<img src="../img/Vector.png" class="vectorVaga2 mt-4">';
+            complemento = complemento + `<img src="../img/Vector.png" class="vectorVaga2 mt-4" onclick="falar('deficiencia visual', 't')">`;
         }
     }
 
@@ -160,11 +160,11 @@ function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
-                '<a href="' + url + vagaId + '">',
-                    '<h3 class="tituloVaga">', vagaNome,'</h3>',
-                    '<p class="textoLocalVaga">', local,'</p>',
-                    '<p class="textoEmpresaVaga">', empresa,'</p>',
-                '</a>',
+            '<a  target="_blank" href="' + url + vagaId + '">',
+                `<h3 class="tituloVaga" id="vaga` + vagaId + `" onclick="falar('vaga` + vagaId+ `', 'i')">`, vagaNome,'</h3>',
+            '</a>',
+                `<p class="textoLocalVaga" id="local` + vagaId + `" onclick="falar('local` + vagaId+ `', 'i')">`, local,'</p>',
+                `<p class="textoEmpresaVaga" id="empresa` + vagaId + `" onclick="falar('empresa` + vagaId+ `', 'i')">`, empresa,'</p>',
             '</div>',
             '<div class="col-1">' + complemento,
             '</div>',

@@ -59,10 +59,9 @@ public class VagaController {
     }
 
     @PostMapping("/vaga") 
-    public ResponseObject cadastrar(@RequestBody final Vaga vaga  ) throws InsertException{
+    public Vaga cadastrar(@RequestBody final Vaga vaga  ) throws InsertException{
         vaga.setDataCriacao(new Date());
-        this.vagaService.criarVaga(vaga);
-        return new ResponseObject(true, "Vaga salva com sucesso");
+        return this.vagaService.criarVaga(vaga);
     }
     
     @DeleteMapping("/vaga/{id}")

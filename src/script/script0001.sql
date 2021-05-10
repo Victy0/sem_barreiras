@@ -103,7 +103,7 @@ CREATE TABLE vaga
 CREATE TABLE curso 
 (
 	id SERIAL NOT NULL,
-    nome VARCHAR(50),
+    nome VARCHAR(200),
     descricao VARCHAR(500) NOT NULL,
 	hiperlink VARCHAR(100) NOT NULL,
 	preco DECIMAL NULL,

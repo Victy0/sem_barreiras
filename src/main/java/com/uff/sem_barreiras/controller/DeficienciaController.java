@@ -44,9 +44,8 @@ public class DeficienciaController {
 
     // mapeamento Post para criar uma deficiencia
     @PostMapping("/deficiencia")
-    public ResponseObject criarDeficiencia(@RequestBody final Deficiencia deficiencia) throws InsertException {
-        this.deficienciaService.criarDeficiencia(deficiencia);
-        return new ResponseObject(true, "Deficiência salva com sucesso");
+    public Deficiencia criarDeficiencia(@RequestBody final Deficiencia deficiencia) throws InsertException {
+        return this.deficienciaService.criarDeficiencia(deficiencia);
     }
 
     // mapeamento Delete para deletar 1 deficiencia informando o id do mesmo
@@ -59,7 +58,7 @@ public class DeficienciaController {
      // mapeamento Put para alterar deficiencia
      @PutMapping("/deficiencia/alterar")
      public Deficiencia alterarDeficiencia(@RequestBody final Deficiencia deficiencia) throws NotFoundException, IdNullException {
-         return this.deficienciaService.alterarDeficiencia(deficiencia);
+        return this.deficienciaService.alterarDeficiencia(deficiencia);
      }
 
     @Autowired

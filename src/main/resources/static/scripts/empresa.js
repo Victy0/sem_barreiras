@@ -19,7 +19,7 @@ $(document).ready( function(){
                 document.getElementById("estado").appendChild(opt);
             }
         }
-    }); 
+    });  
 
     if(id){
 
@@ -106,6 +106,15 @@ function salvar(){
             data: JSON.stringify(empresa),
             success: function(data) { 
                 console.log(data)
+                if(data.id){
+                    document.getElementById("modal").click();
+                    localStorage.setItem("p", "/login");
+                }else{
+                    document.getElementById("modal2").click();
+                }
+            },
+            error: function() {
+                document.getElementById("modal2").click();
             }
         
         });
@@ -116,8 +125,22 @@ function salvar(){
             url: "/empresa/alterar", 
             data: JSON.stringify(empresa),
             success: function(data) { 
-                console.log(data)
+                if(data.id){
+                    document.getElementById("modal").click();
+                    localStorage.setItem("p", "/listar-vaga");
+                }else{
+                    document.getElementById("modal2").click();
+                }
+            },
+            error: function() {
+                document.getElementById("modal2").click();
             }
         });
     }
+}
+
+function alterarPagina(){
+    var url = localStorage.getItem("p");
+    localStorage.removeItem("p");
+    window.location.replace(url);
 }
