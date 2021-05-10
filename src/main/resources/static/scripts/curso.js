@@ -1,15 +1,13 @@
 $(document).ready(function () {
-
-   
      
-    $.getJSON("/curso", {}, function (data) {
-        console.log(data)
-    });
-
     if (ehEdicao()) {
         buscarCurso();
     }
     $.getJSON("/curso", {}, function (data) {
+
+        document.getElementById("background-loading").style.display = "flex";
+    document.getElementById("loading").style.display = "flex";
+
         for(var i =0; i < data.totalElements; i++){
             var curso = data.content[i];
             console.log(curso);
@@ -20,6 +18,9 @@ $(document).ready(function () {
             body.appendChild(div);                 
             body.insertBefore(div, body.firstChild) 
         }
+
+        document.getElementById("background-loading").style.display = "none";
+    document.getElementById("loading").style.display = "none";
     
     });
 });
@@ -46,7 +47,6 @@ function buscarCurso() {
             url: `/curso/${id}`,
             async: false,
             success: function (data) {
-                console.log("CURSO ENCONTRADO: ", data);
 
                 document.getElementById('id-curso').value = data.id;
                 document.getElementById('nome-curso').value = data.nome;
@@ -100,24 +100,25 @@ function createMyElement(curso){
         async: false, 
         success: function(data) { 
 
-            console.log(data)
-
-            for(var i = 0; i < data.totalElements; i++){
-                var vaga = data.content[i];
+            document.getElementById("background-loading").style.display = "flex";
+            document.getElementById("loading").style.display = "flex";
         
-                for(var i =0; i < data.totalElements; i++){
-                    var curso = data.content[i];
-                    console.log(curso);
-                    var body = document.getElementById('corpo');
-                    var div = document.createElement('div'); 
-                    div.innerHTML = createMyElement(curso);   
-                    div.id = curso.id;                      
-                    body.appendChild(div);                 
-                    body.insertBefore(div, body.firstChild) 
-                }
-                var result = document.getElementById('textoResultado');
-                result.innerHTML = data.totalElements + ' resultados';
+            for(var i =0; i < data.totalElements; i++){
+                var curso = data.content[i];
+                console.log(curso);
+                var body = document.getElementById('corpo');
+                var div = document.createElement('div'); 
+                div.innerHTML = createMyElement(curso);   
+                div.id = curso.id;                      
+                body.appendChild(div);                 
+                body.insertBefore(div, body.firstChild) 
             }
+            var result = document.getElementById('textoResultado');
+            result.innerHTML = data.totalElements + ' resultados';
+
+            document.getElementById("background-loading").style.display = "none";
+            document.getElementById("loading").style.display = "none";
         }
+
     });  
  }

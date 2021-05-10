@@ -37,6 +37,9 @@ $(document).ready( function(){
 
     var id = new URL(window.location.href).searchParams.get("id");
     history.replaceState(null, "", location.href.split("?")[0]);
+
+    document.getElementById("background-loading").style.display = "flex";
+    document.getElementById("loading").style.display = "flex";
     
     if(id){
         $.ajax({
@@ -58,8 +61,7 @@ $(document).ready( function(){
                 document.getElementById('jornada').value = data.jornadaTrabalho ;
                 document.getElementById('durac-vaga').value = data.duracaoVaga ;
                 for (var i = 0; i < document.getElementById('area').options.length; i++) {
-                    if (document.getElementById('area').options[i].value == data.area.id) {
-                        
+                    if (document.getElementById('area').options[i].value == data.area.id) { 
 
                         document.getElementById('area')[i].selected = true;
                     }
@@ -73,8 +75,14 @@ $(document).ready( function(){
                 defDissolve(data.deficiencias);
             }
         }); 
+
+        document.getElementById("background-loading").style.display = "none";
+        document.getElementById("loading").style.display = "none";
     }else{
         document.getElementById('deletar').style.display = "none";
+
+        document.getElementById("background-loading").style.display = "none";
+        document.getElementById("loading").style.display = "none";
     }
     
 });
@@ -82,6 +90,9 @@ $(document).ready( function(){
 
 
 function salvarVaga(){
+
+    document.getElementById("background-loading").style.display = "flex";
+    document.getElementById("loading").style.display = "flex";
    
     vaga =
     {
@@ -126,6 +137,10 @@ function salvarVaga(){
             url: "/vaga", 
             data: JSON.stringify(vaga),
             success: function(data) { 
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
+
                 if(data.sucesso){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/listar-vaga");
@@ -134,7 +149,13 @@ function salvarVaga(){
                 }
             },
             error: function() {
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
+
                 document.getElementById("modal2").click();
+
+
             }
         });
     }else{
@@ -144,6 +165,10 @@ function salvarVaga(){
             url: "/vaga/alterar", 
             data: JSON.stringify(vaga),
             success: function(data) { 
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
+
                 if(data.id){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/listar-vaga");
@@ -152,6 +177,10 @@ function salvarVaga(){
                 }
             },
             error: function() {
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
+
                 document.getElementById("modal2").click();
             }
         });

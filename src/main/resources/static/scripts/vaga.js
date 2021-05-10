@@ -13,8 +13,13 @@ $(document).ready( function(){
         body.appendChild(div);                 //append to the doc.body
         body.insertBefore(div, body.firstChild);
         preencherDadosListados(vaga);
+
+        document.getElementById("background-loading").style.display = "none";
+        document.getElementById("loading").style.display = "none";
         
     }); 
+
+    
 
 });
 
@@ -228,6 +233,9 @@ function preencherDadosListados(vaga){
 
 function candidatarVaga(){
 
+    document.getElementById("background-loading").style.display = "flex";
+    document.getElementById("loading").style.display = "flex";
+
     document.getElementById('id01').style.display='none';
 
     var idVaga = document.getElementById("idVaga").value;
@@ -242,6 +250,9 @@ function candidatarVaga(){
         url: "/vaga/candidatar/" + idVaga, 
         data: JSON.stringify(dados)
     });
+
+    document.getElementById("background-loading").style.display = "none";
+    document.getElementById("loading").style.display = "none";
 }
 
 function abre(){

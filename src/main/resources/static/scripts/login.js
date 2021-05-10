@@ -1,4 +1,12 @@
+$(document).ready( function(){
+    document.getElementById("background-loading").style.display = "none";
+    document.getElementById("loading").style.display = "none";
+});
+
 function entrar(){
+
+    document.getElementById("background-loading").style.display = "flex";
+    document.getElementById("loading").style.display = "flex";
 
     var login = {};
     login.email = document.getElementById('email').value;
@@ -17,6 +25,8 @@ function entrar(){
                 console.log(data)
                 document.getElementById('erro').innerHTML = data.mensagem;
             }
+            document.getElementById("background-loading").style.display = "none";
+            document.getElementById("loading").style.display = "none";
         }
     }); 
 

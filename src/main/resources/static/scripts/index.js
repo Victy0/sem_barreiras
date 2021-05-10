@@ -4,11 +4,12 @@ $(document).ready( function(){
     var url = "/vaga";
     if(loged != null && loged != undefined){
         url = "/vaga?empresa=" + loged;
-        document.getElementById("listEmpresa").style.display = "none";
-        document.getElementById("listEmpresaLabel").style.display = "none";
     }
 
     $.getJSON(url, {}, function(data) { 
+
+        document.getElementById("background-loading").style.display = "flex";
+        document.getElementById("loading").style.display = "flex";
 
         for(var i = 0; i < data.totalElements; i++){
             var vaga = data.content[i];
@@ -23,6 +24,9 @@ $(document).ready( function(){
             var result = document.getElementById('textoResultado');
             result.innerHTML = data.totalElements + ' resultados';
         }
+
+        document.getElementById("background-loading").style.display = "none";
+        document.getElementById("loading").style.display = "none";
     }); 
 
     // popular filtros
@@ -130,7 +134,6 @@ $(document).ready( function(){
             }
         }
     }); 
-
 });
 
 function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
@@ -205,8 +208,8 @@ function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
 
     document.getElementById('corpo').innerHTML = "";
 
-    //document.getElementById('exampleModal').style.display = "none";
-    //document.getElementsByClassName('modal-backdrop fade show').style.display = "none";
+    document.getElementById("background-loading").style.display = "flex";
+    document.getElementById("loading").style.display = "flex";
 
     $.ajax({
         type: 'GET', 
@@ -214,8 +217,6 @@ function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
         url: "/vaga" + filterParam,
         async: false, 
         success: function(data) { 
-
-            console.log(data)
 
             for(var i = 0; i < data.totalElements; i++){
                 var vaga = data.content[i];
@@ -230,6 +231,9 @@ function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
                 var result = document.getElementById('textoResultado');
                 result.innerHTML = data.totalElements + ' resultados';
             }
+
+            document.getElementById("background-loading").style.display = "none";
+            document.getElementById("loading").style.display = "none";
         }
     });  
  }

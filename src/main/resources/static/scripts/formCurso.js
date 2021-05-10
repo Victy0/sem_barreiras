@@ -1,4 +1,13 @@
+$(document).ready( function(){
+    document.getElementById("background-loading").style.display = "none";
+    document.getElementById("loading").style.display = "none";
+});
+
 function salvarCurso() {
+
+    document.getElementById("background-loading").style.display = "flex";
+    document.getElementById("loading").style.display = "flex";
+
     let curso = {
         id: document.getElementById('id-curso').value,
         nome: document.getElementById('nome-curso').value,
@@ -7,7 +16,6 @@ function salvarCurso() {
         preco: document.getElementById('preco-curso').value,
     }
 
-    console.log(curso)
     if (!curso.id) {
         $.ajax({
             type: 'POST',
@@ -20,9 +28,15 @@ function salvarCurso() {
                 }else{
                     document.getElementById("modal2").click();
                 }
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
             },
             error: function() {
                 document.getElementById("modal2").click();
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
             }
         });
     } else {
@@ -37,9 +51,15 @@ function salvarCurso() {
                 }else{
                     document.getElementById("modal2").click();
                 }
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
             },
             error: function() {
                 document.getElementById("modal2").click();
+
+                document.getElementById("background-loading").style.display = "none";
+                document.getElementById("loading").style.display = "none";
             }
         });
     }
