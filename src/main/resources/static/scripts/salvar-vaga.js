@@ -1,10 +1,8 @@
 var lendef;
 $(document).ready( function(){
     
-    var loged= sessionStorage.getItem("on");
-    if(loged == null || loged == undefined){
-        window.location.replace("/login");
-    }
+    var loged= localStorage.getItem("on");
+    console.log(loged);
 
     $.ajax({
         type: 'GET', 
@@ -114,7 +112,7 @@ function salvarVaga(){
     vaga.beneficios = checkAppend();
     vaga.jornadaTrabalho =  document.getElementById('jornada').value;
     vaga.duracaoVaga =  document.getElementById('durac-vaga').value;
-    vaga.empresa ={"id":sessionStorage.getItem('on')};
+    vaga.empresa ={"id":localStorage.getItem('on')};
     vaga.area =  {"id":document.getElementById('area').value};
     vaga.escolaridade = {id: document.getElementById('esc').value};
     vaga.deficiencias = defAppend();
@@ -126,7 +124,7 @@ function salvarVaga(){
             url: "/vaga", 
             data: JSON.stringify(vaga),
             success: function(data) { 
-                if(data.sucesso){
+                if(data.id){
                     document.getElementById("modal").click();
                     localStorage.setItem("p", "/listar-vaga");
                 }else{

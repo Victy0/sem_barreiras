@@ -1,6 +1,6 @@
 $(document).ready( function(){
 
-    var loged= sessionStorage.getItem("on");
+    var loged= localStorage.getItem("on");
     var url = "/vaga";
     if(loged != null && loged != undefined){
         url = "/vaga?empresa=" + loged;
@@ -135,7 +135,7 @@ $(document).ready( function(){
 
 function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
 
-    var loged= sessionStorage.getItem("on");
+    var loged= localStorage.getItem("on");
     var url = "/acessar-vaga?id=";
     if(loged != null && loged != undefined){
         url = "/cadastro-vaga?id=";
@@ -160,7 +160,7 @@ function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
-            '<a  target="_blank" href="' + url + vagaId + '">',
+            '<a href="' + url + vagaId + '">',
                 `<h3 class="tituloVaga" id="vaga` + vagaId + `" onclick="falar('vaga` + vagaId+ `', 'i')">`, vagaNome,'</h3>',
             '</a>',
                 `<p class="textoLocalVaga" id="local` + vagaId + `" onclick="falar('local` + vagaId+ `', 'i')">`, local,'</p>',

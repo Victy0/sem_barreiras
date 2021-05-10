@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.kaczmarzyk.spring.data.jpa.domain.GreaterThanOrEqual;
+import net.kaczmarzyk.spring.data.jpa.domain.LessThanOrEqual;
 import net.kaczmarzyk.spring.data.jpa.domain.Like;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.And;
 import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
@@ -29,7 +29,7 @@ import net.kaczmarzyk.spring.data.jpa.web.annotation.Spec;
 public class CursoController {
     @GetMapping("/curso")
     public Page<Curso> listarCursos(
-        @And( value = {	@Spec( path = "preco", params = "precoMinimo", spec = GreaterThanOrEqual.class  ),
+        @And( value = {	@Spec( path = "preco", params = "precoMinimo", spec =   LessThanOrEqual.class  ),
                         @Spec( path = "nome", spec = Like.class)} ) final Specification<Curso> spec,
 		@PageableDefault( size = 50, sort = "nome" ) final Pageable page
     ){ 

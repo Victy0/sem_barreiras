@@ -41,7 +41,7 @@ function verificaCodigo(){
                     url: "/empresa/session",
                     async:false,
                     success: function(data) { 
-                        sessionStorage.setItem("on", data);
+                        localStorage.setItem("on", data);
                         window.location.replace("/");
                     }
                 }); 

@@ -37,7 +37,7 @@ $(document).ready( function(){
                 document.getElementById('cnpj').value = data.cnpj;
                 document.getElementById('email').value = data.email;
                 document.getElementById('endereco').value = data.endereco;
-                document.getElementById('telefone').value = data.endereco;
+                document.getElementById('telefone').value = data.telefone;
                 for (var i = 0; i < document.getElementById('estado').options.length; i++) {
                     if (document.getElementById('estado').options[i].value == data.cidade.estado.id) {
                         document.getElementById('estado')[i].selected = true;

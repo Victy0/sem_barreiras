@@ -80,6 +80,7 @@ public class VagaService {
                 query.distinct(true);
                 Subquery<Vaga> vagaSubQuery = query.subquery(Vaga.class);
                 Root<Vaga> vaga = vagaSubQuery.from(Vaga.class);
+                vagaSubQuery.distinct(true);
                 vagaSubQuery.select(vaga);
                 vagaSubQuery.where(cb.equal(root.join("deficiencias").get("id"), deficienciaId));
 
