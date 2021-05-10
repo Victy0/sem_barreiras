@@ -163,7 +163,7 @@ function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
                 '<img src="../img/Rectangle.png" class="imgVaga">',
             '</div>',
             '<div class="col-9">',
-            '<a  target="_blank" href="' + url + vagaId + '">',
+            '<a href="' + url + vagaId + '">',
                 `<h3 class="tituloVaga" id="vaga` + vagaId + `" onclick="falar('vaga` + vagaId+ `', 'i')">`, vagaNome,'</h3>',
             '</a>',
                 `<p class="textoLocalVaga" id="local` + vagaId + `" onclick="falar('local` + vagaId+ `', 'i')">`, local,'</p>',

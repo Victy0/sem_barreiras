@@ -2,9 +2,6 @@ package com.uff.sem_barreiras.service;
 
 import java.util.List;
 
-import javax.persistence.criteria.Root;
-import javax.persistence.criteria.Subquery;
-
 import com.uff.sem_barreiras.dao.VagaDao;
 import com.uff.sem_barreiras.exceptions.IdNullException;
 import com.uff.sem_barreiras.exceptions.InsertException;
@@ -75,17 +72,15 @@ public class VagaService {
     }
 
     // Subquery using Cat membership in the Owner.cats relation
-        public Specification<Vaga> hasDeficiencia(final Integer deficienciaId) {
-            return (root, query, cb) -> {
-                query.distinct(true);
-                Subquery<Vaga> vagaSubQuery = query.subquery(Vaga.class);
-                Root<Vaga> vaga = vagaSubQuery.from(Vaga.class);
-                vagaSubQuery.select(vaga);
-                vagaSubQuery.where(cb.equal(root.join("deficiencias").get("id"), deficienciaId));
+    public Specification<Vaga> hasDeficiencia(final Integer deficienciaId) {
 
-                return cb.equal(vagaSubQuery, deficienciaId);
-            };
-        }
+        List<Integer> idList = this.vagaDao.idVagasByDeficiencia(deficienciaId);
+        return ( root, query, cb ) -> {
+
+            return root.get( "id" ).in( idList );
+        };
+
+    }
 
     @Autowired
     private VagaDao vagaDao;
