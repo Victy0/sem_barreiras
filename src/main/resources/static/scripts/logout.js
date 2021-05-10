@@ -1,5 +1,5 @@
 $(document).ready( function(){
-    var loged= sessionStorage.getItem("on");
+    var loged= localStorage.getItem("on");
     if(loged == null || loged == undefined){
         document.getElementById("recrutar").style.display = "none";
         document.getElementById("sair").style.display = "none";
@@ -22,7 +22,7 @@ function logout(){
         success: function(data) { 
             console.log(data)
             if(data.sucesso){
-                sessionStorage.removeItem("on");
+                localStorage.removeItem("on");
                 window.location.replace("/"); 
             }
         }
@@ -30,7 +30,7 @@ function logout(){
 }
 
 function editEmpresa(){
-    var loged= sessionStorage.getItem("on");
+    var loged= localStorage.getItem("on");
     if(loged != null || loged != undefined){
         window.location.replace("/cadastro-empresa?id=" + loged); 
     }

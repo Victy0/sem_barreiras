@@ -1,6 +1,6 @@
 $(document).ready( function(){
 
-    var loged= sessionStorage.getItem("on");
+    var loged= localStorage.getItem("on");
     var url = "/vaga";
     if(loged != null && loged != undefined){
         url = "/vaga?empresa=" + loged;
@@ -138,7 +138,7 @@ $(document).ready( function(){
 
 function createMyElement(vagaId, vagaNome, local, empresa, deficiencias){
 
-    var loged= sessionStorage.getItem("on");
+    var loged= localStorage.getItem("on");
     var url = "/acessar-vaga?id=";
     if(loged != null && loged != undefined){
         url = "/cadastro-vaga?id=";
